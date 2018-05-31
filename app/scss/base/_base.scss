@@ -33,6 +33,38 @@ img {
 	max-width: 100%;
 }
 
+ul {
+	margin: 0;
+	padding: 0; 
+	display: inline-block;
+
+	@include breakpoint(mobile, max-width) {
+		ul {
+			width: 100%;
+		}
+	}
+}
+
+li {
+	display: inline-block;
+	list-style: none;
+
+	@include breakpoint(mobile, max-width) {
+		li {
+			display: block;
+			width: 100%;
+			padding: 15px 0;
+		}
+	}
+}
+
+h2 {
+	font-size: 36px;
+	font-weight: bold;
+	margin: 0 0 2rem 0;
+	line-height: 1.2;
+}
+
 .home-portfolio {
 	.blue & {
 		background-color: color(blue, light);
@@ -42,37 +74,5 @@ img {
 	}
 	.green & {
 		background-color: color(green, light);
-	}
-}
-
-ul {
-	margin: 0;
-	padding: 0; 
-	display: inline-block;
-}
-
-li {
-	display: inline-block;
-	list-style: none;
-}
-
-@include breakpoint(mobile, max-width) {
-		
-	ul {
-		width: 100%;
-	}
-	li {
-		display: block;
-		width: 100%;
-		padding: 15px 0;
-	}
-}
-
-.inline-link {
-	color: inherit;
-	text-decoration: underline;
-	transition: .3s ease-in-out;
-	&:hover {
-		opacity: .5;
 	}
 }

@@ -1,9 +1,38 @@
-h2 {
-	font-size: 36px;
-	font-weight: bold;
-	margin: 0 0 2rem 0;
-	line-height: 1.2;
+.hero {
+	#home & {
+		padding: 0;
+
+		@include breakpoint(tablet, min-width) {
+			padding: 3rem 0 6rem 0;
+		}
+		@include breakpoint(desktop, min-width) {
+			padding-bottom: 180px;
+		}
+	}
+
+	&--title a {
+		text-decoration: underline;
+		transition: .3s ease-out;
+
+		.orange & {
+			&:hover {
+				color: color(orange, dark);
+			}
+		}
+		.blue & {
+			&:hover {
+				color: color(blue, dark);
+			}
+		}
+		.green & {
+			&:hover {
+				color: color(green, dark);
+			}
+		}
+	}
 }
+
+// End of Hero
 
 .subtitle {
 	margin: 0 0 2rem 0;
@@ -17,19 +46,19 @@ h2 {
 }
 
 .home-portfolio {
-
 	padding: 3rem 0;
 	@include breakpoint(tablet, min-width) {
 		padding: 6rem 0;
 	}
-	.container {
-		display: grid;
-		grid-template: auto / repeat(1, 1fr);
-
-		@include breakpoint(tablet, min-width) {
-			grid-template: auto / repeat(2, 1fr);
-			grid-gap: 30px;
-		}
+	
+	.blue & {
+		background: color(blue, light);
+	}
+	.orange & {
+		background: color(orange, light);
+	}
+	.green & {
+		background: color(green, light);
 	}
 }
 
@@ -64,19 +93,11 @@ h2 {
 }
 
 .hover {
-
     width: 100%;
 	padding: 20px 0;
-	// overflow: hidden;
-	// min-height: 124px;
-	h2,
-	p {
-		color: color(text, dark);
-	}
 }
 
 .featured-text {
-
 	line-height: 1.2;
 	text-align: left;
 	margin-bottom: auto;
@@ -106,7 +127,6 @@ h2 {
 	@include breakpoint(tablet, min-width) {
 		padding: 360px 0 100px 0;
 	}
-
 	@include breakpoint(desktop, min-width) {
 		padding: 410px 0 120px 0;
 	}

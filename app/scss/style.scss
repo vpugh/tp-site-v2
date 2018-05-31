@@ -1,15 +1,19 @@
 // Normalize
 @import "normalize";
-@import "variables/breakpoints";
-@import "base/all";
+
+
 
 // Variables
+@import "variables/breakpoints";
+@import "base/all";
+@import "variables/typography";
 @import "variables/colors";
 @import "variables/themes";
-@import "variables/typography";
+
 
 // Components
 @import "components/buttons";
+@import "components/links";
 // *No need for inputs*
 // @import "components/hamburger";
 @import "components/link-top";
@@ -26,6 +30,7 @@
 // Animation
 @import "helpers/animations";
 @import "helpers/container";
+@import "helpers/grid";
 // @import "helpers/mixins";
 
 // Layout

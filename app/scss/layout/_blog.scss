@@ -14,13 +14,13 @@
     }
 }
 
-.grid {
-    display: grid;
-    @include breakpoint(desktop,min-width){
-        grid-template: auto / repeat(2, 1fr);
-    }
+// .grid {
+//     display: grid;
+//     @include breakpoint(desktop,min-width){
+//         grid-template: auto / repeat(2, 1fr);
+//     }
     
-}
+// }
 
 .blog-subtitle a {
     line-height: 1.1em;
