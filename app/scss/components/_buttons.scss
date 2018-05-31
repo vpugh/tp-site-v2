@@ -1,0 +1,95 @@
+.btn {
+	padding: 10px 35px;
+    color: #242424;
+    display: block;
+    margin-right: 20px;
+    font-size: 1.125em;
+    transition: ease-in-out 250ms;
+    cursor: pointer;
+    text-decoration: none;
+    
+    &.orange {
+        color: color(orange, base);
+    }
+    &.blue {
+        color: color(blue, base);
+    }
+    &.green {
+        color: color(green, base);
+    }
+    &.base {
+        color: color(text, base);
+    }
+    
+    &.full {
+	    padding: 35px;
+	    text-align: center;
+	    margin: 0;
+    }
+    
+    &:hover {
+	    color: #fff;
+        &.orange {
+            background-color: color(orange, base);
+        }
+        &.blue {
+            background-color: color(blue, base);
+        }
+        &.green {
+            background-color: color(green, base);
+        }
+        &.base {
+            background-color: color(text, base);
+        }
+    }
+    
+    &.block {
+	   	display: inline-block;
+	   	padding: 9px 34px 7px 34px;
+        border: 1px solid #3e3e3e;
+        font-size: 1em;
+        &.large {
+            font-size: 1.3em;
+        }
+        &.small {
+            font-size: .8em;
+        }
+        &.orange {
+            border-color: color(orange, base);
+        }
+        &.blue {
+            border-color: color(blue, base);
+        }
+        &.green {
+            border-color: color(green, base);
+        }
+        &.base {
+            border-color: color(text, base);
+        }
+    }
+}
+.download,
+.download:after {
+    position: relative;
+    transition: all 200ms ease-out;
+}
+
+.download {
+    @include breakpoint(tablet, max-width) {
+        &.btn:hover {
+            padding-right: 0
+        }
+    }
+    &.btn:hover {
+        padding-right: 50px
+    }
+    &:after {
+        content: "\21A7";
+        position: absolute;
+        opacity: 0
+    }
+    &:hover:after {
+        opacity: 1;
+        padding-left: 17px
+    }
+}

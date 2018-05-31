@@ -1,0 +1,36 @@
+// Normalize
+@import "normalize";
+@import "variables/breakpoints";
+@import "base/all";
+
+// Variables
+@import "variables/colors";
+@import "variables/themes";
+@import "variables/typography";
+
+// Components
+@import "components/buttons";
+// *No need for inputs*
+// @import "components/hamburger";
+@import "components/link-top";
+@import "components/footer";
+@import "components/header";
+@import "components/hero";
+@import "components/quote";
+
+// Vendors
+@import "vendors/fontawesome";
+
+// Helpers
+// Mixins
+// Animation
+@import "helpers/animations";
+@import "helpers/container";
+// @import "helpers/mixins";
+
+// Layout
+@import "layout/home";
+@import "layout/about";
+@import "layout/projects";
+@import "layout/solutions";
+@import "layout/blog";

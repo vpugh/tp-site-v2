@@ -1,0 +1,62 @@
+.social-footer {
+	// width: 100%;
+	float: right;
+	// text-align: center;
+	
+	letter-spacing: 1px;
+	padding: 24px 0 12px 0;
+	
+	li {
+		display: inline-block;
+		// padding: 0 16px;
+		line-height: 1.4;
+		@media (max-width: 480px) {
+			width: 48%;
+			margin-bottom: 36px;
+			display: inline-block;
+			padding: 0;
+		}
+		@include desktop {
+			padding: 0 10px;
+		}
+		@include large-desktop {
+			padding: 0 16px;
+		}
+	}
+	a {
+		text-decoration: none;
+		color: #fff;
+		transition: 200ms color ease-in;
+		&:hover {
+			color: rgba(#fff, 0.5);
+		}
+	}
+}
+#footer {
+    padding: 25px 0;
+    background-color: #222;
+    color: #fff;
+    font-size: 16px;
+    @include desktop {
+		font-size: 14px;
+	}
+	@include large-desktop {
+		font-size: 16px;
+	}
+    p {
+	    text-align: center;
+	}
+	.copyright {
+		padding: 24px 0 12px 0;
+		letter-spacing: .5px;
+		float: left;
+	}
+	a[title^="Email"] {
+		-webkit-touch-callout: none;
+	    -webkit-user-select: none;
+	    -khtml-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	}
+}

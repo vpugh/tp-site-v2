@@ -1,0 +1,62 @@
+.sttop {
+	height: 60px;
+	display: inline-block;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: opacity .3s 0s, visibility 0s .3s;
+	-moz-transition: opacity .3s 0s, visibility 0s .3s;
+	transition: opacity .3s 0s, visibility 0s .3s;
+	white-space: nowrap; 
+	text-indent: -100%;
+	background: #3e3e3e url(../images/top-arrow.svg) no-repeat center 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+    width: 100%;
+    border-radius: 0;
+    right: 0;
+    bottom: 0;
+    position: relative;
+	@include tablet {
+		width: 60px;
+		right: 30px;
+		bottom: 30px;
+		position: fixed;
+		overflow:hidden;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		&:hover {
+			-webkit-box-shadow: 1px 2px 4px rgba(0,0,0,.2);
+			-moz-box-shadow: 1px 2px 4px rgba(0,0,0,.2);
+			box-shadow: 1px 2px 4px rgba(0,0,0,.2);
+			background-color: #5B5B5B;
+		}
+  	}
+  	@include desktop {
+		width: 60px;
+		right: 30px;
+		bottom: 30px;
+		position: fixed;
+		overflow:hidden;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		&:hover {
+			-webkit-box-shadow: 1px 2px 4px rgba(0,0,0,.2);
+			-moz-box-shadow: 1px 2px 4px rgba(0,0,0,.2);
+			box-shadow: 1px 2px 4px rgba(0,0,0,.2);
+			background-color: #5B5B5B;
+		}
+  	}
+}
+.sttop.is-visible {
+  visibility: visible;
+  opacity: 1;
+      -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+    -moz-transition: opacity .3s 0s, visibility 0s 0s;
+    transition: opacity .3s 0s, visibility 0s 0s;
+}
+.sttop.fade-out {
+  opacity: .5;
+}

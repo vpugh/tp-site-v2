@@ -1,0 +1,162 @@
+#work {
+	main {
+		background-color: color(background, base);
+		padding-bottom: 6rem;
+	}
+}
+
+
+#work {
+	.nav--link a:hover {
+		border-color: #fff;
+		color: color(text,white);
+	}
+	.navigation .nav--link.active a {
+		color: color(text,white);
+		border-color: color(text, white);
+		opacity: .5;
+	}
+	.navigation,
+	.hero {
+		color: color(text, white);
+	}
+	&.orange {
+		background-color: color(orange, base);
+	}
+	&.blue {
+		background-color: color(blue, base);
+	}
+	&.green {
+		background-color: color(green, base);
+	}
+}
+
+
+.intro-block {
+	background-color: #fff;
+	font-weight: 300;
+	letter-spacing: .5px;
+
+	.left-main {
+		padding-left: 0;
+	}
+	.right-sidebar {
+		padding-right: 0;
+	}
+
+	@include breakpoint(mobile, max-width) {
+		
+		padding: 3rem 0 1.5rem 0;
+		// margin-bottom: 4rem;
+		
+		.left-main {
+			font-size: 1.1rem;
+			line-height: 1.6;
+			padding: 1em 0;
+		}
+		
+		.right-sidebar p {
+			margin-bottom: 1rem;
+		}
+	}
+	
+	@include breakpoint(tablet, max-width) {
+		
+		padding: 60px 0;
+		
+		.left-main {
+			font-size: 18px;
+			line-height: 1.4;
+			width: 100%;
+		}
+		
+		.right-sidebar p {
+			margin-bottom: 1rem;
+			width: 100%;
+		}
+	}
+	
+	@include breakpoint(desktop, min-width) {
+		
+		padding: 55px 0 65px 0;
+		
+		.left-main {
+			font-size: 20px;
+			line-height: 1.4;
+		}
+		
+		.right-sidebar p {
+			font-size: 20px;
+			margin-bottom: 1rem;
+		}
+	}
+	
+}
+
+.body {
+	margin: 0 auto;
+	width: 80%;
+	@include breakpoint(tablet, min-width) {
+		width: 80%;
+	}
+	&:not(:last-child) {
+		padding-bottom: 4rem;
+	}
+	@include breakpoint(mobile, max-width) {
+		margin-top: 4rem;
+	}
+	@include breakpoint(tablet, min-width) {
+		margin-top: 7rem;
+	}
+	@include breakpoint(desktop, min-width) {
+		max-width: 634px;
+		margin-top: 7rem;
+	}
+	img:not(:last-child) {
+		padding-bottom: 3rem;
+	}
+	.subhead,
+	.subhead--sub {
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin: 2em 0 1em;
+	}
+	.subhead--sub {
+		margin: 1em 0 .5em;	
+		font-size: 1.1rem;
+	}
+	p {
+		line-height: 1.5;
+		font-size: 1.1rem;
+		margin-bottom: 1rem;
+		font-weight: 300;
+		@include breakpoint(tablet, min-width) {
+			font-size: 1.5rem;
+		}
+	}
+	a {
+		border-bottom: 2px solid color(text, base);
+		transition: border 300ms ease-out;
+		&:hover {
+			border-color: transparent;
+		}
+	}
+}
+
+
+.full-image {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+.half-image {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	img {
+		width: 49%;
+		@include breakpoint(tablet, max-width) {
+			width: 100%;
+		}
+	}
+}

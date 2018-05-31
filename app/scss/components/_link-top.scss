@@ -1,0 +1,55 @@
+.sttop {
+	height: 60px;
+	display: inline-block;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity .3s 0s, visibility 0s .3s;
+	white-space: nowrap; 
+	text-indent: -100%;
+	background: #3e3e3e url(../images/top-arrow.svg) no-repeat center 50%;
+	@include breakpoint(tablet, min-width) {
+		border-radius: 50%;
+	}
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    position: relative;
+    
+	// @include tablet {
+	@include breakpoint(tablet, min-width) {
+		width: 60px;
+		right: 30px;
+		bottom: 30px;
+		position: fixed;
+		overflow:hidden;
+		border-radius: 50%;
+		
+		&:hover {
+			box-shadow: 1px 2px 4px rgba(0,0,0,.2);
+			background-color: #5B5B5B;
+		}
+  	}
+  	
+  	// @include desktop {
+  	@include breakpoint(desktop, min-width) {
+		width: 60px;
+		right: 30px;
+		bottom: 30px;
+		position: fixed;
+		overflow:hidden;
+		border-radius: 50%;
+		
+		&:hover {
+			box-shadow: 1px 2px 4px rgba(0,0,0,.2);
+			background-color: #5B5B5B;
+		}
+  	}
+  	&.is-visible {
+		visibility: visible;
+		opacity: 1;
+	    transition: opacity .3s 0s, visibility 0s 0s;
+	}
+	&.fade-out {
+		opacity: .5;
+	}
+}

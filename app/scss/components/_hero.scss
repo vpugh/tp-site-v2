@@ -1,0 +1,210 @@
+.hero {
+	.intro-title {
+		text-transform: uppercase;
+		font-size: 14px;
+		@include breakpoint(mobile, max-width) {
+			text-align: center;
+			// padding-top: 20px;
+		}
+		@include breakpoint(tablet, min-width) {
+			padding-top: 40px;
+			margin-bottom: 2em;
+		}
+		@include breakpoint(desktop, min-width) {
+			font-size: 18px;
+			letter-spacing: 2px;
+			padding-top: 80px;
+		}
+		@include breakpoint(xldesktop, min-width){
+			padding-top: 180px;
+		}
+	}
+
+	.intro-line {
+		@include breakpoint(mobile, max-width) {
+			display: block;
+			padding-bottom: 30px;
+		}
+		&:after {
+			content: "";
+			background: #ddd;
+			height: 4px;
+			display: inline-block;
+			@include breakpoint(tablet, min-width) {
+				text-align: center;
+			}
+			width: 48%;
+			margin-bottom: 4px;
+			margin-left: 10px;
+
+			.blue & {
+				background: color(blue, base);
+			}
+
+			.green & {
+				background: color(green, base);
+			}
+
+			.orange & {
+				background: color(orange, base);
+			}
+		}
+	}
+	
+	&--title {
+		line-height: 1.5;
+		font-size: 1.6rem;
+		font-weight: 800;
+		
+
+		@include breakpoint(mobile, max-width){
+			padding-bottom: 20px;
+		}
+		
+		@include breakpoint(tablet, min-width) {
+			font-size: 2.6rem;
+			line-height: 1.333;
+			letter-spacing: 1px;
+			padding-bottom: 6vh;
+		}
+		
+		@include breakpoint(desktop, min-width) {
+			font-size: 58px;
+			width: 90%;
+			line-height: 1.2;
+		}
+		
+		@include breakpoint(xldesktop, min-width) {
+			font-size: 64px;
+		}
+
+	}
+	
+	
+	&--subtitle {
+		font-weight: 300;
+		padding-top: 1rem;
+		line-height: 1.5;
+		
+		@include breakpoint(mobile, max-width){
+			font-size: 1.1rem;
+			padding-top: 2rem;
+		}
+
+		@include breakpoint(tablet, min-width) {
+			font-size: 1.45rem;
+			padding-top: 2rem;
+		}
+		
+		@include breakpoint(desktop, min-width) {
+			width:82%;
+			font-size: 26px;
+			padding-top: .5rem;
+		}
+		
+		@include breakpoint(xldesktop, min-width) {
+			
+			font-size: 30px;
+			padding-top: 2rem;
+			font-size: 32px;
+		}
+	}
+}
+
+#home .hero {
+	
+	padding: 0;
+	
+	@include breakpoint(tablet, min-width) {	
+		padding: 3rem 0 6rem 0;
+	}
+	@include breakpoint(desktop, min-width) {
+		padding-bottom: 180px;
+	}
+}
+
+#home {
+	&.orange .hero--title a {
+		// color: color(orange, light);
+		text-decoration: underline;
+		transition: all 300ms ease-out;
+		&:hover {
+			// color: lighten(color(orange, light), 15);
+			color: color(orange, dark);
+		}
+	}
+	&.green .hero--title a {
+		// color: color(green, light);
+		text-decoration: underline;
+		transition: all 300ms ease-out;
+		&:hover {
+			// color: lighten(color(green, light), 15);
+			color: color(green, dark);
+		}
+	}
+	&.blue .hero--title a {
+		// color: color(blue, light);
+		text-decoration: underline;
+		transition: all 300ms ease-out;
+		&:hover {
+			// color: lighten(color(blue, light), 15);
+			color: color(blue, dark);
+		}
+	}
+}
+
+
+#solutions .hero {
+	
+	// text-align: center;
+	padding: 0 0 6rem 0;
+	
+	@include breakpoint(tablet, min-width) {
+		padding: 3rem 0 6rem 0;
+	}
+	
+	.hero--title {
+		padding-bottom: 3rem;
+	}
+}
+
+#work .hero {
+	
+	padding: 2rem 0 4rem 0;
+	@include breakpoint(tablet, max-width) {
+		padding: 3rem 0 8rem 0;
+	}
+	@include breakpoint(mobile, max-width) {
+		padding: 0 0 4rem 0;
+		text-align: center;
+	}
+
+
+	&--title,
+	&--subtitle {
+		width: 100%;
+	}
+
+	&--title {
+		padding-bottom: 2vh;
+		@include breakpoint(mobile, max-width){
+			font-size: 1.8em;
+			padding-bottom: 3vh;
+		}
+	}
+
+	&--subtitle {
+		padding-top: 0;
+		font-weight: 300;
+		font-size: 1em;
+		letter-spacing: .75px;
+	}
+	
+	// @include breakpoint(desktop, min-width) {
+		
+	// 	.container {
+	// 		padding-left: 81px;
+	// 		padding-right: 81px;
+	// 	}
+	// }
+}

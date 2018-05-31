@@ -1,0 +1,165 @@
+{% extends "layout.njk" %}
+
+{% block bodyid %}
+{% set activePage = "home" %}
+{% endblock %}
+
+{% block hero %}
+<section class="hero">
+	<div class="container">
+		<p class="intro-title">Developer / Designer / Problem-Solver <span class="intro-line"></span></p>
+		<h2 class="hero--title">I create <a href="/solutions">solutions</a>, <a href="http://codepen.io/Vpugh/" target="_blank">code</a> stuff, and <a href="https://dribbble.com/teekatwo" target="_blank">design</a> things for UX/UI design and front-end development.</h2>
+		{# <h3 class="hero--subtitle">
+			 I create products that have engaging experiences and function as well as they look. My solutions are created with the user in mind and by using data and research.
+		</h3> #}
+		{# <h3 class="hero--subtitle">User experience and problem solving are the core ideals behind all my solutions. I approach each project to create engaging experiences and useful products that function as well as they look.</h3> #}
+	</div>
+</section>
+{% endblock %}
+{% block content %}
+
+<main>
+	<section class="home-portfolio" id="design">
+		<div class="container">
+			<div class="featured-image">
+				<a href="/work/cdew-redesign">
+					<img alt="" data-sizes="auto" class="lazyload blur-up"data-src="http://toripugh.com/images/Thumbnails/cdeworld-2@2x.jpg" data-srcset="http://toripugh.com/images/Thumbnails/cdeworld-2@1x.jpg 300w, http://toripugh.com/images/Thumbnails/cdeworld-2@2x.jpg 600w, http://toripugh.com/images/Thumbnails/cdeworld-2@1x.jpg 600w">
+				</a>
+				<div class="hover">
+					<div class="featured-text">
+						<h2>Case Study</h2>
+						<p>CDEWorld Redesign</p>
+					</div>
+				</div>
+			</div>
+			<div class="featured-image">
+				<a href="/work/ucd">
+					<img alt="" data-sizes="auto" class="lazyload"  data-src="images/Thumbnails/updates@1x.jpg"  data-srcset="images/Thumbnails/updates@1x.jpg 300w, images/Thumbnails/updates@2x.jpg 600w, images/Thumbnails/updates@1x.jpg 600w">
+				</a>
+				<div class="hover">
+						<div class="featured-text">
+							<h2>Case Study</h2>
+							<p>UCD Email Series</p>
+						</div>
+					</div>
+			</div>
+			<div class="featured-image">
+				<a href="/work/uniag">
+
+					<img alt="" data-sizes="auto" class="lazyload"  data-src="images/Thumbnails/iagny@1x.jpg"  data-srcset="images/Thumbnails/iagny@1x.jpg 300w, images/Thumbnails/iagny@2x.jpg 600w,images/Thumbnails/iagny@1x.jpg 600w">
+					<div class="hover">
+						<div class="featured-text">
+							<h2>Case Study</h2>
+							<p>United Nations: Inter&#8209;Agency Games</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="featured-image">
+				<a href="/work/newsletters">
+					<img alt="" data-sizes="auto" class="lazyload"  data-src="images/Thumbnails/email-templates@1x.jpg"  data-srcset="images/Thumbnails/email-templates@1x.jpg 300w, images/Thumbnails/email-templates@2x.jpg 600w, images/Thumbnails/email-templates@1x.jpg 600w">
+					<div class="hover">
+						<div class="featured-text">
+							<h2>Email Templates</h2>
+							<p>Email Design &amp; Development</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			{# <div class="featured-image">
+				<a href="/work/tusdm">
+					<div class="hover">
+						<div class="featured-text">
+							<h2>TUSDM</h2>
+							<p>Email Design &amp; Development</p>
+						</div>
+					</div>
+					<img alt="" data-sizes="auto" class="lazyload"  data-src="images/Thumbnails/TuftsE-Home@1x.jpg"  data-srcset="images/Thumbnails/TuftsE-Home@1x.jpg 300w, images/Thumbnails/TuftsE-Home.jpg 600w, images/Thumbnails/TuftsE-Home@1x.jpg 600w">
+				</a>
+			</div> #}
+			<div class="featured-image">
+				<a href="/work/vpdesigns">
+					<img alt="" data-sizes="auto" class="lazyload"  data-src="images/Thumbnails/vpdesigns@1x.jpg"  data-srcset="images/Thumbnails/vpdesigns@1x.jpg 300w, images/Thumbnails/vpdesigns@2x.jpg 600w, images/Thumbnails/vpdesigns@1x.jpg 600w">
+					<div class="hover">
+						<div class="featured-text">
+							<h2>Case Study</h2>
+							<p>VP-Designs</p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="featured-image">
+				<a href="/work/interstice">
+					<img alt="" data-sizes="auto" class="lazyload"  data-src="images/Thumbnails/interstice@1x.jpg"  data-srcset="images/Thumbnails/interstice@1x.jpg 300w, images/Thumbnails/interstice.jpg 600w, images/Thumbnails/interstice@1x.jpg 600w">
+					<div class="hover">
+						<div class="featured-text">
+							<h2>Interstice</h2>
+							<p>Theme Design &amp; Development</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+  <section class="blurb" id="about">
+    <div class="container">
+      <div class="blurb-content">
+        <h2>A Little About Me</h2>
+        <div class="blurb-text">
+          <h3 class="subtitle">I'm Tori Pugh. I create engaging experiences and products that function as well as they look. My solutions are made with the user in mind using data and research. Here are some quick points.</h3>
+          <ul class="">
+            <li class="circle-numbers one">
+              <p>
+                I love the whole process of developing a product, from start to finish. I am mindful of the project as a whole, though I keep an eye on the small details within pieces as well.
+              </p>
+            </li>
+            <li class="circle-numbers two">
+              <p>
+                I learn at amazing speeds, can be anything (program, software, etc). I enjoy trying to find more efficient ways to create things and make sure they benefit the end-user as much as I can.
+              </p>
+            </li>
+            <li class="circle-numbers three">
+              <p>
+                I enjoy researching to find the reason behind people using something or doing a certain action. These finds help dictate how something should be made and go towards making things more efficient for everyone.
+              </p>
+            </li>
+            <li class="circle-numbers four">
+              <p>
+                I enjoy researching to find the reason behind people using something or doing a certain action. These finds help dictate how something should be made and go towards making things more efficient for everyone.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="blurb-image">
+          <img src="" alt="">
+        </div>
+        <p>
+          <a class="h-r-arrow" href="/about"><strong>Delve a bit deeper?</strong></a> 
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="blog">
+    <div id="app" class="container">
+      <h2>Writings and Mental Musings</h2>
+      <h3 class="subtitle">My most recent articles. My writing is varied, design lessons and technical knowledge. Things I've learned and techniques I use.</h3>
+      <div class="blog2-container">
+        <div class="blog--posts" v-for="posts in articles.slice(0, 6)">
+          <a :href="posts.link" target="_blank">
+            <div class="blog--cover lazyload" :style="{ backgroundImage: 'url(' + posts.cover + ')' }"></div>
+
+          </a>
+          <div class="blog--text">
+            <h2 class="title"><a :href="posts.link" target="_blank">{% raw %}{{ posts.title }}{% endraw %}</a></h2>
+            <p class="subtitle">{% raw %}{{ posts.date }}{% endraw %} | {% raw %}{{ posts.source }}{% endraw %}</p>
+          </div>
+        </div>
+      </div>
+      <p>
+          <a class="h-r-arrow" href="/about"><strong>Older Blog Posts</strong></a> 
+        </p>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+node_modules/
+dist/
+/js
+/css
+.vscode/
+assets/
+app.zip
+images/
+prototype/
+Old
+eROI.njk
+fonts
+*.html
+*.htaccess

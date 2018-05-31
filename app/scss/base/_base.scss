@@ -1,0 +1,78 @@
+@import "variables/typography";
+@import "helpers/colorMap";
+
+body {
+	font-family: "canada-type-gibson", $sans-serif;
+	font-size: calc(16px + (22 - 16) * (100vw - 320px)/(1440 - 320));
+  	line-height: calc(1.5em + (1.3 - 1.5) * (100vw - 320px)/(1440 - 320));
+	background: color(background, base);
+	color: color(text, base);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+}
+
+.home-portfolio {
+	.blue & {
+		background-color: color(blue, light);
+	}
+	.orange & {
+		background-color: color(orange, light);
+	}
+	.green & {
+		background-color: color(green, light);
+	}
+}
+
+ul {
+	margin: 0;
+	padding: 0; 
+	display: inline-block;
+}
+
+li {
+	display: inline-block;
+	list-style: none;
+}
+
+@include breakpoint(mobile, max-width) {
+		
+	ul {
+		width: 100%;
+	}
+	li {
+		display: block;
+		width: 100%;
+		padding: 15px 0;
+	}
+}
+
+.inline-link {
+	color: inherit;
+	text-decoration: underline;
+	transition: .3s ease-in-out;
+	&:hover {
+		opacity: .5;
+	}
+}

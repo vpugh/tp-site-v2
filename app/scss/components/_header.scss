@@ -1,0 +1,163 @@
+// @import "helpers/media-query";
+@import "helpers/animations";
+
+header {
+	position: relative;
+	width: 100%;
+}
+
+.gradient-border {
+	background: #ff9600;
+    background: -moz-linear-gradient(left, color(orange,base) 0%, color(green,base) 50%, color(blue,base) 100%);
+    background: -webkit-linear-gradient(left, color(orange,base) 0%, color(green,base) 50%, color(blue,base) 100%);
+    background: linear-gradient(to right, color(orange,base) 0%, color(green,base) 50%, color(blue,base) 100%);
+    height: 20px;
+}
+
+.link-nav {
+	@include breakpoint(desktop, min-width){
+		border-right: 2px solid #d8d8d8;
+		padding-right: 20px;
+		margin-right: 10px;
+	}
+	
+}
+
+.navigation {
+	margin: 0 auto;
+	padding: 40px 0 20px 0;
+	
+	@include breakpoint(tablet, min-width) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	@include breakpoint(desktop, min-width) {
+		padding: 46px 0;
+		width: 82%;
+		padding: 40px 0 20px 0;
+	}
+
+	&--links {
+		text-transform: uppercase;
+		letter-spacing: 3px;
+
+		@include breakpoint(mobile, max-width) {
+			margin-bottom: 0;
+		}
+		@include breakpoint(tablet, min-width) {
+			float: left;
+		}
+		@include breakpoint(tablet, max-width) {
+			text-align: center;
+			font-size: 24px;
+		}
+		@include breakpoint(tablet, min-width) {
+			display: block;
+		}
+		
+		// Mobile Menu Slide Open
+		
+		&.menu-is-open {
+	    z-index: 4;
+	    -webkit-transform: translateX(0);
+		-moz-transform: translateX(0);
+		-ms-transform: translateX(0);
+		-o-transform: translateX(0);
+		transform: translateX(0);
+		}
+	}
+	
+	.nav--link {
+		display: inline-block;
+		padding-right: 10px;
+		letter-spacing: 1.25px;
+		@include breakpoint(tablet, max-width) {
+			&:not(:first-child) {
+				padding: 0 6px;
+			}
+		}
+		@include breakpoint(desktop, min-width) {
+			font-size: 1.1rem;
+			&:not(:first-child) {
+				padding: 0 10px;
+			}
+		}
+		@include breakpoint(xldesktop, min-width) {
+			font-size: 1.2rem;
+		}
+
+		&.home {
+			transition: .3s ease-out;
+			transform: translateX(0);
+			&:hover {
+				transform: translateX(-5px);
+				text-decoration: none;
+				border-bottom: none;
+			}
+		}
+		&.active a {
+			border-color: color(text,dark);
+			transition: ease-out 300ms;
+			color: color(text,light);
+		}
+		
+		a {
+			border-bottom: 2px solid transparent;
+			padding-bottom: 2px;
+			&:hover {
+				border-color: color(text,base);
+				transition: ease-out 300ms;
+				opacity: .5;
+			}
+		}
+	}
+	
+	// Social Icons in the Header
+	
+	&--social {
+
+		font-size: 22px;
+		padding: 0;
+		margin: 0;
+
+		@include breakpoint(mobile, max-width) {
+			display: none;
+		}
+		@include breakpoint(tablet, min-width) {
+			float: right;
+		}
+
+		ul {
+			display: inline-block;
+		}
+
+		ul.social {
+			color: color(text, gargoyles);
+			@include breakpoint(desktop, max-width){
+				display: none;
+			}
+		}
+		
+		li {
+
+			display: inline-block;
+			padding: 0 10px;
+		}
+
+		.fa:hover {
+			color: color(text, pavement);
+			
+			#work & {
+				color: rgba(#fff, .5);
+			}
+		}
+	}	
+}
+.home {
+	@include breakpoint(mobile, max-width) {
+		display: block !important;
+		margin-bottom: 20px;
+		text-align: center;
+		padding-right: 0 !important;
+	}
+}

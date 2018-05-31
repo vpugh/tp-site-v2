@@ -1,0 +1,33 @@
+@import "colors";
+
+$themes: (
+  theme1: theme-orange,
+  theme2: theme-blue,
+  theme3: theme-green
+);
+
+@function setStyle($map, $object, $style) {
+  @if map-has-key($map, $object) {
+    @return map-get(map-get($map, $object), $style);
+  }
+  @else {
+    @warn "The key ´#{$object} is not available in the map.";
+  }
+  
+  @return null;
+}
+
+$config: (
+  theme1: (
+    background: color(orange,base),
+    color: color(text, white)
+  ),
+  theme2: (
+    background: color(blue, base),
+    color: color(text,white)
+  ),
+  theme3: (
+    background: color(green, base),
+    color: color(text, white)
+  )
+);

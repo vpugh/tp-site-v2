@@ -1,0 +1,65 @@
+// $breakpoints: (
+// 	xxsmall: 320px,
+// 	xsmall: 480px,
+// 	small: 768px,
+// 	medium: 960px,
+// 	large: 1200px,
+// 	xlarge: 1440px
+// );
+
+// @mixin respond-to($breakpoint, $size) {
+//     @if map-has-key($breakpoints, $breakpoint) and $size == 'min-width' {
+//         $value: map-get($breakpoints, $breakpoint);
+         
+//         @media screen and ($size: $value) {
+//             @content;
+//         }
+//     } @else if map-has-key($breakpoints, $breakpoint) and $size == 'max-width' {
+//         $value: map-get($breakpoints, $breakpoint);
+        
+//         @media screen and ($size: $value) {
+//           @content;
+//         }
+//     }
+     
+//     @warn "Unknown `#{$breakpoint}` in $breakpoints";
+// }
+
+$breakpoints: (
+xldesktop: 1440px,
+  desktop: 1024px,
+  tablet: 768px,
+  mobile: 480px,
+  xsmobile: 320px
+);
+
+// @mixin breakpoint($breakpoint, $size) {
+//     @if map-has-key($breakpoints, $breakpoint) and ($size == 'min-width') {
+//         $value: map-get($breakpoints, $breakpoint);
+         
+//         @media screen and ($size: $value) {
+//             @content;
+//         }
+//     } @else if map-has-key($breakpoints, $breakpoint) and ($size == 'max-width') {
+//         $value: map-get($breakpoints, $breakpoint);
+        
+//         @media screen and ($size: $value) {
+//           @content;
+//         }
+//     }
+     
+//     @warn "Unknown `#{$breakpoint}` in $breakpoints";
+// }
+
+@mixin breakpoint($breakpoint, $size) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
+        //  $width: calc(#{$breakpoint} * .312);
+        @media screen and ($size: $value) {
+            @content;
+        }
+    }
+    @else {
+      @warn "Breaking - Unknown `#{$breakpoint}` in $breakpoints";
+    }
+}
