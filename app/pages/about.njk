@@ -2,9 +2,7 @@
 
 {% block title %}About Me — {% endblock %}
 
-{% block bodyid %}
-{% set activePage = "about" %}
-{% endblock %}
+{% block pageID %}id="about"{% endblock %}
 
 {% block hero %}
 <section class="hero">
@@ -12,7 +10,7 @@
 		<div class="mypic"></div>
 		<p class="intro-title">An eternal learner and inquisitive</p>
 		<h2 class="hero--title">Driven by curiosity to make things work better.</h2>
-		<a href="tori-resume.pdf" class="btn block base download">Download Resume</a>
+		<a href="tori-resume.pdf" class="btn small block download">Download Resume</a>
 	</div>
 </section>
 {% endblock %}

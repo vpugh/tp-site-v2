@@ -1,7 +1,7 @@
 #blog {
 	main {
-		background-color: color(background, base);
-		padding: 4rem 0 6rem 0;
+		background-color: color(background, grey);
+		padding: 6rem 0 4rem 0;
 	}
 	.body {
 		width: 100%;
@@ -10,73 +10,17 @@
 		}
     }
     .hero--title {
-        padding-bottom:10vh;
-    }
-}
-
-// .grid {
-//     display: grid;
-//     @include breakpoint(desktop,min-width){
-//         grid-template: auto / repeat(2, 1fr);
-//     }
-    
-// }
-
-.blog-subtitle a {
-    line-height: 1.1em;
-    color: color(text, base);
-    text-decoration: none;
-	border-bottom: none;
-	
-	&:after {
-		content: "";
-		display: block;
-		width: 20%;
-		height: 6px;
-		background-color: rgb(201, 201, 201);
-		margin-top: 15px;
-
-		@include breakpoint(tablet, max-width){
+		padding-bottom:10vh;
+		
+		@include breakpoint(mobile, max-width) {
+			margin-top: 14px;
+		}
+		@include breakpoint(tablet, max-width) {
+			margin-top: 70px;
+		}
+		@include breakpoint(desktop, min-width) {
+			margin-top: 100px;
 			margin-bottom: 20px;
-			height: 4px;
 		}
-		@include breakpoint(mobile, max-width){
-			margin-bottom: 10px;
-			width: 30%;
-		}
-	}
-	@include breakpoint(mobile, max-width) {
-		margin-bottom: 20px;
-		font-size: 2rem;
-	}
-	@include breakpoint(tablet, min-width) {
-		font-size: 3rem;	
-	}
-}
-.blog-body {
-	@include breakpoint(mobile, max-width) {
-		font-size: 1.1rem;
-		line-height: 1.6;
-	}
-	@include breakpoint(tablet, min-width) {
-		width: 55%;
-		// float: right;
     }
-    @include breakpoint(desktop, min-width) {
-        padding-top: 2vh;
-    }
-}
-
-.text-divider {
-	margin-bottom: 20px;
-	@include breakpoint(tablet, min-width) {
-		margin-bottom: 80px;
-	}
-	
-	&:after,
-	&:before {
-		display: table;
-		content: "";
-		clear: both;
-	}
 }

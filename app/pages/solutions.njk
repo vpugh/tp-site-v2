@@ -2,16 +2,12 @@
 
 {% block title %}My Process — {% endblock %}
 
-{% block bodyid %}
-{% set activePage = "solutions" %}
-{% endblock %}
+{% block pageID %}id="solutions"{% endblock %}
 
 {% block hero %}
 <section class="hero">
 	<div class="container">
-		{# <h2 class="hero--title">To create great design you need to be a good listener, researcher and thinker.</h2> #}
-		<h2 class="hero--title">Getting The Solution:<br>
-		My Design Process</h2>
+		<h2 class="hero--title">Getting The Solution:<br> My Design Process</h2>
 	</div>
 </section>
 {% endblock %}
@@ -19,9 +15,8 @@
 {% block content %}
 <main>
 	<section>
+	<div class="container">
 		<h2 class="quote">Arrival at great design comes from asking questions, careful research, and understanding the users' needs.</h2>
-		{# <h2 class="quote">Design is for the user. We should do our best to understand their needs and desires and intentionally make something for them.</h2> #}
-		{# <h2 class="quote">It's my belief that to create successful solutions you need to start with a foundation of research and data.</h2> #}
 		<div class="text container">
 		<div class="text-divider">
 			<h3 class="secondary-subtitle">Understanding the Problem</h3>
@@ -58,6 +53,7 @@
 			<p>
 				If the project isn't satisfactorily answering the questions of what problem is being solved or what value is being brought to the customer, chances are your not making the proper decisions or are working on a project that will not benefit your customers. Products that are developed with these factors in mind will be solid in it's intent to engage, attract and satisfy the user.
 			</p>		
+		</div>
 		</div>
 	</section>
 </main>

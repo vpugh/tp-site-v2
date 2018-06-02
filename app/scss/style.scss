@@ -1,8 +1,6 @@
 // Normalize
 @import "normalize";
 
-
-
 // Variables
 @import "variables/breakpoints";
 @import "base/all";
@@ -10,11 +8,9 @@
 @import "variables/colors";
 @import "variables/themes";
 
-
 // Components
 @import "components/buttons";
 @import "components/links";
-// *No need for inputs*
 // @import "components/hamburger";
 @import "components/link-top";
 @import "components/footer";
@@ -26,12 +22,9 @@
 @import "vendors/fontawesome";
 
 // Helpers
-// Mixins
-// Animation
 @import "helpers/animations";
 @import "helpers/container";
 @import "helpers/grid";
-// @import "helpers/mixins";
 
 // Layout
 @import "layout/home";

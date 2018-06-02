@@ -7,15 +7,24 @@
     transition: ease-in-out 250ms;
     cursor: pointer;
     text-decoration: none;
+
+    @include breakpoint(desktop, min-width) {
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding: 16px 35px;
+    }
     
-    &.orange {
-        color: color(orange, base);
+    .orange & {
+        color: color(text, gris);
+        background: color(orange, base);
     }
-    &.blue {
-        color: color(blue, base);
+    .blue & {
+        color: color(text, gris);
+        background: color(blue, base);
     }
-    &.green {
-        color: color(green, base);
+    .green & {
+        color: color(text, gris);
+        background: color(green, base);
     }
     &.base {
         color: color(text, base);
@@ -46,8 +55,11 @@
     &.block {
 	   	display: inline-block;
 	   	padding: 9px 34px 7px 34px;
-        border: 1px solid #3e3e3e;
+        
         font-size: 1em;
+        &.border {
+            border: 1px solid #3e3e3e;
+        }
         &.large {
             font-size: 1.3em;
         }
