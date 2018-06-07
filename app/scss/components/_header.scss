@@ -71,6 +71,7 @@ header {
 		display: inline-block;
 		padding-right: 10px;
 		letter-spacing: 1.25px;
+
 		@include breakpoint(tablet, max-width) {
 			&:not(:first-child) {
 				padding: 0 6px;
@@ -85,31 +86,29 @@ header {
 		@include breakpoint(xldesktop, min-width) {
 			font-size: 1.2rem;
 		}
-
-		&.home {
-			transition: .3s ease-out;
-			transform: translateX(0);
-			&:hover {
-				transform: translateX(-5px);
-				text-decoration: none;
-				border-bottom: none;
-			}
-		}
-		&.active a {
-			border-color: color(text,dark);
-			transition: ease-out 300ms;
-			color: color(text,light);
-		}
 		
 		a {
 			border-bottom: 2px solid transparent;
 			padding-bottom: 2px;
+
 			&:hover {
 				border-color: color(text,base);
 				transition: ease-out 300ms;
 				opacity: .5;
 			}
 		}
+
+		&.active a {
+			border-color: color(text, base);
+			transition: ease-out 300ms;
+			color: color(text, gargoyles);
+		}
+	}
+
+	.active {
+		border-color: color(text,dark);
+			transition: ease-out 300ms;
+			color: color(text,light);
 	}
 	
 	// Social Icons in the Header
@@ -152,12 +151,4 @@ header {
 			}
 		}
 	}	
-}
-.home {
-	@include breakpoint(mobile, max-width) {
-		display: block !important;
-		margin-bottom: 20px;
-		text-align: center;
-		padding-right: 0 !important;
-	}
 }

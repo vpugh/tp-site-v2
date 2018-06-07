@@ -1,7 +1,10 @@
 #solutions {
 	main {
 		background-color: color(background, white);
-		padding: 6rem 0;
+		padding: 2rem 0;
+		@include breakpoint(desktop, min-width) {
+			padding: 4rem 0 6rem 0;
+		}
 	}
 	.body {
 		width: 100%;
@@ -9,10 +12,25 @@
 			margin-top: 0;
 		}
 	}
+
+	.hero {
+		padding: 0 0 6rem 0;
+		
+		@include breakpoint(tablet, min-width) {
+			padding: 3rem 0 6rem 0;
+		}
+		
+		&--title {
+			padding-top: 5.5rem;
+			padding-bottom: 1rem;
+		}	
+	}
 }
 
 .secondary-subtitle {
 	line-height: 1.1em;
+	color: color(text, onyx);
+
 	@include breakpoint(mobile, max-width) {
 		margin-bottom: 20px;
 		font-size: 2rem;
@@ -27,7 +45,7 @@
 			display: block;
 			width: 20%;
 			height: 6px;
-			background-color: #ddd;
+			background-color: color(background, grey);
 			margin-top: 15px;
 		}	
 	}

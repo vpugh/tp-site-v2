@@ -56,7 +56,6 @@
 		font-size: 1.6rem;
 		font-weight: 800;
 		
-
 		@include breakpoint(mobile, max-width){
 			padding-bottom: 20px;
 		}
@@ -67,12 +66,12 @@
 			padding-bottom: 6vh;
 		}
 		@include breakpoint(desktop, min-width) {
-			font-size: 58px;
+			font-size: 3.625rem;
 			width: 90%;
 			line-height: 1.2;
 		}
 		@include breakpoint(xldesktop, min-width) {
-			font-size: 64px;
+			font-size: 4rem;
 		}
 
 	}
@@ -92,70 +91,13 @@
 			padding-top: 2rem;
 		}
 		@include breakpoint(desktop, min-width) {
-			width:82%;
-			font-size: 26px;
+			width: 82%;
+			font-size: 1.625rem;
 			padding-top: .5rem;
 		}
 		@include breakpoint(xldesktop, min-width) {
-			font-size: 30px;
 			padding-top: 2rem;
-			font-size: 32px;
+			font-size: 2rem;
 		}
 	}
 }
-
-
-// #solutions .hero {
-	
-// 	// text-align: center;
-// 	padding: 0 0 6rem 0;
-	
-// 	@include breakpoint(tablet, min-width) {
-// 		padding: 3rem 0 6rem 0;
-// 	}
-	
-// 	.hero--title {
-// 		padding-bottom: 3rem;
-// 	}
-// }
-
-// #work .hero {
-	
-// 	padding: 2rem 0 4rem 0;
-// 	@include breakpoint(tablet, max-width) {
-// 		padding: 3rem 0 8rem 0;
-// 	}
-// 	@include breakpoint(mobile, max-width) {
-// 		padding: 0 0 4rem 0;
-// 		text-align: center;
-// 	}
-
-
-// 	&--title,
-// 	&--subtitle {
-// 		width: 100%;
-// 	}
-
-// 	&--title {
-// 		padding-bottom: 2vh;
-// 		@include breakpoint(mobile, max-width){
-// 			font-size: 1.8em;
-// 			padding-bottom: 3vh;
-// 		}
-// 	}
-
-// 	&--subtitle {
-// 		padding-top: 0;
-// 		font-weight: 300;
-// 		font-size: 1em;
-// 		letter-spacing: .75px;
-// 	}
-	
-// 	// @include breakpoint(desktop, min-width) {
-		
-// 	// 	.container {
-// 	// 		padding-left: 81px;
-// 	// 		padding-right: 81px;
-// 	// 	}
-// 	// }
-// }

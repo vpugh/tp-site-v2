@@ -1,12 +1,42 @@
 #work {
 	main {
 		background-color: color(background, base);
-		padding-bottom: 6rem;
+		padding: 2rem 0;
+		@include breakpoint(desktop, min-width) {
+			padding: 0 0 6rem 0;
+		}
 	}
-}
 
+	.hero--title {
+		width: 100%;
+		@include breakpoint(mobile, max-width) {
+			padding-top: 10px;
+			text-align: center;
+		}
+		@include breakpoint(tablet, min-width) {
+			padding-top: 16vh;
+			padding-bottom: 0;
+		}
+	}
 
-#work {
+	.hero--subtitle {
+		width: 100%;
+		font-weight: 400;
+
+		@include breakpoint(desktop, min-width) {
+			padding-bottom: 8vh;
+			font-size: .95em;
+		}
+	}
+
+	#footer {
+		color: color(text, white);
+	}
+
+	.copyright {
+		color: color(text, white);
+	}
+
 	.nav--link a:hover {
 		border-color: #fff;
 		color: color(text,white);
@@ -16,32 +46,50 @@
 		border-color: color(text, white);
 		opacity: .5;
 	}
+	.social {
+		color: color(text, white);
+		opacity: .65;
+	}
 	.navigation,
 	.hero {
 		color: color(text, white);
 	}
+	.link-nav {
+		border-color: color(text, white);
+	}
 	&.orange {
-		background-color: color(orange, base);
+		background-color: color(orange, dark);
 	}
 	&.blue {
-		background-color: color(blue, base);
+		background-color: color(blue, dark);
 	}
 	&.green {
-		background-color: color(green, base);
+		background-color: color(green, dark);
 	}
 }
 
 
 .intro-block {
-	background-color: #fff;
-	font-weight: 300;
-	letter-spacing: .5px;
+	background-color: color(background, white);
+	// letter-spacing: .5px;
 
 	.left-main {
 		padding-left: 0;
+
+		p {
+			margin: 0;
+		}
 	}
 	.right-sidebar {
-		padding-right: 0;
+		padding: 0;
+		background: transparent;
+
+		span {
+			font-style: italic;
+			font-size: .9em;
+			line-height: 80%;
+			display: block;
+		}
 	}
 
 	@include breakpoint(mobile, max-width) {
@@ -110,7 +158,6 @@
 	}
 	@include breakpoint(desktop, min-width) {
 		max-width: 634px;
-		margin-top: 7rem;
 	}
 	img:not(:last-child) {
 		padding-bottom: 3rem;
@@ -120,16 +167,17 @@
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		margin: 2em 0 1em;
+		color: color(text, onyx);
 	}
 	.subhead--sub {
 		margin: 1em 0 .5em;	
 		font-size: 1.1rem;
 	}
 	p {
-		line-height: 1.5;
-		font-size: 1.1rem;
-		margin-bottom: 1rem;
-		font-weight: 300;
+		line-height: 1.4;
+		font-size: 1rem;
+		// margin-bottom: 1rem;
+
 		@include breakpoint(tablet, min-width) {
 			font-size: 1.5rem;
 		}
@@ -158,5 +206,13 @@
 		@include breakpoint(tablet, max-width) {
 			width: 100%;
 		}
+	}
+}
+
+.full-image,
+.half-image {
+	.quote {
+		width: 70%;
+		margin: 30px auto 0 auto;
 	}
 }
