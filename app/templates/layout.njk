@@ -22,7 +22,7 @@
 	{% block bodyid %}{% endblock %}
 	{% import 'macros/bodyid-macro.njk' as pageBodyID %}
 	{{pageBodyID.active(activePage)}}
-	<body {% block pageID %}{% endblock %}>
+	{# <body {% block pageID %}{% endblock %}> #}
 	{% include "partials/header.njk" %}
 	{% block hero %}{% endblock %}
 	{% block content %}{% endblock %}

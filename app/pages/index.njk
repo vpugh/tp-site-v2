@@ -1,6 +1,8 @@
 {% extends "layout.njk" %}
 
-{% block pageID %}id="home"{% endblock %}
+{% block bodyid %}
+{% set activePage = "home" %}
+{% endblock %}
 
 {% block hero %}
 <section class="hero">

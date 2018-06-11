@@ -8,15 +8,17 @@
 		}
 		@include breakpoint(tablet, min-width) {
 			padding-top: 40px;
+			// padding-top: 12vh;
 			margin-bottom: 2em;
 		}
 		@include breakpoint(desktop, min-width) {
 			font-size: 18px;
 			letter-spacing: 2px;
-			padding-top: 80px;
+			padding-top: 40px;
 		}
 		@include breakpoint(xldesktop, min-width){
-			padding-top: 180px;
+			padding-top: 100px;
+			// padding-top: 40vh;
 		}
 	}
 

@@ -10,18 +10,15 @@
 		}
 	}
 
-	.intro-title {
-		@include breakpoint(desktop, min-width) {
-			padding-top: 16vh;
-		}
-	}
-
-	&--title {
+	#home &--title {
 		@include breakpoint(tablet, min-width) {
-			padding-bottom: 22vh;
+			padding-bottom: 6vh;
 		}
 		@include breakpoint(desktop, min-width) {
-			padding-bottom: 26vh;
+			padding-bottom: 2vh;
+		}
+		@include breakpoint(xldesktop, min-width) {
+			padding-bottom: 4vh;
 		}
 	}
 
@@ -66,7 +63,7 @@
 
 .featured {
 	&-image {
-		margin-bottom: 4%;
+		// margin-bottom: 4%;
 		line-height: 0;
 		width: 100%;
 		transition: all 300ms ease-out;
@@ -147,6 +144,7 @@
 			float: right;
 			width: 90%;
 			display: inline;
+			margin-bottom: 0;
 			@include breakpoint(desktop, min-width) {
 				font-size: 18px;
 				line-height: 1.4;

@@ -1,4 +1,20 @@
 #work {
+
+	.navigation {
+		&--link_link.active a {
+			color: color(text, white);
+			border-color: color(text, grey);
+		}
+		&--social {
+			color: color(text, white);
+			opacity: .75;
+			.fa:hover {
+				color: color(text, dusty);
+				opacity: .5;
+			}
+		}
+	}
+
 	main {
 		background-color: color(background, base);
 		padding: 2rem 0;
@@ -138,29 +154,44 @@
 			margin-bottom: 1rem;
 		}
 	}
+
+	@include breakpoint(xldesktop, min-width) {
+		padding: 55px 0;
+
+		.right-sidebar p {
+			margin-bottom: 0;
+		}
+	}
 	
 }
 
 .body {
 	margin: 0 auto;
 	width: 80%;
-	@include breakpoint(tablet, min-width) {
-		width: 80%;
-	}
 	&:not(:last-child) {
 		padding-bottom: 4rem;
 	}
+
+	img:not(:last-child) {
+		padding-bottom: 3rem;
+	}
+
 	@include breakpoint(mobile, max-width) {
 		margin-top: 4rem;
 	}
+
 	@include breakpoint(tablet, min-width) {
+		width: 80%;
 		margin-top: 7rem;
 	}
+	
 	@include breakpoint(desktop, min-width) {
-		max-width: 634px;
+		width: 634px;
 	}
-	img:not(:last-child) {
-		padding-bottom: 3rem;
+	
+
+	@include breakpoint(xldesktop, min-width) {
+		width: 37%;
 	}
 	.subhead,
 	.subhead--sub {
@@ -201,6 +232,10 @@
 	margin: 0 auto;
 	width: 100%;
 	text-align: center;
+	@include breakpoint(xldesktop, min-width) {
+		width: 90%;
+	}
+
 	img {
 		width: 49%;
 		@include breakpoint(tablet, max-width) {

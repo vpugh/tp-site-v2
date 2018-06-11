@@ -1,43 +1,26 @@
 // @import "helpers/media-query";
-@import "helpers/animations";
+// @import "helpers/animations";
 
 header {
 	position: relative;
 	width: 100%;
 }
 
-.gradient-border {
-	background: #ff9600;
-    background: -moz-linear-gradient(left, color(orange,base) 0%, color(green,base) 50%, color(blue,base) 100%);
-    background: -webkit-linear-gradient(left, color(orange,base) 0%, color(green,base) 50%, color(blue,base) 100%);
-    background: linear-gradient(to right, color(orange,base) 0%, color(green,base) 50%, color(blue,base) 100%);
-    height: 20px;
-}
-
-.link-nav {
-	@include breakpoint(desktop, min-width){
-		border-right: 2px solid #d8d8d8;
-		padding-right: 20px;
-		margin-right: 10px;
-	}
-	
-}
-
 .navigation {
 	margin: 0 auto;
 	padding: 40px 0 20px 0;
 	
-	@include breakpoint(tablet, min-width) {
-		padding-left: 30px;
-		padding-right: 30px;
-	}
+	// @include breakpoint(tablet, min-width) {
+	// 	padding-left: 30px;
+	// 	padding-right: 30px;
+	// }
 	@include breakpoint(desktop, min-width) {
 		padding: 46px 0;
 		width: 82%;
-		padding: 40px 0 20px 0;
+		// padding: 40px 0 20px 0;
 	}
 
-	&--links {
+	&--title {
 		text-transform: uppercase;
 		letter-spacing: 3px;
 
@@ -66,16 +49,27 @@ header {
 		transform: translateX(0);
 		}
 	}
+
+	&--link {
+		@include breakpoint(tablet, max-width) {
+			display: block;
+			height: 100vh;
+		}
+		@include breakpoint(desktop, min-width){
+			border-right: 2px solid #d8d8d8;
+			padding-right: 20px;
+			margin-right: 10px;
+		}
+	}
 	
-	.nav--link {
+	&--link_link {
 		display: inline-block;
 		padding-right: 10px;
 		letter-spacing: 1.25px;
 
 		@include breakpoint(tablet, max-width) {
-			&:not(:first-child) {
-				padding: 0 6px;
-			}
+			display: block;
+			padding: 20px 0;
 		}
 		@include breakpoint(desktop, min-width) {
 			font-size: 1.1rem;
@@ -90,10 +84,11 @@ header {
 		a {
 			border-bottom: 2px solid transparent;
 			padding-bottom: 2px;
+			transition: ease-out 300ms;
 
 			&:hover {
 				border-color: color(text,base);
-				transition: ease-out 300ms;
+				
 				opacity: .5;
 			}
 		}
@@ -104,37 +99,29 @@ header {
 			color: color(text, gargoyles);
 		}
 	}
-
-	.active {
-		border-color: color(text,dark);
-			transition: ease-out 300ms;
-			color: color(text,light);
+	
+	nav {
+		@include breakpoint(tablet, max-width) {
+			width: 100%;
+			background-color: color(background, grey);
+			position: absolute;
+			top: 0;
+			text-align: center;
+		}
+		@include breakpoint(desktop, min-width) {
+			float: right;
+		}
 	}
 	
-	// Social Icons in the Header
-	
 	&--social {
-
 		font-size: 22px;
 		padding: 0;
 		margin: 0;
+		display: inline-block;
+		color: color(text, gargoyles);
 
-		@include breakpoint(mobile, max-width) {
+		@include breakpoint(tablet, max-width){
 			display: none;
-		}
-		@include breakpoint(tablet, min-width) {
-			float: right;
-		}
-
-		ul {
-			display: inline-block;
-		}
-
-		ul.social {
-			color: color(text, gargoyles);
-			@include breakpoint(desktop, max-width){
-				display: none;
-			}
 		}
 		
 		li {
@@ -143,11 +130,11 @@ header {
 			padding: 0 10px;
 		}
 
-		.fa:hover {
-			color: color(text, pavement);
-			
-			#work & {
-				color: rgba(#fff, .5);
+		.fa {
+			transition: ease-out 300ms;
+
+			&:hover {
+				color: color(text, pavement);
 			}
 		}
 	}	
