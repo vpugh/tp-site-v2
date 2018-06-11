@@ -2,13 +2,15 @@
 
 {% block title %}About Me — {% endblock %}
 
-{% block pageID %}id="about"{% endblock %}
+{% set pageID="about" %}
 
 {% block hero %}
 <section class="hero">
 	<div class="container">
-		<div class="mypic"></div>
-		<p class="intro-title">An eternal learner and inquisitive</p>
+		<div class="avatar grid">
+			<div class="avatar--img"></div>
+			<p class="avatar--text">Always Learning and Eternally Inquisitive</p>
+		</div>
 		<h2 class="hero--title">Driven by curiosity to make things work better.</h2>
 		<a href="tori-resume.pdf" class="btn small block download">Download Resume</a>
 	</div>
@@ -30,11 +32,10 @@
 				My greatest asset is my passion for learning, which is due in great part to my never-ending curiosity about how things work. I can learn new techniques or programs at an amazing speed, getting too obsessed at times. I take great enjoyment in trying to find more efficient ways to create things and looking into new technologies. I’m always looking to expand my knowledge through online learning, taking classes, going to conferences, or reading articles.
 			</p>
 			<p>
-				I like to share and interact on <a class="inline-link" href="https://twitter.com/teekatwo" rel=noopener" target=_blank">Twitter</a>; get inspired and share my projects on <a class="inline-link" href="https://dribbble.com/teekatwo" rel=noopener" target=_blank">Dribbble</a>; tinker and learn new code on <a class="inline-link" href="http://codepen.io/Vpugh/" rel=noopener" target=_blank">Codepen</a>; and work on my projects on <a class="inline-link" href="https://github.com/vpugh" rel=noopener" target=_blank">Github</a>. In my free time, I'm an avid reader with a ever-growing backlog of books or trying to get through my game collection for the PS4.
+				I share and interact on <a class="inline-link" href="https://twitter.com/teekatwo" rel=noopener" target=_blank">Twitter</a>; get inspired and showcase work on <a class="inline-link" href="https://dribbble.com/teekatwo" rel=noopener" target=_blank">Dribbble</a>; tinker and learn new code on <a class="inline-link" href="http://codepen.io/Vpugh/" rel=noopener" target=_blank">Codepen</a>; work on side projects on <a class="inline-link" href="https://github.com/vpugh" rel=noopener" target=_blank">Github</a>; and write when I can on <a class="inline-link" href="https://medium.com/@teekatwo" rel=noopener" target=_blank">Medium</a> or <a class="inline-link" href="https://dev.to/teekatwo" rel=noopener" target=_blank">Dev.to</a>. In my free time, I'm an avid reader with a ever-growing backlog of books or trying to get through my game collection for the PS4 (Destiny, AC Origins, Tomb Raider).
 			</p>
 		</div>
 		<div class="right-sidebar">
-			{# <h3>Skillset</h3> #}
 			<p><span class="t">Development:</span><br>
 			HTML, CSS, SASS, jQuery, Git, Gulp, Node.js, HTML Emails, Vue.js, <span class="learning">Angular</span>, <span class="learning">Wordpress</span></p>
 			<p><span class="t">Design</span><br>

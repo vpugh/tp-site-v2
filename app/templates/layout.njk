@@ -19,8 +19,7 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	{% endblock %}
 </head>
-	{% block bodyid %}{% endblock %}
-	<body {% block pageID %}{% endblock %}>
+	<body id="{{pageID}}">
 	{% include "partials/header.njk" %}
 	{% block hero %}{% endblock %}
 	{% block content %}{% endblock %}

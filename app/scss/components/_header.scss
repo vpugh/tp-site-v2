@@ -16,7 +16,7 @@ header {
 
 .link-nav {
 	@include breakpoint(desktop, min-width){
-		border-right: 2px solid #d8d8d8;
+		border-right: 2px solid color(text, grey);
 		padding-right: 20px;
 		margin-right: 10px;
 	}
@@ -27,14 +27,13 @@ header {
 	margin: 0 auto;
 	padding: 40px 0 20px 0;
 	
-	@include breakpoint(tablet, min-width) {
-		padding-left: 30px;
-		padding-right: 30px;
-	}
+	// @include breakpoint(tablet, min-width) {
+	// 	padding-left: 30px;
+	// 	padding-right: 30px;
+	// }
 	@include breakpoint(desktop, min-width) {
 		padding: 46px 0;
 		width: 82%;
-		padding: 40px 0 20px 0;
 	}
 
 	&--links {
@@ -71,6 +70,7 @@ header {
 		display: inline-block;
 		padding-right: 10px;
 		letter-spacing: 1.25px;
+
 		@include breakpoint(tablet, max-width) {
 			&:not(:first-child) {
 				padding: 0 6px;
@@ -95,10 +95,11 @@ header {
 				border-bottom: none;
 			}
 		}
+
 		&.active a {
-			border-color: color(text,dark);
+			border-color: color(text, gargoyles);
 			transition: ease-out 300ms;
-			color: color(text,light);
+			color: color(text, gargoyles);
 		}
 		
 		a {

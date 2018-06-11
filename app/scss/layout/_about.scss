@@ -3,7 +3,7 @@
 		background-color: #fff;
 		padding: 2rem 0;
 		@include breakpoint(desktop, min-width) {
-			padding: 6rem 0;
+			padding: 4rem 0;
 		}
 		
 	}
@@ -49,7 +49,8 @@
 		}
 	}
 
-	p {
+	.left-main p,
+	.right-sidebar p {
 		margin-bottom: 1.4em;
 	}
 }
@@ -122,15 +123,10 @@
 		}
 	}
 }
-.mypic::before {
-	content: '';
-	background-image: url('../../images/pic.jpg');
-	width: 100px;
-	height: 100px;
-	display: block;
-	background-size: cover;
-	background-position: 50% 70%;
-	border-radius: 50%;
+
+.avatar {
+	position: relative;
+	display: inline-block;
 	@include breakpoint(mobile, max-width) {
 		margin: 14px auto 24px auto;
 	}
@@ -140,5 +136,25 @@
 	@include breakpoint(desktop, min-width) {
 		margin-top: 100px;
 		margin-bottom: 20px;
+	}
+
+	&--text {
+		float: left;
+		margin: 25px 0 0 25px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+	&--img {
+		float: left;
+		&::before {
+			content: '';
+			background-image: url('../../images/pic.jpg');
+			width: 100px;
+			height: 100px;
+			display: block;
+			background-size: cover;
+			background-position: 50% 70%;
+			border-radius: 50%;
+		}
 	}
 }

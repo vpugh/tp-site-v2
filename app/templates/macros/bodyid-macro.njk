@@ -1,9 +1,3 @@
 {% macro active(activePage='home') %}
-{# {%if activePage == 'home' %}<body id="home">{% endif %}
-{%if activePage == 'work' %}<body id="work">{% endif %}
-{%if activePage == 'about' %}<body id="about">{% endif %}
-{%if activePage == 'design' %}<body id="design">{% endif %}
-{%if activePage == 'development' %}<body id="development">{% endif %}
-{%if activePage == 'solutions' %}<body id="{{activePage}}">{% endif %} #}
-{%if activePage !== '' %}<body id="{{activePage}}">{% endif %}
+<body id="{{activePage}}">
 {% endmacro %}

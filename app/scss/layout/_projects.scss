@@ -3,123 +3,165 @@
 		background-color: color(background, base);
 		padding-bottom: 6rem;
 	}
-}
 
+	#footer,
+	.copyright {
+		color: color(text, white);
+	}
 
-#work {
+	.link-nav {
+		border-color: color(text, white);
+	}
 	.nav--link a:hover {
 		border-color: #fff;
 		color: color(text,white);
 	}
-	.navigation .nav--link.active a {
+	.nav--link.active a {
 		color: color(text,white);
 		border-color: color(text, white);
-		opacity: .5;
+		// opacity: .5;
+	}
+	.social {
+		color: color(text, white);
+		opacity: .55;
 	}
 	.navigation,
 	.hero {
 		color: color(text, white);
 	}
 	&.orange {
-		background-color: color(orange, base);
+		background-color: color(orange, dark);
 	}
 	&.blue {
-		background-color: color(blue, base);
+		background-color: color(blue, dark);
 	}
 	&.green {
-		background-color: color(green, base);
+		background-color: color(green, dark);
+	}
+
+	.hero {
+		&--title {
+			width: 100%;
+			@include breakpoint(mobile, max-width) {
+				padding-top: 10px;
+				text-align: center;
+			}
+			@include breakpoint(tablet, min-width) {
+				padding-top: 16vh;
+				padding-bottom: 0;
+			}
+		}
+		&--subtitle {
+			width: 100%;
+			font-weight: 400;
+	
+			@include breakpoint(desktop, min-width) {
+				padding-bottom: 8vh;
+				font-size: .95em;
+			}
+		}
 	}
 }
 
 
 .intro-block {
-	background-color: #fff;
-	font-weight: 300;
-	letter-spacing: .5px;
+	background-color: color(background, white);
 
+	@include breakpoint(mobile, max-width){
+		padding: 3rem 0 1.5rem 0;
+	}
+	@include breakpoint(tablet, max-width) {
+		padding: 60px 0;
+	}
+	@include breakpoint(desktop, min-width) {
+		padding: 55px 0 65px 0;
+	}
+	@include breakpoint(xldesktop, min-width) {
+		padding: 55px 0;
+	}
+	
 	.left-main {
 		padding-left: 0;
-	}
-	.right-sidebar {
-		padding-right: 0;
-	}
 
-	@include breakpoint(mobile, max-width) {
-		
-		padding: 3rem 0 1.5rem 0;
-		// margin-bottom: 4rem;
-		
-		.left-main {
+		@include breakpoint(mobile, max-width){
 			font-size: 1.1rem;
 			line-height: 1.6;
 			padding: 1em 0;
 		}
-		
-		.right-sidebar p {
-			margin-bottom: 1rem;
-		}
-	}
-	
-	@include breakpoint(tablet, max-width) {
-		
-		padding: 60px 0;
-		
-		.left-main {
+		@include breakpoint(tablet, max-width) {
 			font-size: 18px;
 			line-height: 1.4;
 			width: 100%;
 		}
-		
-		.right-sidebar p {
-			margin-bottom: 1rem;
-			width: 100%;
-		}
-	}
-	
-	@include breakpoint(desktop, min-width) {
-		
-		padding: 55px 0 65px 0;
-		
-		.left-main {
+		@include breakpoint(desktop, min-width) {
 			font-size: 20px;
 			line-height: 1.4;
 		}
-		
-		.right-sidebar p {
-			font-size: 20px;
-			margin-bottom: 1rem;
+
+		p {
+			margin: 0;
 		}
 	}
-	
+	.right-sidebar {
+		padding: 0;
+		background: transparent;
+
+		span {
+			font-style: italic;
+			font-size: .9em;
+			line-height: 80%;
+			display: block;
+		}
+
+		p {
+			margin-bottom: 1rem;
+			&::last-child {
+				margin-bottom: 0;
+			}
+			@include breakpoint(tablet, max-width) {
+				width: 100%;
+			}
+			@include breakpoint(desktop, min-width) {
+				font-size: 20px;
+				line-height: 1.4;
+			}
+		}
+	}
 }
 
 .body {
 	margin: 0 auto;
 	width: 80%;
-	@include breakpoint(tablet, min-width) {
-		width: 80%;
-	}
-	&:not(:last-child) {
+	&:not(::last-child) {
 		padding-bottom: 4rem;
-	}
-	@include breakpoint(mobile, max-width) {
-		margin-top: 4rem;
-	}
-	@include breakpoint(tablet, min-width) {
-		margin-top: 7rem;
-	}
-	@include breakpoint(desktop, min-width) {
-		max-width: 634px;
-		margin-top: 7rem;
 	}
 	img:not(:last-child) {
 		padding-bottom: 3rem;
 	}
+
+	@include breakpoint(mobile, max-width) {
+		margin-top: 4rem;
+	}
+
+	@include breakpoint(tablet, min-width) {
+		width: 80%;
+		margin-top: 7rem;
+	}
+
+	@include breakpoint(desktop, min-width) {
+		width: 634px;
+	}
+
+	@include breakpoint(xldesktop, min-width) {
+		width: 37%;
+	}
+	
 	.subhead,
 	.subhead--sub {
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		margin: 2em 0 1em;
+		color: color(text, onyx);
 	}
 	.subhead--sub {
 		margin: 1em 0 .5em;	
@@ -128,8 +170,7 @@
 	p {
 		line-height: 1.5;
 		font-size: 1.1rem;
-		margin-bottom: 1rem;
-		font-weight: 300;
+		margin-bottom: 1.4rem;
 		@include breakpoint(tablet, min-width) {
 			font-size: 1.5rem;
 		}
@@ -148,15 +189,30 @@
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
+	@include breakpoint(xldesktop, min-width) {
+		width: 90%;
+	}
 }
 .half-image {
 	margin: 0 auto;
 	width: 100%;
 	text-align: center;
+	@include breakpoint(xldesktop, min-width) {
+		width: 90%;
+	}
+
 	img {
 		width: 49%;
 		@include breakpoint(tablet, max-width) {
 			width: 100%;
 		}
+	}
+}
+
+.full-image,
+.half-image {
+	.quote {
+		width: 70%;
+		margin: 30px auto 0 auto;
 	}
 }

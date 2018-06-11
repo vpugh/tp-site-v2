@@ -19,9 +19,7 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	{% endblock %}
 </head>
-	{% block bodyid %}{% endblock %}
-	{% import 'macros/bodyid-macro.njk' as pageBodyID %}
-	{{pageBodyID.active(activePage)}}
+	<body id="{{pageID}}">
 	{% include "partials/header.njk" %}
 	{% block hero %}{% endblock %}
 	{% block content %}{% endblock %}

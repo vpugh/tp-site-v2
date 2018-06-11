@@ -10,6 +10,18 @@
 		}
 	}
 
+	#home &--title {
+		@include breakpoint(tablet, min-width) {
+			padding-bottom: 6vh;
+		}
+		@include breakpoint(desktop, min-width) {
+			padding-bottom: 2vh;
+		}
+		@include breakpoint(xldesktop, min-width) {
+			padding-bottom: 4vh;
+		}
+	}
+
 	&--title a {
 		text-decoration: underline;
 		transition: .3s ease-out;

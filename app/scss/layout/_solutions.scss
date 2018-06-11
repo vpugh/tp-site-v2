@@ -2,6 +2,9 @@
 	main {
 		background-color: color(background, white);
 		padding: 6rem 0;
+		@include breakpoint(desktop, min-width) {
+			padding: 4rem 0 6rem 0;
+		}
 	}
 	.body {
 		width: 100%;
@@ -26,7 +29,11 @@
 
 .secondary-subtitle {
 	line-height: 1.1em;
-
+	span {
+		font-size: .7em;
+		display: block;
+		font-style: italic;
+	}
 	@include breakpoint(mobile, max-width) {
 		margin-bottom: 20px;
 		font-size: 2rem;
@@ -41,7 +48,7 @@
 			display: block;
 			width: 20%;
 			height: 6px;
-			background-color: #ddd;
+			background-color: color(text, gargoyles);
 			margin-top: 15px;
 		}	
 	}
