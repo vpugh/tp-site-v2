@@ -1,4 +1,4 @@
-[
+export default [
     {
         title: 'When to Call it Quits on a Project: Stepping Back and Taking a Break',
         date: 'March 29, 2018',

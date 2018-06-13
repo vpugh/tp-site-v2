@@ -1,0 +1,107 @@
+{% extends "secondary-layout.njk" %}
+
+{% block title %}Email Workflow GUI{% endblock %}
+
+{% set pageID="work" -%}
+
+{% block hero %}
+<section class="hero">
+	<div class="container">
+		<h2 class="hero--title">Email Workflow GUI</h2>
+		<h3 class="hero--subtitle">A more accessible version of my email workflow with an interface.</h3>
+	</div>
+</section>
+{% endblock %}
+
+{% block content %}
+<main>
+	<section class="intro-block">
+		<div class="container">
+			<div class="right-sidebar">
+				<p>
+					<strong>Client:</strong> Self
+				</p>
+
+				<p>
+					<strong>Role:</strong> Designer, Developer
+				</p>
+
+				<p>
+					<strong>Deliverable:</strong> Site
+				</p>
+			</div>
+			<div class="left-main">
+				<p>
+					I have developed a email workflow that revolves around using Gulp and Nunjucks. This is a solution for those who aren't versed in programming or aren't knowledgeable about coding.<br><br>
+					<a href="https://codepen.io/Vpugh/pen/MGZrME" target="_blank" class="btn block">Codepen</a>
+				</p>
+				
+			</div>
+		</div>
+	</section>
+	<div class="full-image">
+		<p class="quote">Current Progress in the Visual Setup</p>
+	</div>
+	<div class="body">
+		<p>
+			My email workflow works well for me, but I don't mind using Gulp and Nunjucks. I've become familiar with using a task-runner and a templating system. I think it works very well and is easy to maintain but how would non-coding people feel.
+		</p>
+
+		<p>
+			I started making this system with the intent for it to be usable by all people. So it would increase high quality emails and help reduce some of the mundane work that goes into it. It's not taking away the responsibilites of email designers, it's better managing their time to work on more complex products and cut down on monotony.
+		</p>
+		<h3 class="subhead">Starting the Idea</h3>
+		<p>
+			Very much like how I started my <a href="https://github.com/vpugh/Gulp-Email-Workflow" target="_blank">Gulp Email Workflow</a>, I had no real idea of what I needed to do to make this a viable idea. I'd made the workflow, so how to translate it into something more visual that people could use easier.
+		</p>
+		<p>
+			My first idea, over a year ago, was to make an <a href="https://github.com/vpugh/electron-photo-test" target="_blank">Electron-based app</a>. Using the thing Spotify and VS Code are built on to power an app. Both of those are apps I enjoy using, they have very similar setups. I thought the setup, the dashboard on the left and the editor/main content on the right was very conducive for visual editing. This was the first direction I took in regards to the design and development of the app.
+		</p>
+	</div>
+	<div class="full-image">
+		<img src="https://cdn.dribbble.com/users/180127/screenshots/3812826/bespoke-v1.jpg" alt="">
+		<p class="quote">Trying to imitate Spotify and VS Code but with a lighter palette</p>
+	</div>
+	<div class="body">
+		<p>
+			It was a good start but I was having trouble developing for Electron and using React. Something I'd heard of by talking to someone and knew no one personally who had any experience with building anything with it. My javascript skills were also probably lacking which made the whole experience that much harder.
+		</p>
+		<p>
+			Most importantly for me, I really wasn't liking the look of the layout. I'm not sure I was ever a 100% sold on the tabbing system and having all the settings in little drop-down menus all over the window. In trying to emulate VS Code a bit too much, I don't think I accounted for what I wanted to place in the window. It started getting cluttered and jumbled.
+		</p>
+		<h3 class="subhead">Try #2</h3>
+		<p>
+			I never gave up on this idea. I took a step back and gave myself time to learn and become a better developer and designer. This evolved into me learning Angular and Vue. For me Vue just clicked and I enjoy using it immensely.
+		</p>
+		<p>
+			I'd gotten in touch with a former co-worker and he told me how he'd taken my email workflow and recreated with React to make a GUI for it. What he did is exactly the next steps I'd always envisioned for my workflow in the first place. After seeing his idea I was really excited to try and replicate it with my more advanced and nuanced additions. (The big endgame would be to make it ESP and templating system agnostic, it would support multiple languages and email services.)
+		</p>
+		<p>
+			I'd been making a few minor things with Vue for a bit and I finally had a breakthrough while at Codeland 2018. I saw how I could use templates to facilitate the different email types in the GUI and how I could lay it all out. It seemed to hit me all at once how this for the first time, could come together.
+		</p>
+		<p>
+			I started the idea in CodePen, since it's a little easier to get started and change ideas quickly. It took a few tries (<a href="https://codepen.io/Vpugh/pen/xjjvbK" target="_blank">try-1</a>, <a href="https://codepen.io/Vpugh/pen/gzKxVK" target="_blank">try-2</a>), but I made it to the current version - <a href="https://codepen.io/Vpugh/pen/rvQLdM" target="_blank">V3</a>. This is more a visual setup preparing for the behind the scenes functionality. I was more concerned with creating a smooth experience for editing and managing emails. I grouped content together and even now think I could combine some forms together and seperate them from others.
+		</p>
+		<p>
+			This latest try is interesting with my random desire to use a new bootstrap system - Bulma for styling. I didn't want to worry too much about the design at the moment, it was all about arrangement and functionality. I would work on a more personal styling later.
+		</p>
+	</div>
+	{# <div class="full-image">
+		<img src="http://victoriapugh.net/images/gallery/iag/iag-initialdesign.png" alt="">
+		<h2 class="quote">An early version hifi wireframe and the prototype created from it.</h2>
+	</div> #}
+	<div class="body">
+		<h3 class="subhead">Function</h3>
+		<p>
+			There are a few things that make this different from my challenge version. Having a method for displaying what stage your in. This clearly has the 5 stages &mdash; Timer, Rest, Timer, Rest, and Timer. It then tells you which stage your currently in and highlights the marker. 
+		</p>
+		<p>
+			I've also added sound effects to mark the change of the rounds. This was an interesting part for me as I'd never done anything remotely like that. It adds that extra level of professionalism and helps if you've moved to another program or another tab.
+		</p>
+	</div>
+	{# <div class="full-image">
+		<img src="http://toripugh.com/images/gallery/uniag/IAG-Results.jpg" alt="">
+		<h2 class="quote">There was a good spike of traffic before and during the event.</h2>
+	</div> #}
+</main>
+{% endblock %}

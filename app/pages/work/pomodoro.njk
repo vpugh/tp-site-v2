@@ -1,0 +1,99 @@
+{% extends "secondary-layout.njk" %}
+
+{% block title %}Pomodoro Timer{% endblock %}
+
+{% set pageID="work" -%}
+
+{% block hero %}
+<section class="hero">
+	<div class="container">
+		<h2 class="hero--title">Pomodoro Timer</h2>
+		<h3 class="hero--subtitle">A development challenge that turned into it's own app</h3>
+	</div>
+</section>
+{% endblock %}
+
+{% block content %}
+<main>
+	<section class="intro-block">
+		<div class="container">
+			<div class="right-sidebar">
+				<p>
+					<strong>Client:</strong> Self
+				</p>
+
+				<p>
+					<strong>Role:</strong> Designer, Developer
+				</p>
+
+				<p>
+					<strong>Deliverable:</strong> Site
+				</p>
+			</div>
+			<div class="left-main">
+				<p>
+					To keep my skills sharp and for some fun I decided to participate in the development challenge that <a href="">Scotch.io</a> was running every week. At the completion of the challenge I wanted to make my own Pomodoro Timer using the Vue-CLI and host it online so anyone could use it.<br><br>
+					<a href="https://vpugh.github.io/vue-pomodoro-timer/" target="_blank" class="btn block">Site</a>
+					<a href="https://github.com/vpugh/vue-pomodoro-timer" target="_blank" class="inline-link">Github</a>
+				</p>
+				
+			</div>
+		</div>
+	</section>
+	{# <div class="full-image">
+		<img alt="" 
+		data-sizes="auto" 
+		class="blur-up lazyautosizes lazyloaded" 
+		data-src="../images/gallery/uniag/homepage-end@1x.png" 
+		data-srcset="../images/gallery/uniag/homepage-end@0.5pngpg 480w,
+		../images/gallery/uniag/homepage-end@1x.png 640w,
+		../images/gallery/uniag/homepage-end@2x.png 1200w"
+		srcset="../images/gallery/uniag/homepage-end@0.5pngpg 480w,
+		../images/gallery/uniag/homepage-end@1x.png 640w, 
+		../images/gallery/uniag/homepage-end@2x.png 1200w" src="../images/gallery/uniag/homepage-end@1x.png"
+		>
+	</div> #}
+	<div class="body">
+		<p>
+			When I started making this timer for the challenge, I thought it would be no problem. How hard could a timer be to make? I ended up learning a lot and in the end building my own version from scratch using the Vue-CLI and then hosting it on Github Pages.
+		</p>
+
+		<p>
+			Since it was such an involved process I wrote a <a href="https://dev.to/teekatwo/building-a-pomodoro-timer-with-vuejs-on-codepen-7no" target="_blank">blog article</a> about my experience; my steps in creating; and the lessons I learned.
+		</p>
+		<h3 class="subhead">Minor Setback</h3>
+		<p>
+			I thought that creating a countdown system would be easy. It was anything but easy, at least for me who is weak in math. I had to go on a tangent of breaking down all time into milliseconds and then using that as a base for keeping track of time. Once I understood how all this worked, by making a digital clock, then working it into the countdown timer was pretty simple.
+		</p>
+	</div>
+	{# <div class="full-image">
+		<img src="http://victoriapugh.net/images/gallery/iag/iag-olddesign.png" alt="">
+	</div> #}
+	<div class="body">
+		<p>
+		When I started my research for this project I centered it on similar criteria. The criteria was an international event, my instinct was to investigate the Olympics and World Cups—two of the largest events that fit the criteria and would be the best at showcasing the different aspects of the games to keep in mind.
+		</p>
+		<h3 class="subhead">Look</h3>
+		<p>
+			The design for this was purely tongue and cheek. Pomodoro is a 'tomato' so it should be red, for the rest periods I thought it should be a 'green tomato' or 'tomatillo'. Something cute and different, a slight change of pace from just being red all the time.
+		</p>
+	</div>
+	{# <div class="full-image">
+		<img src="http://victoriapugh.net/images/gallery/iag/iag-initialdesign.png" alt="">
+		<h2 class="quote">An early version hifi wireframe and the prototype created from it.</h2>
+	</div> #}
+	<div class="body">
+		<h3 class="subhead">Function</h3>
+		<p>
+			There are a few things that make this different from my challenge version. Having a method for displaying what stage your in. This clearly has the 5 stages &mdash; Timer, Rest, Timer, Rest, and Timer. It then tells you which stage your currently in and highlights the marker. 
+		</p>
+		<p>
+			I've also added sound effects to mark the change of the rounds. This was an interesting part for me as I'd never done anything remotely like that. It adds that extra level of professionalism and helps if you've moved to another program or another tab.
+		</p>
+	</div>
+	{# <div class="full-image">
+		<img src="http://toripugh.com/images/gallery/uniag/IAG-Results.jpg" alt="">
+		<h2 class="quote">There was a good spike of traffic before and during the event.</h2>
+	</div> #}
+</main>
+{% endblock %}

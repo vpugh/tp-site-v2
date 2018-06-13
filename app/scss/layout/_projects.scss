@@ -10,7 +10,7 @@
 	}
 
 	.link-nav {
-		border-color: color(text, white);
+		border-color: color(text, white-50);
 	}
 	.nav--link a:hover {
 		border-color: #fff;
@@ -19,11 +19,9 @@
 	.nav--link.active a {
 		color: color(text,white);
 		border-color: color(text, white);
-		// opacity: .5;
 	}
 	.social {
-		color: color(text, white);
-		opacity: .55;
+		color: color(text, white-50);
 	}
 	.navigation,
 	.hero {
@@ -62,7 +60,6 @@
 		}
 	}
 }
-
 
 .intro-block {
 	background-color: color(background, white);
@@ -155,6 +152,10 @@
 	@include breakpoint(xldesktop, min-width) {
 		width: 37%;
 	}
+
+	.full-image ~ & {
+		margin-top: 3rem;
+	}
 	
 	.subhead,
 	.subhead--sub {
@@ -191,6 +192,10 @@
 	text-align: center;
 	@include breakpoint(xldesktop, min-width) {
 		width: 90%;
+	}
+
+	.body ~ & {
+		margin-top: 5rem;
 	}
 }
 .half-image {

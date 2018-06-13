@@ -1,18 +1,18 @@
-{% extends "layout.njk" %}
+{% extends "layout.njk" -%}
 
-{% block title %}Blog — {% endblock %}
+{% block title -%}Blog — {% endblock -%}
 
-{% block pageID %}id="blog"{% endblock %}
+{% set pageID="blog" -%}
 
-{% block hero %}
+{% block hero -%}
 <section class="hero">
 	<div class="container">
 		<h2 class="hero--title">Writings and Mental Musings</h2>
 	</div>
 </section>
-{% endblock %}
+{% endblock -%}
 
-{% block content %}
+{% block content -%}
 <main id="app">
 	<section>
 		<div class="container grid">
@@ -20,7 +20,6 @@
 				<div class="blog--posts" v-for="posts in articles">
 				<a :href="posts.link" target="_blank">
 					<div class="blog--cover lazyload" :style="{ backgroundImage: 'url(' + posts.cover + ')' }"></div>
-
 				</a>
 				<div class="blog--text">
 					<h2 class="blog--title"><a :href="posts.link" target="_blank">{% raw %}{{ posts.title }}{% endraw %}</a></h2>
@@ -28,66 +27,6 @@
 				</div>
 				</div>
 			</div>
-		{# <div class="text-divider">
-			<h3 class="blog-subtitle"><a href="https://medium.com/@teekatwo/dont-fear-failure-learn-from-it-338565aef743" target="_blank">Don’t Fear Failure, Learn From It</a></h3>
-			<p class="blog-body">
-				January 31, 2018
-			</p>
-		</div>
-		<div class="text-divider">
-			<h3 class="blog-subtitle"><a href="https://medium.com/@teekatwo/improvement-requires-a-lot-of-practice-f5802a2954d6" target="_blank">Improvement Requires a lot of Practice</a></h3>
-			<p class="blog-body">
-				January 24 2018
-			</p>
-		</div>
-		<div class="text-divider">
-			<h3 class="blog-subtitle"><a href="https://medium.com/@teekatwo/emails-arent-as-simple-as-you-think-987c6dfeb09e" target="_blank">Emails aren’t as simple as you think</a></h3>
-			<p class="blog-body">
-				January 17, 2018
-			</p>
-		</div>
-		<div class="text-divider">
-			<h3 class="blog-subtitle"><a href="https://medium.com/@teekatwo/tips-on-overcoming-imposter-syndrome-fca5409afa75" target="_blank">Tips on overcoming Imposter Syndrome</a></h3>
-			<p class="blog-body">
-				January 10, 2018
-			</p>
-		</div>
-        <div class="text-divider">
-			<h3 class="blog-subtitle"><a href="https://medium.com/@teekatwo/whats-the-best-way-to-present-your-freelance-business-studio-or-person-b1dd2853549f" target="_blank">What’s the best way to present your freelance business: Studio or Person?</a></h3>
-			<p class="blog-body">January 3, 2018</p>
-		</div>
-        <div class="text-divider">
-			<h3 class="blog-subtitle"><a href="https://medium.com/@teekatwo/using-social-media-to-your-advantage-446598468375" target="_blank">Using Social Media to Your Advantage</a></h3>
-			<p class="blog-body">December 18, 2017</p>
-		</div>
-        <div class="text-divider">
-			<h3 class="blog-subtitle"><a href="https://medium.com/@teekatwo/knowing-when-to-readjust-your-dreams-1886b6aa9f5b" target="_blank">Knowing when to readjust your dreams</a></h3>
-			<p class="blog-body">November 6, 2017</p>
-		</div>
-        <div class="text-divider">
-			<h3 class="blog-subtitle"><a href="https://medium.com/@teekatwo/creating-my-own-gulp-based-email-workflow-system-35c50725cdb8" target="_blank">Creating my own Gulp-based email workflow system</a></h3>
-			<p class="blog-body">October 23, 2017</p>
-		</div>
-        <div class="text-divider">
-			<h3 class="blog-subtitle"><a href="https://medium.com/@teekatwo/mastering-the-art-of-admitting-you-dont-know-something-1148066ef200" target="_blank">Mastering the art of admitting you don’t know something</a></h3>
-			<p class="blog-body">October 8, 2017</p>
-		</div>
-        <div class="text-divider">
-			<h3 class="blog-subtitle"><a href="https://medium.com/@teekatwo/how-to-explain-what-design-is-to-non-designers-72838fc12b09" target="_blank">How to Explain What Design is to Non-Designers</a></h3>
-			<p class="blog-body">September 23, 2017</p>
-		</div>
-        <div class="text-divider">
-			<h3 class="blog-subtitle"><a href="https://medium.com/@teekatwo/be-tron-fight-for-the-user-f96efc142876" target="_blank">Be Tron: Fight for the User</a></h3>
-			<p class="blog-body">September 11, 2017</p>
-		</div>
-        <div class="text-divider">
-			<h3 class="blog-subtitle"><a href="https://blog.prototypr.io/how-to-fall-down-and-get-back-up-45b325ca717f" target="_blank">How to Fall Down and Get Back Up</a></h3>
-			<p class="blog-body">August 30, 2017</p>
-		</div>
-        <div class="text-divider">
-			<h3 class="blog-subtitle"><a href="https://medium.com/@teekatwo/giving-a-talk-that-i-didnt-even-know-i-really-wanted-to-give-ae9226fd8fce" target="_blank">Giving a Talk That I Didn’t Know I Wanted to Give</a></h3>
-			<p class="blog-body">August 12, 2017</p>
-		</div> #}
 	</section>
 </main>
-{% endblock %}
+{% endblock -%}
