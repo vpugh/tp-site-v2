@@ -7,6 +7,13 @@ export default [
         title: 'UCD Email Series',
     },
     {
+        worklink: '/work/pomodoro',
+        img1x: 'images/Thumbnails/pomodoro-thumb.jpg',
+        img2x: 'images/Thumbnails/pomodoro-thumb.jpg',
+        type: 'Case Study + Github Pages',
+        title: 'Pomodoro Timer App',
+    },
+    {
         worklink: '/work/cdew-redesign',
         img1x: 'images/Thumbnails/cdeworld-2@1x.jpg',
         img2x: 'images/Thumbnails/cdeworld-2@2x.jpg',
@@ -14,24 +21,10 @@ export default [
         title: 'CDEWorld Redesign',
     },
     {
-        worklink: '/work/pomodoro',
-        img1x: 'images/Thumbnails/pomodoro-thumb.jpg',
-        img2x: 'images/Thumbnails/pomodoro-thumb.jpg',
-        type: 'Github Pages - App',
-        title: 'Pomodoro Timer App',
-    },
-    {
-        worklink: '/work/invoice',
-        img1x: 'images/Thumbnails/invoice-thumb.jpg',
-        img2x: 'images/Thumbnails/invoice-thumb.jpg',
-        type: 'CodePen',
-        title: 'Invoice Time App',
-    },
-    {
         worklink: '/work/emailgui',
         img1x: 'images/Thumbnails/emailgui-thumb.jpg',
         img2x: 'images/Thumbnails/emailgui-thumb.jpg',
-        type: 'CodePen',
+        type: 'Case Study + CodePen',
         title: 'Email Workflow GUI',
     },
     {
@@ -40,6 +33,13 @@ export default [
         img2x: 'images/Thumbnails/vpdesigns-thumb.jpg',
         type: 'Case Study',
         title: 'VP-Designs'
+    },
+    {
+        worklink: '/work/invoice',
+        img1x: 'images/Thumbnails/invoice-thumb.jpg',
+        img2x: 'images/Thumbnails/invoice-thumb.jpg',
+        type: 'Case Study + CodePen',
+        title: 'Temp Time Assistant App',
     },
     {
         worklink: '/work/uniag',

@@ -1,0 +1,74 @@
+{% extends "secondary-layout.njk" %}
+
+{% block title %}Temp Time Assistant{% endblock %}
+
+{% set pageID="work" -%}
+
+{% block hero %}
+<section class="hero">
+	<div class="container">
+		<h2 class="hero--title">Temp Time Assistant</h2>
+		<h3 class="hero--subtitle">A development challenge that turned into it's own app</h3>
+	</div>
+</section>
+{% endblock %}
+
+{% block content %}
+<main>
+	<section class="intro-block">
+		<div class="container">
+			<div class="right-sidebar">
+				<p>
+					<strong>Client:</strong> Self
+				</p>
+
+				<p>
+					<strong>Role:</strong> Designer, Developer
+				</p>
+
+				<p>
+					<strong>Deliverable:</strong> Site
+				</p>
+			</div>
+			<div class="left-main">
+				<p>
+					Another fun side-project that would be really helpful to me. I'm not the greatest when it comes to converting time into decimals, since math is my enemy. This would help me keep things straight.<br><br>
+					<a href="https://codepen.io/Vpugh/full/vjoxrG/" target="_blank" class="btn block">CodePen</a>
+				</p>
+				
+			</div>
+		</div>
+	</section>
+	<div class="full-image">
+		<img src="http://victoriapugh.net/images/gallery/iag/iag-initialdesign.png" alt="">
+		<h2 class="quote">An early version hifi wireframe and the prototype created from it.</h2>
+	</div>
+	<div class="body">
+		<p>
+			I started working at a temp agency, Creative Circle, and had to use their site to log my hours. When I started I was already annoyed that I had to write a start time and stop time and break times. Instead of just writing an amount of hours worked and break time.
+		</p>
+		<p>
+			Since the job I was on treated me like a freelancer, I didn't work straight hours. This made it annoying for me to sit and count up all the times I had worked throughout the day. Keeping track of it on paper I would then input them into this system to get a final double check and leave nothing to chance or my poor math.
+		</p>
+		<h3 class="subhead">Rough Start</h3>
+		<p>
+			I had the barest of outlines of what I wanted. Something that would hold different times and then find the difference in those times. It would be displayed as a decimal, since that's how my system takes them. I would then have the ability to keep adding times and it would show me the time lapsed for each entry. The bottom would be a combination of all the added times at the top. This would be the day total.
+		</p>
+	</div>
+	<div class="full-image">
+		<img src="http://victoriapugh.net/images/gallery/iag/iag-olddesign.png" alt="">
+	</div>
+	<div class="body">
+		<p>
+			These were the simplest functional goals. The advanced goals would be the ability to save it as a file, an excel, word doc I'm not sure what it would be. Then I could have a record of my own and not rely on my handwritten scribble. For the completion of the simple the start was a bit <a href="https://codepen.io/Vpugh/pen/KRYzbW" target="_blank">rough</a>.
+		</p>
+		<p>
+			This was an interesting lesson in working with time and working with complex arrays. Since I'd made a timer, I thought I had this in the bag and that wasn't really true. It took trial and error (<a href="https://codepen.io/Vpugh/pen/jxXbyd" target="_blank">Trial 2</a> and <a href="https://codepen.io/Vpugh/pen/yjWbGV" target="_blank">Trial 3</a>) but I got the individual entries to work as I intended.
+		</p>
+		<h3 class="subhead">The Next Roadblock</h3>
+		<p>
+			I thought the hardest part was getting the individual time entries to calculate themselves individually. Then I tried to get the times to combine at the bottom. This has been another set of troublesome problems. At the moment, I'm stuck in creating an infinte loop on one of my components. That is the next hurdle to overcome.
+		</p>
+	</div>
+</main>
+{% endblock %}
