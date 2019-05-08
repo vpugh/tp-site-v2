@@ -64,7 +64,7 @@ li {
 
 .heading {
 	font-size: 36px;
-	font-weight: bold;
+	font-weight: 600;
 	margin: 0 0 2rem 0;
 	line-height: 1.2;
 }
@@ -89,4 +89,13 @@ li {
 
 p {
 	margin-bottom: 1.4em;
+}
+
+.sr-only {
+	position:absolute; 
+	left:-10000px; 
+	top:auto; 
+	width:1px; 
+	height:1px; 
+	overflow:hidden;
 }

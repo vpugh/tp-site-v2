@@ -2,6 +2,7 @@ node_modules/
 dist/
 /js
 /css
+.DS_Store
 .vscode/
 assets/
 app.zip

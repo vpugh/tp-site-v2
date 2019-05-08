@@ -1,4 +1,7 @@
 .hero {
+
+	padding-bottom: 140px;
+	
 	.intro-title {
 		text-transform: uppercase;
 		font-size: 14px;
@@ -56,7 +59,7 @@
 	&--title {
 		line-height: 1.5;
 		font-size: 1.6rem;
-		font-weight: 800;
+		font-weight: 600;
 		
 		@include breakpoint(mobile, max-width){
 			padding-bottom: 20px;
@@ -68,13 +71,13 @@
 			padding-bottom: 6vh;
 		}
 		@include breakpoint(desktop, min-width) {
-			font-size: 3.625rem;
-			width: 90%;
-			line-height: 1.2;
+			font-size: 4.8rem;
+			// width: 90%;
+			line-height: 1.1;
 		}
-		@include breakpoint(xldesktop, min-width) {
-			font-size: 4rem;
-		}
+		// @include breakpoint(xldesktop, min-width) {
+		// 	font-size: 4rem;
+		// }
 
 	}
 	

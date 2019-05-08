@@ -23,6 +23,7 @@ header {
 	&--title {
 		text-transform: uppercase;
 		letter-spacing: 3px;
+		font-weight: 600;
 
 		@include breakpoint(mobile, max-width) {
 			margin-bottom: 0;
@@ -110,6 +111,74 @@ header {
 		}
 		@include breakpoint(desktop, min-width) {
 			float: right;
+		}
+	}
+
+	// intrinsic ratio
+	.ir {
+		display: block;
+		overflow: visible;
+		padding: 0 0 100%;
+		position: relative;
+		height: 0;
+		width: 100%;
+	}
+	.ir > * {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		// top: 0;
+		top: 6px;
+		left: 0;
+	}
+
+	.soc {
+		display: inline-block;
+		// font-size: 0;
+		list-style: none;
+		margin: 0 auto;
+		// padding: 48px;
+		// padding: 4.8rem;
+		text-align: center;
+		// width: 110rem;
+		// max-width: 100%;
+	}
+	.soc li {
+		display: inline-block;
+		margin: 0 6px;
+		// margin: 12px;
+		// margin: 1.2rem;
+	}
+	.soc a, .soc svg {
+		display: block;
+	}
+	.soc svg {
+		fill: color(text, gargoyles);
+		&:hover {
+			fill: color(text, pavement);
+		}
+	}
+	.soc a {
+		position: relative;
+		// height: 96px;
+		// height: 9.6rem;
+		// width: 96px;
+		// width: 9.6rem;
+		height: 18px;
+		height: 1.8rem;
+		width: 18px;
+		width: 1.8rem;
+	}
+
+	.s-media {
+		position: relative; // IE8
+    height: 96px; // IE8
+    height: 9.6rem;
+    width: 96px; // IE8
+		width: 9.6rem;
+		
+		svg {
+			display: block;
 		}
 	}
 	
