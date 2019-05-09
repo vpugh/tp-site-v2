@@ -67,7 +67,7 @@ function nunjucks() {
           this.emit('end');
       }
   }))
-  .pipe(nunjucksRender({path: [paths.nunjucks.templates]}))
+  .pipe(nunjucksRender({path: ['src/']}))
   .pipe(gulp.dest(paths.src))
 }
 

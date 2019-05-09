@@ -1,10 +1,12 @@
-{% extends "layout.njk" %}
+{% extends "templates/layout.njk" %}
 
 {% block title %}Blog — {% endblock %}
 
 {% block bodyid %}
 {% set activePage = "blog" %}
 {% endblock %}
+
+{% import 'data/articles.njk' as blogContent %}
 
 {% block hero %}
 <section class="hero">
@@ -19,16 +21,19 @@
 	<section>
 		<div class="container grid">
 			<div class="grid grid-2-col">
-				<div class="blog--posts" v-for="posts in articles">
-				<a :href="posts.link" target="_blank">
-					<div class="blog--cover lazyload" :style="{ backgroundImage: 'url(' + posts.cover + ')' }"></div>
-
-				</a>
-				<div class="blog--text">
-					<h2 class="blog--title"><a :href="posts.link" target="_blank">{% raw %}{{ posts.title }}{% endraw %}</a></h2>
-					<p class="blog--subtitle">{% raw %}{{ posts.date }}{% endraw %} | {% raw %}{{ posts.source }}{% endraw %}</p>
-				</div>
-				</div>
+				{% for item in blogContent.previews %}
+        <div class="blog--posts">
+          <a href="{{item.link}}" target="_blank">
+            <div class="blog--cover lazyload" style="background-image: url('{{item.cover}}')"></div>
+          </a>
+          <div class="blog--text">
+            <h2 class="blog--title">
+              <a href="{{item.link}}" target="_blank">{{item.title}}</a>
+            </h2>
+            <p class="blog--subtitle">{{item.date}} | <em>{{item.source}}</em></p>
+          </div>
+        </div>
+      {% endfor %}
 			</div>
 		</div>
 	</section>
