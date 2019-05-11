@@ -102,6 +102,6 @@ function watchFiles() {
 
 // const watch = () => gulp.watch(paths.scripts.src, gulp.series(style, nunjucks, scripts, reload));
 
-const dev = gulp.series(style, serve, nunjucks, scripts, watchFiles);
+const dev = gulp.series(style, serve, nunjucks, watchFiles);
 exports.default = dev;
 exports.watch = dev;

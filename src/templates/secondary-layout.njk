@@ -15,10 +15,7 @@
 	<!--endbuild-->
 	{% endblock %}
 </head>
-	{% block bodyid %}{% endblock %}
-	{% import 'templates/macros/bodyid-macro.njk' as pageBodyID %}
-	{{pageBodyID.active(activePage)}}
-	{# <body {% block pageID %}{% endblock %}> #}
+	<body id="{{pageID}}">
 	{% include "templates/partials/header.njk" %}
 	{% block hero %}{% endblock %}
 	{% block content %}{% endblock %}

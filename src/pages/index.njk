@@ -1,8 +1,6 @@
 {% extends "templates/layout.njk" %}
 
-{% block bodyid %}
-{% set activePage = "home" %}
-{% endblock %}
+{% set pageID = "home" %}
 
 {% import 'data/articles.njk' as blogContent %}
 {% import 'data/thumbnails.njk' as previewContent %}
@@ -18,7 +16,7 @@
 {% block content %}
 
 <main id="app">
-	<section class="home-portfolio">
+	<section id="design" class="home-portfolio">
 		<div class="container grid grid-2-col">
       {% for thumbnail in previewContent.thumbnails %}
         <div class="featured-image">
@@ -39,28 +37,28 @@
   <section class="blurb">
     <div class="container">
       <div class="blurb-content">
-        <h2 class="heading">A Little About Me</h2>
+        <h2 class="heading">Who am I?</h2>
         <div class="blurb-text">
-          <h3 class="subheading">I'm Tori Pugh. I create engaging experiences and products that function as well as they look. My solutions are made with the user in mind using data and research. Here are some quick points.</h3>
+          <h3 class="subheading">I create engaging and functional experiences and products. Also, develop solutions targeting the user and backed by data and research. Here are some quick points.</h3>
           <ul class="">
             <li class="circle-numbers one">
               <p>
-                I love the whole process of developing a product, from start to finish. I am mindful of the project as a whole, though I keep an eye on the small details within pieces as well.
+                Enjoy the whole process of developing a product, from start to finish. I am mindful of the project as a whole, though I keep an eye on the small details within pieces as well.
               </p>
             </li>
             <li class="circle-numbers two">
               <p>
-                I learn at amazing speeds, can be anything (program, software, etc). I enjoy trying to find more efficient ways to create things and make sure they benefit the end-user as much as I can.
+                Learn at amazing speeds, can be a program, software, etc. I enjoy finding efficient ways to create things and making sure they benefit the user as much as I can.
               </p>
             </li>
             <li class="circle-numbers three">
               <p>
-                I enjoy researching to find the reason behind people using something or doing a certain action. These finds help dictate how something should be made and go towards making things more efficient for everyone.
+                Love researching and finding the reason behind why people using something or do a certain action. These answers dictate how something should be made and making things more efficient for everyone.
               </p>
             </li>
             <li class="circle-numbers four">
               <p>
-                I enjoy researching to find the reason behind people using something or doing a certain action. These finds help dictate how something should be made and go towards making things more efficient for everyone.
+                Sometimes, to my detriment, I will keep at a problem until I solve it. If I can't solve it it will slowly drive me crazy trying to figure it out. It's a good and bad.
               </p>
             </li>
           </ul>
