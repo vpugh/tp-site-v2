@@ -1,7 +1,3 @@
-// jQuery(document).ready(function ($) {
-// 		    $("img.lazy").lazyload();
-// 		});
-
 // Create random background color
 
 jQuery(document).ready(function(){
@@ -21,7 +17,7 @@ jQuery(document).ready(function(){
 		
 		//open/close primary navigation
 		var toggleNav = $('.nav-trigger'),
-			navigation = $('.navigation--main'),
+			navigation = $('.navigation'),
 			icon = $('.cd-icon'),
 			body = $('body');
 		toggleNav.click(function(){

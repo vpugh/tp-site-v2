@@ -1,10 +1,7 @@
-//@import "helpers/media-query";
-@import "variables/breakpoints";
-
 .nav-trigger {
   position: absolute;
   right: 5%;
-  top: 22%;
+  top: 42%;
   height: 44px;
   width: 44px;
   z-index: 100;
@@ -12,10 +9,11 @@
   text-indent: 100%;
   white-space: nowrap;
 
-  // @include desktop {
-  // 		display: none;
-  // }
   @include breakpoint(tablet, min-width) {
+    top: 60%;
+  }
+
+  @include breakpoint(desktop, min-width) {
     display: none;
   }
 }

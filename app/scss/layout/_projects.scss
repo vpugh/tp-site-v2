@@ -9,18 +9,18 @@
 		color: color(text, white);
 	}
 
-	.link-nav {
+	.navigation--link {
 		border-color: color(text, white-50);
 	}
-	.nav--link a:hover {
+	.navigation--link_link a:hover {
 		border-color: #fff;
 		color: color(text,white);
 	}
-	.nav--link.active a {
+	.navigation--link_link.active a {
 		color: color(text,white);
 		border-color: color(text, white);
 	}
-	.social {
+	.navigation--social {
 		color: color(text, white-50);
 	}
 	.navigation,
@@ -45,13 +45,24 @@
 				text-align: center;
 			}
 			@include breakpoint(tablet, min-width) {
-				padding-top: 16vh;
+				padding-top: 8vh;
 				padding-bottom: 0;
 			}
 		}
 		&--subtitle {
 			width: 100%;
 			font-weight: 400;
+
+			@include breakpoint(mobile, max-width) {
+				padding-top: 0px;
+				padding-bottom: 30px;
+				text-align: center;
+			}
+
+			@include breakpoint(tablet, max-width) {
+				padding-top: 0px;
+				padding-bottom: 40px;
+			}
 	
 			@include breakpoint(desktop, min-width) {
 				padding-bottom: 8vh;
@@ -188,7 +199,7 @@
 
 .full-image {
 	width: 100%;
-	margin: 0 auto;
+	margin: 5rem auto 0 auto;
 	text-align: center;
 	@include breakpoint(xldesktop, min-width) {
 		width: 90%;
@@ -196,6 +207,10 @@
 
 	.body ~ & {
 		margin-top: 5rem;
+	}
+
+	.shadow {
+		box-shadow: 3px 6px 15px rgba(0,0,0,.2);
 	}
 }
 .half-image {

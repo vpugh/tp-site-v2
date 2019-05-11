@@ -9,6 +9,11 @@ body {
 	color: color(text, base);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	&.overflow {
+		overflow: hidden;
+		height: 100vh;
+	}
 }
 
 * {

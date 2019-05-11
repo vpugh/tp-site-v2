@@ -109,7 +109,9 @@ gulp.task('images', function(){
 		// .pipe(cache(imagemin({
 		// 	interlaced: true
 		// })))
-		.pipe(imagemin())
+		.pipe(imagemin({
+			verbose: true
+		}))
 		.pipe(gulp.dest('dist/images'))
 });
 

@@ -53,108 +53,108 @@
 	.right-sidebar p {
 		margin-bottom: 1.4em;
 	}
-}
-.left-main {
-	width: 100%;
-	@include breakpoint(tablet, min-width) {
-		float: left;
-		width: 60%;
-		// padding-left: 84px;
-	}
-	@include breakpoint(desktop, min-width) {
-		// padding-left: 81px;
-	}
-	@include breakpoint(xldesktop, min-width) {
-		width: 58%;
-		// padding-left: 226px;
-	}
-}
-.right-sidebar {
-	width: 100%;
-	background: color(background, dusty);
-	padding: 30px;
-	color: color(text, pavement);
-
-	.t {
-		color: color(text,gris);
-		font-weight: 600;
-		display: inline-block;
-		margin-bottom: .2em;
-	}
-
-	@include breakpoint(tablet, min-width) {
-		float: right;
-		width: 35%;
-		// padding-right: 64px;
-	}
-	@include breakpoint(desktop, min-width) {
-		// padding-right: 81px;
-	}
-	@include breakpoint(xldesktop, min-width) {
-		width: 30%;
-		// padding-right: 81px;
-	}
-}
-.text {
-	p {
-		margin-bottom: 1.3em;
-	}
-	a {
-		border-bottom: 2px solid color(text, base);
-		transition: border 300ms ease-out;
-		&:hover {
-			border-color: transparent;
+	.left-main {
+		width: 100%;
+		@include breakpoint(tablet, min-width) {
+			float: left;
+			width: 60%;
+			// padding-left: 84px;
+		}
+		@include breakpoint(desktop, min-width) {
+			// padding-left: 81px;
+		}
+		@include breakpoint(xldesktop, min-width) {
+			width: 58%;
+			// padding-left: 226px;
 		}
 	}
-}
-.learning {
-	&:before,
-	&::before {
-		content: "*";
-		color: red;
-	}
-	&--text {
-		font-size: .6em;
-		color: red;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		@include breakpoint(tablet, max-width) {
-			line-height: 1.5rem;
+	.right-sidebar {
+		width: 100%;
+		background: color(background, dusty);
+		padding: 30px;
+		color: color(text, pavement);
+	
+		.t {
+			color: color(text,gris);
+			font-weight: 600;
+			display: inline-block;
+			margin-bottom: .2em;
+		}
+	
+		@include breakpoint(tablet, min-width) {
+			float: right;
+			width: 35%;
+			// padding-right: 64px;
+		}
+		@include breakpoint(desktop, min-width) {
+			// padding-right: 81px;
+		}
+		@include breakpoint(xldesktop, min-width) {
+			width: 30%;
+			// padding-right: 81px;
 		}
 	}
-}
-
-.avatar {
-	position: relative;
-	display: inline-block;
-	@include breakpoint(mobile, max-width) {
-		margin: 14px auto 24px auto;
+	.text {
+		p {
+			margin-bottom: 1.3em;
+		}
+		a {
+			border-bottom: 2px solid color(text, base);
+			transition: border 300ms ease-out;
+			&:hover {
+				border-color: transparent;
+			}
+		}
 	}
-	@include breakpoint(tablet, max-width) {
-		margin: 70px auto 24px auto;
-	}
-	@include breakpoint(desktop, min-width) {
-		margin-top: 100px;
-		margin-bottom: 20px;
-	}
-
-	&--text {
-		float: left;
-		margin: 25px 0 0 25px;
-		letter-spacing: 2px;
-		text-transform: uppercase;
-	}
-	&--img {
-		float: left;
+	.learning {
+		&:before,
 		&::before {
-			content: '';
-			background-image: url('../../images/pic.jpg');
-			width: 100px;
-			height: 100px;
-			display: block;
-			background-size: cover;
-			background-position: 50% 70%;
-			border-radius: 50%;
+			content: "*";
+			color: red;
+		}
+		&--text {
+			font-size: .6em;
+			color: red;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			@include breakpoint(tablet, max-width) {
+				line-height: 1.5rem;
+			}
+		}
+	}
+	
+	.avatar {
+		position: relative;
+		display: inline-block;
+		@include breakpoint(mobile, max-width) {
+			margin: 14px auto 24px auto;
+		}
+		@include breakpoint(tablet, max-width) {
+			margin: 70px auto 24px auto;
+		}
+		@include breakpoint(desktop, min-width) {
+			margin-top: 100px;
+			margin-bottom: 20px;
+		}
+	
+		&--text {
+			float: left;
+			margin: 25px 0 0 25px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+		}
+		&--img {
+			float: left;
+			&::before {
+				content: '';
+				background-image: url('../../images/pic.jpg');
+				width: 100px;
+				height: 100px;
+				display: block;
+				background-size: cover;
+				background-position: 50% 70%;
+				border-radius: 50%;
+			}
 		}
 	}
 }

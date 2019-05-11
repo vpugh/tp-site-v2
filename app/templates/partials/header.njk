@@ -1,15 +1,14 @@
 <header>
 	<div class="gradient-border"></div>
 	<div class="navigation">
-		{# <div class="container"> #}
-			<nav class="navigation--social">
-				<ul class="link-nav">
-					<li class="nav--link {%if pageID == 'work' %}active{% endif %}"><a class="smoothScroll" href="/#design">Work</a></li>
-					<li class="nav--link {%if pageID == 'about' %}active{% endif %}"><a href="/about">About</a></li>
-					<li class="nav--link"><a href="mailto:hello@toripugh.com">Contact</a></li>
-					<li class="nav--link {%if pageID == 'blog' %}active{% endif %}"><a href="/blog">Blog</a></li>
+			<nav>
+				<ul class="navigation--link">
+					<li class="navigation--link_link {%if pageID == 'work' %}active{% endif %}"><a class="smoothScroll" href="/#design">Work</a></li>
+					<li class="navigation--link_link {%if pageID == 'about' %}active{% endif %}"><a href="/about">About</a></li>
+					<li class="navigation--link_link"><a href="mailto:hello@toripugh.com">Contact</a></li>
+					<li class="navigation--link_link {%if pageID == 'blog' %}active{% endif %}"><a href="/blog">Blog</a></li>
 				</ul>
-				<ul class="social">
+				<ul class="navigation--social">
 					<li>
 						<a href="https://twitter.com/teekatwo" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
 					</li>
@@ -27,10 +26,9 @@
 					</li>
 				</ul>
 			</nav>
-			<h2 class="navigation--links">Tori Pugh</h2>
+			<h2 class="navigation--title"><a href="/">Tori Pugh</a></h2>
 			<a class="nav-trigger" href="javascript:void(0);">
 		        <span class="cd-icon"></span>
 		    </a>
-		{# </div> #}
 	</div>
 </header>

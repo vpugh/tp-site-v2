@@ -40,35 +40,58 @@
 		</div>
 	</section>
 	<div class="full-image">
-		<img src="http://victoriapugh.net/images/gallery/iag/iag-initialdesign.png" alt="">
-		<h2 class="quote">An early version hifi wireframe and the prototype created from it.</h2>
+		<img class="shadow" src="../../images/gallery/invoice/temp-assistant.jpg" alt="">
 	</div>
 	<div class="body">
 		<p>
-			I started working at a temp agency, Creative Circle, and had to use their site to log my hours. When I started I was already annoyed that I had to write a start time and stop time and break times. Instead of just writing an amount of hours worked and break time.
+			I started working at a temp agency and started using their site to log my hours. I was already annoyed with filling it out. I had to write a start time and stop time and break times. Instead of writing a summary of hours worked and break time.
 		</p>
 		<p>
-			Since the job I was on treated me like a freelancer, I didn't work straight hours. This made it annoying for me to sit and count up all the times I had worked throughout the day. Keeping track of it on paper I would then input them into this system to get a final double check and leave nothing to chance or my poor math.
+			For my job at the time I was on treated more like a freelancer, I didn't work set straight hours. I needed to count up all the times I had worked throughout the day. Keeping track of it on paper I would then input them into this system to get a final double check and leave nothing to chance or my poor math.
+		</p>
+		<h3 class="subhead">Initial Strategy</h3>
+		{# Scheduled Time Sheet Hours #}
+		<p>
+			For this project I had the barest of outlines of what I wanted. I wanted something that would hold different entries and find the difference in the start and stop times. The difference would be displayed as a decimal, since that's how the temp agency system displays them. I would then have the ability to keep adding entries and it would show time lapsed for each entry. At the very bottom would be a combination of all the entried and this would be the day total.
+		</p>
+		<p>
+			The basic requirements for simple functionality are listed above. The advanced goals would be saving the day total and entries as a file, an excel or word doc, I'm not sure what it would be. Or maybe save it as a json file and can be incorporated in a time tracking system or personal invoicing system. Then I could have a record of my own and not rely on my handwritten scribbles.
 		</p>
 		<h3 class="subhead">Rough Start</h3>
 		<p>
-			I had the barest of outlines of what I wanted. Something that would hold different times and then find the difference in those times. It would be displayed as a decimal, since that's how my system takes them. I would then have the ability to keep adding times and it would show me the time lapsed for each entry. The bottom would be a combination of all the added times at the top. This would be the day total.
+			For the completion of the simple requirements, the start was a bit rough. I had gotten the layout figured out, which was pretty simple. I put the inputs and figured out the grouping for the time entries. I was confused for a bit with trying to compartmentalize the sections. I wanted the entries and their totals to be individual in each iteration of the entries. I ran into some trouble with getting this to work at first and then later getting the totals to work individually.
 		</p>
 	</div>
 	<div class="full-image">
-		<img src="http://victoriapugh.net/images/gallery/iag/iag-olddesign.png" alt="">
+		<div class="container">
+			<p data-height="489" data-theme-id="0" data-slug-hash="KRYzbW" data-default-tab="result" data-user="Vpugh" data-embed-version="2" data-pen-title="Invoice Time" class="codepen">See the Pen <a href="https://codepen.io/Vpugh/pen/KRYzbW/">Invoice Time</a> by Tori (<a href="https://codepen.io/Vpugh">@Vpugh</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+			<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+		</div>
 	</div>
 	<div class="body">
 		<p>
-			These were the simplest functional goals. The advanced goals would be the ability to save it as a file, an excel, word doc I'm not sure what it would be. Then I could have a record of my own and not rely on my handwritten scribble. For the completion of the simple the start was a bit <a href="https://codepen.io/Vpugh/pen/KRYzbW" target="_blank">rough</a>.
+			This was an interesting lesson in working with time and working with complex arrays. Since I'd made a timer, I thought I had this in the bag and that wasn't really true. It took trial and error and a change in design but I got the individual entries to work as I intended.
 		</p>
-		<p>
-			This was an interesting lesson in working with time and working with complex arrays. Since I'd made a timer, I thought I had this in the bag and that wasn't really true. It took trial and error (<a href="https://codepen.io/Vpugh/pen/jxXbyd" target="_blank">Trial 2</a> and <a href="https://codepen.io/Vpugh/pen/yjWbGV" target="_blank">Trial 3</a>) but I got the individual entries to work as I intended.
-		</p>
+	</div>
+	<div class="full-image">
+		<div class="container">
+			<p data-height="486" data-theme-id="0" data-slug-hash="jxXbyd" data-default-tab="result" data-user="Vpugh" data-embed-version="2" data-pen-title="jxXbyd" class="codepen">See the Pen <a href="https://codepen.io/Vpugh/pen/jxXbyd/">jxXbyd</a> by Tori (<a href="https://codepen.io/Vpugh">@Vpugh</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<p class="quote">Trial #2 - Getting the entry time difference to display. Sadly it was the same time for all entries.</p>
+	</div>
+	<div class="body">
 		<h3 class="subhead">The Next Roadblock</h3>
 		<p>
 			I thought the hardest part was getting the individual time entries to calculate themselves individually. Then I tried to get the times to combine at the bottom. This has been another set of troublesome problems. At the moment, I'm stuck in creating an infinte loop on one of my components. That is the next hurdle to overcome.
 		</p>
+	</div>
+	<div class="full-image">
+		<div class="container">
+			<p data-height="628" data-theme-id="0" data-slug-hash="vjoxrG" data-default-tab="result" data-user="Vpugh" data-embed-version="2" data-pen-title="Temping Time Assistant - v4" class="codepen">See the Pen <a href="https://codepen.io/Vpugh/pen/vjoxrG/">Temping Time Assistant - v4</a> by Tori (<a href="https://codepen.io/Vpugh">@Vpugh</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		<p class="quote">I can't seem to create a summary of the times without causing an infinte loop.</p>
 	</div>
 </main>
 {% endblock %}
