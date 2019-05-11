@@ -23,6 +23,12 @@
 		}
 	}
 
+	.hero {
+		@include breakpoint(desktop, min-width) {
+			padding-bottom: 0;
+		}
+	}
+
 	.hero--title {
 		width: 100%;
 		@include breakpoint(mobile, max-width) {
@@ -61,6 +67,16 @@
 		color: color(text,white);
 		border-color: color(text, white);
 		opacity: .5;
+	}
+	.body .subhead {
+		font-weight: 600;
+	}
+	.navigation .soc svg {
+		fill: #fff;
+		transition: ease-out 300ms;
+	}
+	.navigation .soc svg:hover {
+		fill: rgba(#fff, .5);
 	}
 	.social {
 		color: color(text, white);

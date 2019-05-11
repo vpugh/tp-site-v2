@@ -1,0 +1,101 @@
+{% extends "templates/secondary-layout.njk" %}
+
+{% block title %}Pomodoro Timer {% endblock %}
+
+{% set pageID="work" -%}
+
+{% block hero %}
+<section class="hero">
+	<div class="container">
+		<h2 class="hero--title">Pomodoro Timer</h2>
+		<h3 class="hero--subtitle">A development challenge that turned into it's own app</h3>
+	</div>
+</section>
+{% endblock %}
+
+{% block content %}
+<main>
+	<section class="intro-block">
+		<div class="container">
+			<div class="right-sidebar">
+				<p>
+					<strong>Client:</strong> Self
+				</p>
+
+				<p>
+					<strong>Role:</strong> Designer, Developer
+				</p>
+
+				<p>
+					<strong>Deliverable:</strong> Site
+				</p>
+			</div>
+			<div class="left-main">
+				<p>
+					To keep my skills sharp and for some fun I decided to participate in the development challenge that <a href="">Scotch.io</a> was running every week. At the completion of the challenge I wanted to make my own Pomodoro Timer using the Vue-CLI and host it online so anyone could use it.<br><br>
+					<a href="https://vpugh.github.io/vue-pomodoro-timer/" target="_blank" class="btn block">Site</a>
+					<a href="https://github.com/vpugh/vue-pomodoro-timer" target="_blank" class="inline-link">Github</a>
+				</p>
+				
+			</div>
+		</div>
+	</section>
+	<div class="full-image">
+		<img src="../../images/gallery/pomodoro/pomodoro-original.jpg" alt="">
+	</div>
+	<div class="body">
+		<p>
+			When I started making this timer for the challenge, I thought it would be no problem. How hard could a timer be to make? I ended up learning a lot and in the end building my own version from scratch using the Vue-CLI and then hosting it on Github Pages.
+		</p>
+
+		<p>
+			Since it was such an involved process I wrote a <a href="https://dev.to/teekatwo/building-a-pomodoro-timer-with-vuejs-on-codepen-7no" target="_blank">blog article</a> about my experience; my steps in creating; and the lessons I learned.
+		</p>
+		<h3 class="subhead">Minor Setback</h3>
+		<p>
+			I thought that creating a countdown system would be easy. It was anything but easy, at least for me who is weak in math. I had to go on a tangent of breaking down all the time into milliseconds and then using that as a base for keeping track of the overall time. I learned how all this worked by making a digital clock.
+		</p>
+		{# <img src="../../images/gallery/pomodoro/pomodoro-scotchio.jpg" alt=""> #}
+	</div>
+	<div class="full-image">
+		<div class="container">
+		<p data-height="516" data-theme-id="0" data-slug-hash="MVpaxo" data-default-tab="result" data-user="Vpugh" data-embed-version="2" data-pen-title="Vue Clock" class="codepen">See the Pen <a href="https://codepen.io/Vpugh/pen/MVpaxo/">Vue Clock</a> by Tori (<a href="https://codepen.io/Vpugh">@Vpugh</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></div>
+	</div>
+	<div class="body">
+		<p>
+			After creating the clock I worked what I had learned into the countdown timer, which was pretty simple. I fulfilled the simple requests for the challenge - the Play button starts the timer; the Pause button stops the timer; and the Reset button returns the timer to its original state of 25 minutes.
+		</p>
+		<p>
+			I'd done the challenge and had succeeded, where to go from here. I decided to dive in and make a fully functional pomodoro timer, one that counts from 25 mins to a 5 min break and repeats this a few times. This version needed to tell you what stage you were in, alert you when the stage was over and visually look a bit slicker.
+		</p>
+	</div>
+	<div class="full-image">
+		<img src="../../images/gallery/pomodoro/pomodoro-scotchio.jpg" alt="">
+		<p class="quote">
+			My challenge complete timer, the messages changed depending what state it was in.
+		</p>
+	</div>
+	<div class="body">
+		<h3 class="subhead">My Pomodoro Timer</h3>
+		<p>
+			The design for this was purely tongue and cheek. Pomodoro is italian for tomato so it should be red. For the rest periods I thought it should be a 'green tomato' or 'tomatillo' and made the theme green. Something cute and different, a slight change of pace from just being red all the time.
+		</p>
+		<p>
+			I created a display for the current stage &mdash; Timer, Rest, Timer, Rest, and Timer. Highlighting whichever marker is the current one. I also fixed an issue with the original timer that it wouldn't clear the time between restarts. This caused it to gain speed on every restart and countdown into obliviion.
+		</p>
+		<p>
+			I've added sound effects to mark the change of the rounds. This was an interesting for me as I'd never done anything with sounds embedded in anything. It adds that extra level of professionalism and helps if you've moved to another program or another tab.
+		</p>
+		<p>
+			The full timer version I did not make on CodePen, I used the Vue CLI and exported it out and uploaded it to Github Pages. This was it's own adventure. Luckily it wasn't nearly as tough as I thought it would be and it's now hosted on Github.
+		</p>
+	</div>
+	<div class="full-image">
+		<img src="../../images/gallery/pomodoro/pomodoro-tomatillo.jpg" alt="">
+		<p class="quote">
+			The rest period tomatillo theme.
+		</p>
+	</div>
+</main>
+{% endblock %}

@@ -8,8 +8,13 @@
 		@include breakpoint(mobile, max-width) {
 			margin-top: 0;
 		}
-    }
-    .hero--title {
+	}
+	.hero {
+		@include breakpoint(desktop, min-width) {
+			padding-bottom: 0;
+		}
+	}
+	.hero--title {
 		padding-bottom:10vh;
 		
 		@include breakpoint(mobile, max-width) {
@@ -22,5 +27,5 @@
 			margin-top: 100px;
 			margin-bottom: 20px;
 		}
-    }
+	}
 }
