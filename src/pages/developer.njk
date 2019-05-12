@@ -1,8 +1,6 @@
 {% extends "templates/layout.njk" %}
 
-{% block bodyid %}
-{% set activePage = "home" %}
-{% endblock %}
+{% set pageID="work" -%}
 
 {% block hero %}
 <section class="hero">
@@ -11,7 +9,6 @@
 		<h3 class="hero--subtitle">
 			I enjoy developing web systems and bringing consistence and order to front-end systems. My language of choice at the moment is Vue and I'm looking into Angular as well. I'm a huge fan of automation and strive to create systems that handle redundancy as much as possible.
 		</h3>
-		{# <h3 class="hero--subtitle">User experience and problem solving are the core ideals behind all my solutions. I approach each project to create engaging experiences and useful products that function as well as they look.</h3> #}
 	</div>
 </section>
 {% endblock %}

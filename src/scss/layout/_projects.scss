@@ -239,7 +239,7 @@
 
 .full-image {
 	width: 100%;
-	margin: 0 auto;
+	margin: 5rem auto 0;
 	text-align: center;
 }
 .half-image {
@@ -263,5 +263,9 @@
 	.quote {
 		width: 70%;
 		margin: 30px auto 0 auto;
+	}
+
+	iframe {
+		display: inline-block !important;
 	}
 }

@@ -1,0 +1,112 @@
+{% extends "templates/secondary-layout.njk" %}
+
+{% block title %}Email Workflow GUI{% endblock %}
+
+{% set pageID="work" -%}
+
+{% block hero %}
+<section class="hero">
+	<div class="container">
+		<h2 class="hero--title">Email Workflow GUI</h2>
+		<h3 class="hero--subtitle">A more accessible version of my email workflow with an interface.</h3>
+	</div>
+</section>
+{% endblock %}
+
+{% block content %}
+<main>
+	<section class="intro-block">
+		<div class="container">
+			<div class="right-sidebar">
+				<p>
+					<strong>Client:</strong> Self
+				</p>
+
+				<p>
+					<strong>Role:</strong> Designer, Developer
+				</p>
+
+				<p>
+					<strong>Deliverable:</strong> Site
+				</p>
+			</div>
+			<div class="left-main">
+				<p>
+					I have developed a email workflow that revolves around using Gulp and Nunjucks. This is a solution for those who aren't versed in programming or aren't knowledgeable about coding.<br><br>
+					<a href="https://codepen.io/Vpugh/pen/MGZrME" target="_blank" class="btn block">Codepen</a>
+				</p>
+				
+			</div>
+		</div>
+	</section>
+	<div class="full-image">
+		<p class="quote">Current Progress in the Visual Setup</p>
+	</div>
+	<div class="body">
+		<p>
+			My email workflow works well for me, but I don't mind using Gulp and Nunjucks. I've become familiar with using a task-runner and a templating system. I think it works very well and is easy to maintain but how would non-coding people feel.
+		</p>
+
+		<p>
+			I started making this system with the intent for it to be usable by all people. It would increase the creation of high quality emails and help reduce some of the mundane work that goes into their creation. It's not taking away the responsibilites of email designers, it's better managing their time to work on more complex products and cut down on monotony.
+		</p>
+		<h3 class="subhead">Starting the Idea</h3>
+		<p>
+			Very much like how I started my <a href="https://github.com/vpugh/Gulp-Email-Workflow" target="_blank">Gulp Email Workflow</a>, I had no real idea of what I needed to do to make this a viable idea. I'd made the workflow, so how to translate it into something more visual that people could use easier.
+		</p>
+		<p>
+			My first idea was to make an <a href="https://github.com/vpugh/electron-photo-test" target="_blank">Electron-based app</a>. Using the software both Spotify and VS Code are built on to power it. Both of those are apps I enjoy using, they have very similar setups. I thought the setup, the dashboard on the left and the editor/main content on the right was very conducive for visual editing. This was the first direction I took in regards to the design and development of the app.
+		</p>
+	</div>
+	<div class="full-image">
+		<img src="https://cdn.dribbble.com/users/180127/screenshots/3812826/bespoke-v1.jpg" alt="">
+		<p class="quote">Trying to imitate Spotify and VS Code but with a lighter palette</p>
+	</div>
+	<div class="body">
+		<p>
+			It was a good start but I was having trouble developing with Electron. It was something I'd heard of from someone and didn't know anyone personally who had any experience with building anything with it. Most importantly for me, I really wasn't liking the look of the layout. I'm not sure I was ever a 100% sold on the tabbing system and having all the settings in little drop-down menus all over the window. I tried to emulate VS Code too much. I didn't account for my content in the window. It started getting cluttered and jumbled.
+		</p>
+		<h3 class="subhead">Idea Try #2</h3>
+		<p>
+			I never gave up on this idea. I took a step back and gave myself time to learn and become a better developer and designer. This evolved into me learning Angular and Vue. For me Vue just clicked and I enjoy using it immensely.
+		</p>
+		<p>
+			One day a former coworker told me how he'd taken my email workflow and recreated it with React to make a GUI. What he did was the next steps I'd envisioned for the workflow. After seeing his idea I was really excited, and increasing in skill with Vue, wanted to try and replicate his approach with all my plans for it. The big endgame would be to make it ESP and templating system agnostic, it would support multiple templating languages and email services.
+		</p>
+		<p>
+			I'd been plugging away at it since that day and making a few minor things with Vue for a bit. I finally had a breakthrough while at Codeland 2018. I saw how I could use templates to facilitate the different email types in the GUI and how I could lay it all out. It seemed to hit me all at once how this for the first time, could come together.
+		</p>
+		<p>
+			I started the idea in CodePen, since it's a little easier to get started and change ideas quickly. It took a few tries to get started (<a href="https://codepen.io/Vpugh/pen/xjjvbK" target="_blank">Example 1</a>, <a href="https://codepen.io/Vpugh/pen/gzKxVK" target="_blank">Example 2</a>), but I made it to the current version - <a href="https://codepen.io/Vpugh/pen/rvQLdM" target="_blank">V3</a>. Right now its more a visual setup preparing for the behind the scenes functionality. I was more concerned with creating a smooth experience for editing and managing emails. I grouped content together and even now think I could combine some forms together and separate them from other sections to streamline the forms.
+		</p>
+		<p>
+			I'm not sure why but I decided to test out a new CSS framework (<a href="https://bulma.io/" target="_blank">Bulma.io</a>) to make this. I don't usually use them, prefering to make my own. I'd seen it used in a few tutorials and took a leap of faith and decided to use it. Since this version is more about arrangement and functionality versus a 1-1 design look. I wanted something to give me the ability to bring my ideas to life quickly. It's been working pretty well so far.
+		</p>
+	</div>
+	{# <div class="full-image">
+		<img src="http://victoriapugh.net/images/gallery/iag/iag-initialdesign.png" alt="">
+		<h2 class="quote">An early version hifi wireframe and the prototype created from it.</h2>
+	</div> #}
+	<div class="body">
+		<h3 class="subhead">Product Future</h3>
+		<p>
+			The ultimate goal is to make this in the Vue-CLI and then host it online. Test it out as a signup service and then push for something more personal for the users. Something that they can just boot up on their own machine and access the templates on their computer or on a local server in the office.
+		</p>
+		<p>
+			To that end the next steps are pretty straightforward. I'm sure more will come along the way but these are the few I've got on my mind right now.
+		</p>
+		<ul class="list">
+			<li class="incomplete">Get the templates to switch by using the dropdown menu.</li>
+			<li class="incomplete">Have the download HTML and Text-Only buttons work</li>
+			<li class="incomplete">An option to upload a template</li>
+			<li class="incomplete">Add State Management, so changes will be saved</li>
+			<li class="incomplete">Add in accounts, cause that seems useful in the long run</li>
+			<li class="incomplete">Look into incorporating some ESP's api</li>
+		</ul>
+	</div>
+	{# <div class="full-image">
+		<img src="http://toripugh.com/images/gallery/uniag/IAG-Results.jpg" alt="">
+		<h2 class="quote">There was a good spike of traffic before and during the event.</h2>
+	</div> #}
+</main>
+{% endblock %}
