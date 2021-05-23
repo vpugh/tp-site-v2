@@ -10,7 +10,7 @@ const Jumbotron = () => {
             style={{
               fontSize: 64,
               lineHeight: '72px',
-              fontWeight: '700',
+              fontWeight: '800',
               marginBottom: '.25rem',
             }}
           >
@@ -21,7 +21,7 @@ const Jumbotron = () => {
             solutions, building cool stuff, & designing amazing things. Striving
             to make things better than I found them.
           </h3>
-          <div>
+          <div className='jumbo-buttons'>
             <Link to='/work'>View My Work</Link>
             <Link to='/contact'>Contact Me</Link>
           </div>

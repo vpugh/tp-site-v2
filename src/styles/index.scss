@@ -17,7 +17,7 @@ body {
 // Utility styles
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1300px;
   box-sizing: border-box;
   margin: 40px auto;
   padding: 0 20px;
@@ -42,8 +42,11 @@ body {
 }
 
 .logo {
+  &:hover {
+    transition: opacity 300ms ease-in-out;
+    opacity: 0.5;
+  }
   font-weight: 900;
-  // color: #573300;
   color: var(--textColor);
   font-size: 32px;
   text-decoration: none;
@@ -58,6 +61,7 @@ body {
     color: var(--textColor);
     font-size: 18px;
     border-bottom: 3px solid transparent;
+    transition: 300ms ease-in-out;
     &:hover {
       // border-bottom-color: #573300;
       border-bottom-color: var(--textColor);
@@ -71,9 +75,31 @@ body {
   padding: 160px 0;
 }
 
+.jumbo-buttons {
+  margin-top: 53px;
+  & > a {
+    border: 2px solid var(--textColor);
+    border-radius: 6px;
+    padding: 12px 20px;
+    color: var(--textColor);
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 300ms ease-in-out;
+    &:hover {
+      background-color: var(--textColor);
+      color: #fff;
+    }
+    &:last-child {
+      margin-left: 20px;
+    }
+  }
+}
+
 .jumbo-text {
-  margin: 0 240px;
-  // @media (min-width: 1400px) {
-  //   margin: 0 400px;
-  // }
+  margin: 0 200px;
+  @media (min-width: 1600px) {
+    margin: 0 250px;
+  }
 }

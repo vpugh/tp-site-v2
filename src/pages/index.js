@@ -1,5 +1,6 @@
 import * as React from 'react';
-import Jumbotron from '../components/jumbotron';
+import Jumbotron from '../components/index/jumbotron';
+import WorkPreview from '../components/index/work-preview';
 import Layout from '../components/layout';
 
 const IndexPage = () => {
@@ -8,7 +9,9 @@ const IndexPage = () => {
       <Jumbotron />
       <Layout floatNav>
         <div className='container'>
-          <h1>Test Content</h1>
+          {/* Work Sample Portion */}
+          <WorkPreview />
+          {/* Blog Sample Portion */}
         </div>
       </Layout>
     </>
