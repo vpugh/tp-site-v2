@@ -1718,6 +1718,14 @@ var plugins = [{
     "mediaTypes": ["text/markdown", "text/x-markdown"],
     "root": "/Users/user/Documents/GitHub/tp-site-v2"
   }
+}, {
+  name: 'gatsby-plugin-google-fonts',
+  plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-google-fonts/gatsby-ssr */ "./node_modules/gatsby-plugin-google-fonts/gatsby-ssr.js"),
+  options: {
+    "plugins": [],
+    "fonts": ["nunito sans:400,700,900"],
+    "display": "swap"
+  }
 }]; // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
 //   {
@@ -2033,6 +2041,53 @@ HTML.propTypes = {
   preBodyComponents: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().array),
   body: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
   postBodyComponents: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().array)
+};
+
+/***/ }),
+
+/***/ "./node_modules/gatsby-plugin-google-fonts/gatsby-ssr.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/gatsby-plugin-google-fonts/gatsby-ssr.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+var format = function format(string) {
+  return string.split(' ').map(function (s) {
+    return s.replace(/^\w/, function (s) {
+      return s.toUpperCase();
+    });
+  }).join(' ');
+};
+
+var getFonts = function getFonts(options) {
+  return options.fonts.map(format).join('|').replace(/ /g, '+');
+};
+
+function getDisplay(options) {
+  return options.display ? '&display=' + options.display : '';
+}
+
+exports.onRenderBody = function (_ref, options) {
+  var setHeadComponents = _ref.setHeadComponents;
+  var link = 'https://fonts.googleapis.com/css?family=' + getFonts(options) + getDisplay(options);
+  setHeadComponents([_react2.default.createElement('link', {
+    key: 'fonts',
+    href: link,
+    rel: 'stylesheet'
+  })]);
 };
 
 /***/ }),

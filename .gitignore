@@ -5,7 +5,6 @@ dist/
 .vscode/
 assets/
 app.zip
-images/
 .cache
 fonts
 .DS_Store

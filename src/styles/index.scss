@@ -1,0 +1,79 @@
+:root {
+  --textColor: #000;
+  --jumbotronBg: #000;
+}
+
+html {
+  font-family: 'Nunito Sans', sans-serif;
+  color: var(--textColor);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+// Utility styles
+.container {
+  width: 100%;
+  max-width: 1280px;
+  box-sizing: border-box;
+  margin: 40px auto;
+  padding: 0 20px;
+  @media (min-width: 768px) {
+    padding: 0 80px;
+  }
+}
+
+// Header Navigation Styles
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-selector {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.logo {
+  font-weight: 900;
+  // color: #573300;
+  color: var(--textColor);
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.link-container {
+  a {
+    text-decoration: none;
+    margin-right: 36px;
+    // color: #573300;
+    color: var(--textColor);
+    font-size: 18px;
+    border-bottom: 3px solid transparent;
+    &:hover {
+      // border-bottom-color: #573300;
+      border-bottom-color: var(--textColor);
+    }
+  }
+}
+
+// jumbotron
+.jumbotron-bg {
+  background-color: var(--jumbotronBg);
+  padding: 160px 0;
+}
+
+.jumbo-text {
+  margin: 0 240px;
+  // @media (min-width: 1400px) {
+  //   margin: 0 400px;
+  // }
+}
