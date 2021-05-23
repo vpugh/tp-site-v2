@@ -6,9 +6,8 @@ dist/
 assets/
 app.zip
 images/
-prototype/
-Old
-eROI.njk
+.cache
 fonts
+.DS_Store
 *.html
 *.htaccess
