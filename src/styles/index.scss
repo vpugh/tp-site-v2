@@ -26,6 +26,25 @@ body {
   }
 }
 
+.button {
+  border: 2px solid var(--textColor);
+  border-radius: 6px;
+  padding: 10px 20px;
+  color: var(--textColor);
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 300ms ease-in-out;
+  &:hover {
+    background-color: var(--textColor);
+    color: #fff;
+  }
+  &:last-child {
+    margin-left: 20px;
+  }
+}
+
 // Header Navigation Styles
 
 .navigation {
@@ -101,5 +120,21 @@ body {
   margin: 0 200px;
   @media (min-width: 1600px) {
     margin: 0 250px;
+  }
+}
+
+// work page
+.body {
+  max-width: 750px;
+  margin: 200px auto 100px auto;
+  & img {
+    width: 100%;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 32px;
   }
 }
