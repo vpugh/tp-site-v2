@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Tori Pugh - UX/UI Developer',
+    siteUrl: `https://toripugh.com`,
+    title: 'Tori Pugh',
+    twitterUsername: '@teekatwo',
+    description: `A UX Engineer bumbling through tech, also known as a front end developer & UX designer. This is a place to showoff my work and ideas and writing about my experiences and my learning adventures.`,
   },
   plugins: [
     'gatsby-plugin-sass',
@@ -10,6 +13,18 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/tp-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
@@ -17,13 +32,20 @@ module.exports = {
       },
       __key: 'images',
     },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     name: 'pages',
+    //     path: './src/pages/',
+    //   },
+    //   __key: 'pages',
+    // },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'pages',
-        path: './src/pages/',
+        name: `work`,
+        path: './src/pages/work',
       },
-      __key: 'pages',
     },
     {
       resolve: `gatsby-plugin-google-fonts`,

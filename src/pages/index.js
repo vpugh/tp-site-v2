@@ -3,14 +3,15 @@ import Jumbotron from '../components/index/jumbotron';
 import WorkPreview from '../components/index/work-preview';
 import Layout from '../components/layout';
 import { graphql } from 'gatsby';
+import Seo from '../components/seo';
 
 const IndexPage = ({ data }) => {
   return (
     <>
+      <Seo title='UI/UX Designer &amp; Front End Developer' />
       <Jumbotron />
       <Layout floatNav>
         <div className='container'>
-          {/* Work Sample Portion */}
           <WorkPreview data={data} />
           {/* Blog Sample Portion */}
         </div>

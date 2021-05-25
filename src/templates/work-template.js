@@ -2,12 +2,14 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import Seo from '../components/seo';
 
 const WorkTemplate = ({ data }) => {
   const project = data.allMdx.edges[0].node.frontmatter;
   const body = data.allMdx.edges[0].node.body;
   return (
     <Layout>
+      <Seo title={`Work - ${project.title}`} />
       <div className='container'>
         <div
           className='work-jumbo'
