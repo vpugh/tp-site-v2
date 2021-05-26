@@ -18,7 +18,7 @@ const themePalette = {
 
 let root;
 
-if (typeof window !== undefined || window.document) {
+if (typeof window !== undefined || window?.document) {
   root = document.documentElement;
 }
 
