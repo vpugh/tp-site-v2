@@ -1,0 +1,166 @@
+---
+path: '/blog/intro-to-gatsby--getting-started'
+title: 'Intro to Gatsby - Getting Started'
+excerpt: 'First local development of Gatsby and some important info'
+tags: ['web development', 'gatsby', 'react', 'javascript', 'learning']
+cover_image: ../../images/compressed/david-iskander-iWTamkU5kiI-unsplash.jpg
+draft: false
+type: blog
+date: 2019-09-08
+---
+
+I'd been curious about Gatsby for awhile. I've heard about the **JAM**STACK (**J**avaScript, **A**PIs, and prerendered **M**arkup) and about static site generators for awhile. Having plenty of Gatsby courses saved on <a class="inline-link" title="egghead.io" href="https://egghead.io/" target="_blank" aria-label="Egghead.io - Screencast workshops for professional web developers." rel="noopener noreferrer">egghead.io</a> and I decided one day that a side project I was building might be a good candidate to use it. So, there was no better time to start then now.
+
+### Video Tutorials are great starting points
+
+I'm personally a fan of video tutorials, I'm a visual learner and I like watching people build things. I watched <a class="inline-link" aria-label="Build a Blog with React and Markdown from egghead.io" title="" href="" target="_blank" rel="noopener noreferrer"></a>[Build a Blog With React and Markdown](https://egghead.io/courses/build-a-blog-with-react-and-markdown-using-gatsby) and was just amazed at how straight forward and simple this all seemed. Having used Gatsby about a year ago, but with no experience in React. I was fairly confused how anything worked.
+
+Now I’m React trained and I think it’s time to give this another shot. After watching the Egghead series and a <a class="inline-link" aria-label="YouTube GatsbyJS Tutorials Series"  title="" href="" target="_blank" rel="noopener noreferrer"></a>[Youtube series](https://www.youtube.com/playlist?list=PLLnpHn493BHHfoINKLELxDch3uJlSapxg) to better understand how to use Gatsby. Also reading articles about how people should try and maintain their own blogs the decision was pretty clear. Make a blog! This would be the perfect way to get a controlled feel for Gatsby and make something that would be beneficial to me.
+
+### Using Gatsby CLI to develop a site
+
+This is one of the easiest setups I've encountered.
+
+<ul>
+<li>Install the CLI</li>
+<li>Create a new site</li>
+<li>Move into the newly created site folder</li>
+<li>Develop the Gatsby site</li>
+</ul>
+
+**Technical Directions:**
+Install the CLI by running `npm install -g gatsby-cli` in your terminal. Then run `gatsby new gatsby-site`, replacing 'gatsby-site' with the name you want your folder to be. After the folder is created, change directories to go the newly created folder. Then you can run `gatsby develop` and Gatsby will start a development server that hot-reloads and can be accessed at `localhost:8000`.
+
+After following these instructions your Gatsby site is up and running. This will feel familiar if you've done `create-react-app` for a basic React app. The way Gatsby is setup is very different from a React app and requires special handling.
+
+In Gatsby, there are two important files: `gatsby-config.js` and `gatsby-node.js`. Unlike a plain React site, these two files are the heart and soul of your site. The config is going to control your access to files and plugins and the node will control the creation of pages, among other things.
+
+### Gatsby-config.js
+
+This is where your site configuration, _surprise surprise_, for your site will be placed.
+
+The options that I used on this page were siteMetadata and plugins. There are a few more that I haven't made use of yet, <a class="inline-link" aria-label="GatsbyJS Docs for Configuration Options"  title="configuration options" href="https://www.gatsbyjs.org/docs/gatsby-config/#configuration-options" target="_blank" rel="noopener noreferrer">configuration options</a>
+
+#### siteMetadata
+
+```javascript
+  siteMetadata: {
+    title: `Tori Pugh`,
+    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    author: `@gatsbyjs`,
+    menuLinks: [
+      {
+        name: 'Work',
+        link: '/work'
+      },
+      {
+        name: 'About',
+        link: '/about'
+      },
+      {
+        name: 'Contact',
+        link: '/contact'
+      },
+      {
+        name: 'Blog',
+        link: '/blog'
+      }
+    ]
+  }
+```
+
+This is an object that will contain site wide data that you want to keep consistent. This would be the site name, menuLinks, or anything you'd use from one page to another.
+
+#### plugins
+
+```javascript
+plugins: [
+  `gatsby-transformer-json`,
+  `gatsby-plugin-react-helmet`,
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `project`,
+      path: `${__dirname}/src/data`,
+    },
+  },
+];
+```
+
+Plugins can either be only listed by name or some may take options. If it takes options, it will need to be in object form with a resolve being the listed name, followed by an options object.
+
+### Gatsby-node.js
+
+This is where usage of the Gatsby node APIs are expected. The most important part of the file that I learned was to create new pages during the build process with `createPages`.
+
+CreatePages works by taking a GraphQL schema and using that to reference and query some data. That queried data can be used in a function to create pages.
+
+```javascript
+  workPages: allMarkdownRemark(sort: {fields: frontmatter___role}, filter: {frontmatter: {client: {regex: ""}}}) {
+    edges {
+      node {
+        frontmatter {
+          title
+          path
+          client
+          github
+          draft
+          description
+          deliverable
+          role
+          project_description
+          url
+        }
+        html
+      }
+    }
+  }
+```
+
+This GraphQL query finds all my work projects and will return them in an array. I will then take this array and loop through it and create pages for each item in the array.
+
+```javascript
+res.data.workPages.edges.forEach(({ node }) => {
+  createPage({
+    path: node.frontmatter.path,
+    component: workTemplate,
+  });
+});
+```
+
+Resources:
+
+<a class="inline-link" aria-label="GatsbyJS Node APIs"  title="Gatsby Node APIs" href="https://www.gatsbyjs.org/docs/node-apis/" target="_blank" rel="noopener noreferrer">Gatsby Node APIs</a>
+
+<a class="inline-link" aria-label="GatsbyJS Tutorial Part Seven - Programmatically create pages from data"  title="Gatsby Tutorial Part Seven - Programmatically create pages from data" href="https://www.gatsbyjs.org/tutorial/part-seven/" target="_blank" rel="noopener noreferrer">Gatsby Tutorial Part Seven - Programmatically create pages from data</a>
+
+<a class="inline-link" aria-label="GatsbyJS Tutorials #5 - Building A Blog With Markdown Part 2"  title="GatsbyJS Tutorials #5 - Building A Blog With Markdown Part 2" href="https://www.youtube.com/watch?v=VxVKMJThh04&list=PLLnpHn493BHHfoINKLELxDch3uJlSapxg&index=5" target="_blank" rel="noopener noreferrer">GatsbyJS Tutorials #5 - Building A Blog With Markdown Part 2</a> - Should watch Part 1 to understand the foundations for this part.
+
+### The Page Folder
+
+Gatsby will automatically create a page for any React component created in the `src/pages` folder. After setup the initial pages should be - index.js, page-2.js, 404.js. If you change anything in these files it will make changes to the corresponding pages on the website and if you had a new React component a page will be automatically generated for it.
+
+Example new page. Create a new file `src/pages/about.js` with the following code.
+
+```javascript
+import React from 'react';
+const AboutPage = () => (
+  <main>
+    <h1>About the Author</h1>
+    <p>Welcome to my Gatsby site.</p>
+  </main>
+);
+export default AboutPage;
+```
+
+Something as simple as the code above would generate a new page in Gatsby. You could then go to `localhost:8000/about` and see your new page.
+
+<a class="inline-link" aria-label="GatsbyJS Docs for Creating Pages Automatically"  title="Creating Pages Automatically" href="https://www.gatsbyjs.org/docs/recipes/#creating-pages-automatically" target="_blank" rel="noopener noreferrer">Creating Pages Automatically</a>
+
+## Were do you go from here
+
+This is only scratching the barest minimum to get a functioning Gatsby site running locally. With an idea of what to do next, automatically or dynamically creating new pages; using data in some way with GraphQL; or using different plugins and options to change how your site/app will function, you can do whatever you want.
+
+I'm going to document more of my steps to create a working blog and the transitioning that blog over to incorporated into a full site.
+
+This is no way exhaustive, since I myself don't know all there is to know about Gatsby. I'm just sharing what I've done with my Gatsby experience.

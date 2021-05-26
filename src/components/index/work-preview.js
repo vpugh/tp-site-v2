@@ -1,21 +1,28 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const WorkPreview = ({ data }) => {
   return (
     <>
       <div className='work-preview-container'>
-        {data.allMdx.edges.map((x) => {
+        {data.edges.map((x) => {
           const frontm = x.node.frontmatter;
+          const image = getImage(frontm.cover_image);
           return (
             <Link to={frontm.path} key={frontm.title} className='work-link'>
-              <img
+              {/* <img
                 className='work-preview-image'
                 src={
                   frontm.cover_image.childImageSharp.gatsbyImageData.images
                     .fallback.src
                 }
                 alt={`${frontm.title} Screenshot`}
+              /> */}
+              <GatsbyImage
+                image={image}
+                alt={`${frontm.title} Screenshot`}
+                className='work-preview-image'
               />
               <div className='work-preview-text'>
                 <h4 className='work-preview-title'>{frontm.title}</h4>

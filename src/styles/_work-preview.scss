@@ -9,6 +9,14 @@
 
 .work-link {
   text-decoration: none;
+  &:hover {
+    .work-preview-image {
+      transform: scale(1.02);
+    }
+    .work-preview-text {
+      transform: translateY(-8px);
+    }
+  }
 }
 
 .work-preview-image {
@@ -17,9 +25,11 @@
   height: auto;
   color: #fff;
   width: 100%;
+  transition: 300ms ease-in-out;
 }
 
 .work-preview-text {
+  transition: 300ms ease-in-out;
   .work-preview-title {
     margin-bottom: 0;
     // font-size: 39px;

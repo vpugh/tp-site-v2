@@ -1,0 +1,185 @@
+---
+path: '/blog/building-a-pomodoro-timer-with-vuejs-on-codepen'
+title: 'Building a Pomodoro Timer with Vue.js on CodePen'
+excerpt: ''
+tags: ['web development', 'learning', 'frontend', 'vue']
+cover_image: ../../images/compressed/jan-antonin-kolar-ElqUw5iiXqM-unsplash.jpg
+draft: false
+type: blog
+date: 2018-05-31
+---
+
+I've been following the challenges on [Scotch.io](https://scotch.io) for awhile and saw one that I was really interesting in trying to make. It was a Pomodoro timer for the [Scotch.io Challenge #6](https://scotch.io/tutorials/code-challenge-6-build-a-pomodoro-timer). Always looking to test my skills I wanted to take a crack at this one.
+
+## Setup
+
+The setup was easy as there already was a [codepen](https://codepen.io/sevilayha/pen/QmEEmr) (below) with all the required html and css work done. With the major work ahead of me it was time to start working on the javascript portion of this challenge.
+
+[Vue Pomodoro Timer Scotch Challenge Base](https://codepen.io/chrisoncode/pen/QmEEmr)
+https://codepen.io/chrisoncode/pen/QmEEmr
+
+## First Steps
+
+The first thing I wanted to do was setup my data with all the variables I would need.
+
+```javascript
+data: {
+    message: 'Let the countdown begin!!',
+    timerRunning: false
+}
+```
+
+This just created the variable for my messaging, which would change depending on what state the timer is in, and the states to differentiate from the timer being active or being paused. These states would be crucial to creating my methods in relation to getting the timer to countdown.
+
+The methods came pretty naturally in reference to their connections with the buttons. I needed to attach a method to each button that would run on click. The requirement called for 4 buttons (Start, Pause, Resume, and Reset).
+
+The start button would turn on the countdown and make the `timerRunning: true`, since the timer would be running. The pause button would freeze the countdown and make the `timerRunning: false`. The resume button would turn the countdown back on at it's current time and pace while making `timerRunning: true`. Finally the reset button would set the countdown to it's starting number and make `timerRunning: false`.
+
+This is the original code for the methods relating to the functionality we just talked about. Including the changing of the message on the certain states.
+
+```javascript
+methods: {
+    timerRun() {
+      this.timerRunning = true;
+      this.message = 'Greatness is within sight!!!';
+    },
+    timerPause() {
+      this.message = 'Never quit, keep going!!';
+      this.timerRunning = false;
+    },
+    timerReset() {
+      this.message = 'Let the countdown begin!!';
+      this.timerRunning = false;
+    },
+    timerCountdown() {
+      this.timerRunning = true;
+    }
+  }
+```
+
+To change the message for certain steps I tied the methods, shown above, to the buttons, shown below, and this triggers different actions. Depending on what button was pressed it could say the timer is running, the timer is paused, the timer was reset, or the timer is running. With the variable of `timerRunning` changing in the scenarios that also would change which button configuration was being shown at the moment, with the v-if function. So, this took care of the functions of the buttons and it's time to actually get the timer working.
+
+```html
+<div class="buttons">
+  <button @click="timerRun" v-if="!timerRunning">Start</button>
+  <button @click="timerPause" v-if="timerRunning">Pause</button>
+  <button @click="timerReset" v-if="timerRunning">Restart</button>
+</div>
+```
+
+When I went to create the timer I realized I didn't really know how to code something counting down and didn't understand the basic principles to create a timer. To learn how this should work I took a quick deviation into making a clock.
+
+[Vue Clock Codepen](https://codepen.io/Vpugh/pen/MVpaxo)
+https://codepen.io/Vpugh/pen/MVpaxo
+
+I learned about using the milliseconds to base all the clock actions on, how to step through time, and display hours, minutes, seconds and milliseconds. From this side project I learned a lot about time management when it comes to going forward or backward through time.
+
+A major problem that I was having for the countdown timer was consistently moving through time. When I first created it, whenever the start/resume button was pressed after the initial start, the countdown would speed up incrementally for every time pressed. This was not the expected result and not conducive to something where you'd need to resume. After making this clock I realized a more consistent method of triggering the start of the timer.
+
+```javascript
+data {
+    interval: null
+},
+methods: {
+    timerRun() {
+      this.timerRunning = true;
+      this.message = 'Greatness is within sight!!!';
+      this.interval = setInterval(this.countdownTimer, 1000);
+    }
+    timerPause() {
+      this.message = 'Never quit, keep going!!';
+      this.timerRunning = false;
+      clearInterval(this.interval);
+    },
+    timerReset() {
+      this.message = 'Let the countdown begin!!';
+      this.timerRunning = false;
+      clearInterval( () => { this.interval; });
+    }
+}
+```
+
+This code was important to having a consistent movement in the countdown from initial run to any subsequent resumes. Now when the timer is started a new `this.interval` is started to countdown the timer. On a pause and reset that variable is cleared, which pauses the countdown and stops the variable from multiplying on top of each other.
+
+Getting the timer to countdown was a long road of understanding a lot of math, which I'm sadly very poor at. In the end I needed to break down the interpretation of time into — hours are 60*60*60, minutes are 60\*60 and milliseconds are 60. So you need to take the milliseconds and times up. (I apologize if I'm explaining this poorly, I'm horrible at math).
+
+Now the other problem with counting down, how not to go into negative numbers. With the explanation below this is the reason that the time doesn't become negative (it actually does but we don't show that).
+
+```javascript
+timerCountdown() {
+      this.timerRunning = true;
+      this.interval = setInterval(this.updateCurrentTime, 1000);
+      // Counts down from 60 seconds times 1000.
+      setInterval( () => {
+        this.timerMinutes--
+      }, 60 * 1000)
+
+      // Check if seconds at double zero and then make it a 59 to countdown from.
+      // need another method of checking the number while in the loop and then adding a zero on the number under 10
+      if(this.timerSeconds === '00'){
+        this.timerSeconds = 59;
+        setInterval( () => {
+          this.timerSeconds--
+        }, 1000);
+      } else {
+        setInterval( () => {
+          this.timerSeconds--
+        }, 1000);
+      }
+    },
+```
+
+> It does go into negatives in his solution. You could include a simple check if time <= 0 to reset and stop the timer. And how it stays in 60 seconds is just maths. He converts the rounded minutes into seconds and subtracts them from the total time (in seconds). So what will be left are seconds between 0 and 60.
+> This could be shortened and cleared up using modulo.
+> `this.totalTime % 60`
+> This will always leave the remainder of a number 0 - 60.
+> Thanks to Zammy13 for [answering my question](https://scotch.io/bar-talk/build-a-pomodoro-timer-with-vuejs-solution-to-code-challenge-6#passing-timer-variables-and-methods-to-the-dom)
+
+The breakdown of the [modulo](https://en.wikipedia.org/wiki/Modulo_operation) (Remainder %).
+[twitter](https://twitter.com/pixelambacht/status/976186607794520065)
+
+For my timer I wanted 25 minutes, so I used this instead `totalTime: (25 * 60)`. This equals the total amount of time (25 minutes) times 60 which equals the amount in seconds. The totalTime is then 1500 in seconds.
+
+```javascript
+computed: {
+     time: function() {
+      return this.minutes + " : " + this.seconds;
+    },
+    hours: function() {
+      var milli = this.milliseconds;
+      // var hrs = new Date().getHours();
+      // Used getHours() since the below didn't work for me
+      var hrs = Math.floor((milli / 3600000) % 24);
+      if (hrs >= 13) { hrs = hrs - 12 }
+      return hrs >= 10 ? hrs : '0' + hrs;
+    },
+    minutes: function() {
+      var min = Math.floor(this.totalTime / 60);
+      return min >= 10 ? min : '0' + min;
+    },
+    seconds: function() {
+      var sec = this.totalTime - (this.minutes * 60);
+      return sec >= 10 ? sec : '0' + sec;
+    }
+  }
+```
+
+The final step was to make sure that your timer knew it was counting down. Which is probably the easiest part of this whole thing, just checking that the variable `timerRunning == true` and then removing a millisecond.
+
+```javascript
+countdownTimer() {
+      if (this.timerRunning == true) {
+          this.totalTime--;
+      }
+    }
+```
+
+## End
+
+It was a long road and a lot more work than I thought it was going to be. In the end I made something that is basic and can't wait to make something with all the bells and whistles. Something to tell you where you are in the pomodoro technique and something to make it visually more fun.
+
+The final codePen for the challenge
+[Vue Pomodoro Timer - Scotch.io Challenge](https://codepen.io/Vpugh/pen/VXPrXg)
+https://codepen.io/Vpugh/pen/VXPrXg
+
+This codepen has a lot of problems, including an accelerated countdown. I fixed this in my personal version of the timer. This was done to reach a goal and that was the challenge due date. There will be a part two of my own advanced timer.
