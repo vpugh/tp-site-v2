@@ -21,7 +21,7 @@ const useThemePage = () => {
   let root;
 
   if (typeof window !== undefined || window?.document) {
-    root = document.documentElement;
+    root = window?.document?.documentElement;
   }
   React.useEffect(() => {
     const savedTheme = window.localStorage.getItem("siteColor");
@@ -31,7 +31,7 @@ const useThemePage = () => {
     if (!savedTheme && !currentTheme) {
       setCurrentTheme("Orange");
       window.localStorage.setItem("siteColor", currentTheme);
-      document.body.style.backgroundColor = themePalette[currentTheme];
+      window.document.body.style.backgroundColor = themePalette[currentTheme];
       root.style.setProperty(
         "--textColor",
         themePalette.textColors[currentTheme]
@@ -44,7 +44,7 @@ const useThemePage = () => {
     if (currentTheme) {
       setCurrentTheme(currentTheme);
       window.localStorage.setItem("siteColor", currentTheme);
-      document.body.style.backgroundColor = themePalette[currentTheme];
+      window.document.body.style.backgroundColor = themePalette[currentTheme];
       root.style.setProperty(
         "--textColor",
         themePalette.textColors[currentTheme]
