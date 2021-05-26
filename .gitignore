@@ -6,6 +6,8 @@ dist/
 assets/
 app.zip
 .cache
+.cache/
+public
 fonts
 .DS_Store
 *.html

@@ -11,7 +11,6 @@ const Layout = ({ children, floatNav }) => {
     <>
       <Header floatNav={floatNav} />
       <main>{children}</main>
-      {/* <FooterCTA /> */}
       <Footer />
     </>
   );

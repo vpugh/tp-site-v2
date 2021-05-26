@@ -1,0 +1,17 @@
+// work page
+.body {
+  max-width: 750px;
+  margin: 200px auto 100px auto;
+  & img {
+    width: 100%;
+  }
+  h3 {
+    font-size: 28px;
+    margin-bottom: .5rem;
+  }
+  p {
+    font-size: 20px;
+    line-height: 32px;
+    margin-top: 0;
+  }
+}

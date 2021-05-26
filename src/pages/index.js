@@ -33,9 +33,7 @@ export const indexQuery = graphql`
             path
             cover_image {
               childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(layout: FIXED)
               }
             }
           }

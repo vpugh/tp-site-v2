@@ -16,7 +16,8 @@ const WorkTemplate = ({ data }) => {
           style={{
             display: 'flex',
             justifyContent: 'space-between',
-            alignItems: 'center',
+            alignItems: 'flex-end',
+            margin: '0 110px',
           }}
         >
           <div style={{ width: 530 }}>
@@ -66,7 +67,7 @@ const WorkTemplate = ({ data }) => {
           </div>
           <div>
             <img
-              style={{ maxWidth: 516, height: 'auto' }}
+              style={{ maxWidth: 516, height: 'auto', marginBottom: 20 }}
               src={project.laptop_image}
               alt='mock-laptop'
             />

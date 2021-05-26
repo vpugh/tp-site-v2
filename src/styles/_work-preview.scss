@@ -1,0 +1,37 @@
+// work preview
+
+.work-preview-container {
+  display: grid;
+  grid-template: auto/repeat(2, 1fr);
+  gap: 100px;
+  margin-top: 80px;
+}
+
+.work-link {
+  text-decoration: none;
+}
+
+.work-preview-image {
+  background-color: #000;
+  max-width: 600px;
+  height: auto;
+  color: #fff;
+  width: 100%;
+}
+
+.work-preview-text {
+  .work-preview-title {
+    margin-bottom: 0;
+    // font-size: 39px;
+    font-size: 28px;
+    // line-height: 48px;
+    line-height: 32px;
+    color: var(--textColor);
+  }
+  .work-preview-description {
+    font-size: 20px;
+    line-height: 32px;
+    color: var(--textColor);
+    width: 80%;
+  }
+}

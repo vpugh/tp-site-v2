@@ -23,7 +23,9 @@ const Jumbotron = () => {
           </h3>
           <div className='jumbo-buttons'>
             <Link to='/work'>View My Work</Link>
-            <Link to='/contact'>Contact Me</Link>
+            <Link to='/contact' className='highlighted-btn'>
+              Contact Me
+            </Link>
           </div>
         </div>
       </div>

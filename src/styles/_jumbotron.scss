@@ -1,0 +1,49 @@
+// jumbotron
+.jumbotron-bg {
+  background-color: var(--jumbotronBg);
+  padding: 160px 0;
+}
+
+.jumbo-buttons {
+  margin-top: 53px;
+  & .highlighted-btn {
+    border: 2px solid var(--textColor);
+    background-color: var(--textColor);
+    border-radius: 6px;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 300ms ease-in-out;
+    &:hover {
+      opacity: 0.8
+    }
+  }
+  & > a {
+    border: 2px solid var(--textColor);
+    border-radius: 6px;
+    padding: 12px 20px;
+    color: var(--textColor);
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 300ms ease-in-out;
+    &:hover {
+      background-color: var(--textColor);
+      color: #fff;
+    }
+    &:last-child {
+      margin-left: 20px;
+    }
+  }
+}
+
+.jumbo-text {
+  margin: 0 240px;
+  @media (min-width: 1600px) {
+    margin: 0 300px;
+  }
+}

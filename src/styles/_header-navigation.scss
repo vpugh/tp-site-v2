@@ -1,0 +1,42 @@
+// Header Navigation Styles
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-selector {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.logo {
+  &:hover {
+    transition: opacity 300ms ease-in-out;
+    opacity: 0.5;
+  }
+  font-weight: 900;
+  color: var(--textColor);
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.link-container {
+  a {
+    text-decoration: none;
+    margin-right: 36px;
+    // color: #573300;
+    color: var(--textColor);
+    font-size: 18px;
+    border-bottom: 3px solid transparent;
+    transition: 300ms ease-in-out;
+    &:hover {
+      // border-bottom-color: #573300;
+      border-bottom-color: var(--textColor);
+    }
+  }
+}
