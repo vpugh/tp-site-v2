@@ -16,15 +16,13 @@ const themePalette = {
   },
 };
 
-let root;
-
-if (typeof window !== undefined || window?.document) {
-  root = document.documentElement;
-}
-
 const useThemePage = () => {
   const [currentTheme, setCurrentTheme] = React.useState();
+  let root;
 
+  if (typeof window !== undefined || window?.document) {
+    root = document.documentElement;
+  }
   React.useEffect(() => {
     const savedTheme = window.localStorage.getItem("siteColor");
     if (savedTheme) {
