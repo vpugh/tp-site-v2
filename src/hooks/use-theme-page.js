@@ -1,58 +1,69 @@
-import React from "react";
+import React from 'react';
 
 const themePalette = {
-  Orange: "#FFE6C2",
-  Blue: "#B3EEFF",
-  Green: "#DFF0CC",
+  Orange: '#FFE6C2',
+  Blue: '#B3EEFF',
+  Green: '#DFF0CC',
   textColors: {
-    Orange: "#573300",
-    Blue: "#003C4D",
-    Green: "#2D4314",
+    Orange: '#573300',
+    Blue: '#003C4D',
+    Green: '#2D4314',
   },
   jumboBg: {
-    Orange: "#FFA119",
-    Green: "#96CD56",
-    Blue: "#19CDFF",
+    Orange: '#FFA119',
+    Green: '#96CD56',
+    Blue: '#19CDFF',
   },
 };
 
+const isBrowser = () => typeof window !== 'undefined';
+
+let root;
+
+root = isBrowser() ? window?.document?.documentElement : null;
+
 const useThemePage = () => {
   const [currentTheme, setCurrentTheme] = React.useState();
-  let root;
-
-  if (typeof window !== undefined || window?.document) {
-    root = window?.document?.documentElement;
-  }
   React.useEffect(() => {
-    const savedTheme = window.localStorage.getItem("siteColor");
+    const savedTheme = isBrowser()
+      ? window.localStorage.getItem('siteColor')
+      : null;
     if (savedTheme) {
       setCurrentTheme(savedTheme);
     }
     if (!savedTheme && !currentTheme) {
-      setCurrentTheme("Orange");
-      window.localStorage.setItem("siteColor", currentTheme);
-      window.document.body.style.backgroundColor = themePalette[currentTheme];
-      root.style.setProperty(
-        "--textColor",
-        themePalette.textColors[currentTheme]
-      );
-      root.style.setProperty(
-        "--jumbotronBg",
-        themePalette.jumboBg[currentTheme]
-      );
+      setCurrentTheme('Orange');
+      isBrowser() && window.localStorage.setItem('siteColor', currentTheme);
+      isBrowser() &&
+        (window.document.body.style.backgroundColor =
+          themePalette[currentTheme]);
+      isBrowser() &&
+        root.style.setProperty(
+          '--textColor',
+          themePalette.textColors[currentTheme]
+        );
+      isBrowser() &&
+        root.style.setProperty(
+          '--jumbotronBg',
+          themePalette.jumboBg[currentTheme]
+        );
     }
     if (currentTheme) {
       setCurrentTheme(currentTheme);
-      window.localStorage.setItem("siteColor", currentTheme);
-      window.document.body.style.backgroundColor = themePalette[currentTheme];
-      root.style.setProperty(
-        "--textColor",
-        themePalette.textColors[currentTheme]
-      );
-      root.style.setProperty(
-        "--jumbotronBg",
-        themePalette.jumboBg[currentTheme]
-      );
+      isBrowser() && window.localStorage.setItem('siteColor', currentTheme);
+      isBrowser() &&
+        (window.document.body.style.backgroundColor =
+          themePalette[currentTheme]);
+      isBrowser() &&
+        root.style.setProperty(
+          '--textColor',
+          themePalette.textColors[currentTheme]
+        );
+      isBrowser() &&
+        root.style.setProperty(
+          '--jumbotronBg',
+          themePalette.jumboBg[currentTheme]
+        );
     }
   }, [currentTheme]);
 
