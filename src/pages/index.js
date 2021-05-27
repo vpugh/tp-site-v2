@@ -42,7 +42,7 @@ export const indexQuery = graphql`
                   height: 592
                   placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
-                  transformOptions: { fit: COVER, cropFocus: ATTENTION }
+                  transformOptions: { fit: OUTSIDE }
                 )
               }
             }

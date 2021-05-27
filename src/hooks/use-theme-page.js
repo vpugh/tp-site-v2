@@ -25,11 +25,11 @@ root = isBrowser() ? window?.document?.documentElement : null;
 const useThemePage = () => {
   const [currentTheme, setCurrentTheme] = React.useState();
   React.useEffect(() => {
-    const savedTheme = isBrowser()
-      ? window.localStorage.getItem('siteColor')
-      : null;
-    if (savedTheme) {
+    let savedTheme =
+      (isBrowser() && window.localStorage.getItem('siteColor')) || undefined;
+    if (savedTheme && !currentTheme) {
       setCurrentTheme(savedTheme);
+      savedTheme = undefined;
     }
     if (!savedTheme && !currentTheme) {
       setCurrentTheme('Orange');

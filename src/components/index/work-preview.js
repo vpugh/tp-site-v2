@@ -11,14 +11,6 @@ const WorkPreview = ({ data }) => {
           const image = getImage(frontm.cover_image);
           return (
             <Link to={frontm.path} key={frontm.title} className='work-link'>
-              {/* <img
-                className='work-preview-image'
-                src={
-                  frontm.cover_image.childImageSharp.gatsbyImageData.images
-                    .fallback.src
-                }
-                alt={`${frontm.title} Screenshot`}
-              /> */}
               <GatsbyImage
                 image={image}
                 alt={`${frontm.title} Screenshot`}
