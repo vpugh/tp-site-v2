@@ -9,7 +9,10 @@ const WorkTemplate = ({ data }) => {
   const body = data.allMdx.edges[0].node.body;
   return (
     <Layout>
-      <Seo title={`Work - ${project.title}`} />
+      <Seo
+        title={`Work - ${project.title}`}
+        description={project.description}
+      />
       <div className='container'>
         <div
           className='work-jumbo'

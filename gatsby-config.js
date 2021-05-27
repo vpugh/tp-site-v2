@@ -4,6 +4,7 @@ module.exports = {
     title: 'Tori Pugh',
     twitterUsername: '@teekatwo',
     description: `A UX Engineer bumbling through tech, also known as a front end developer & UX designer. This is a place to showoff my work and ideas and writing about my experiences and my learning adventures.`,
+    author: 'Tori Pugh',
   },
   plugins: [
     'gatsby-plugin-sass',
@@ -15,7 +16,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `Tori Pugh's UX/UI Developer Site`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
@@ -32,14 +33,6 @@ module.exports = {
       },
       __key: 'images',
     },
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     name: 'pages',
-    //     path: './src/pages/',
-    //   },
-    //   __key: 'pages',
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -11,7 +11,7 @@ const BlogTemplate = ({ data }) => {
   const image = getImage(post.cover_image);
   return (
     <Layout>
-      <Seo title={`Blog - ${post.title}`} />
+      <Seo title={`Blog - ${post.title}`} description={post.excerpt} />
       <div className='container'>
         <div style={{ margin: '80px auto 0 auto', textAlign: 'center' }}>
           <GatsbyImage image={image} alt='trshtr' />

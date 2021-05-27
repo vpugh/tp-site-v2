@@ -11,6 +11,7 @@ function Seo({ description, lang, meta, title }) {
           siteMetadata {
             title
             description
+            author
           }
         }
       }
