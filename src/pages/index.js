@@ -26,6 +26,7 @@ export default IndexPage;
 export const indexQuery = graphql`
   {
     allMdx(
+      limit: 6
       filter: { frontmatter: { type: { regex: "", eq: "work" } } }
       sort: { fields: frontmatter___order }
     ) {
