@@ -2,11 +2,20 @@
 
 .navigation {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .theme-selector {
+  @media (max-width: 480px) {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
   border: 1px solid rgba(0, 0, 0, 0.3);
   background-color: transparent;
   border-radius: 6px;
@@ -17,6 +26,9 @@
   &:hover {
     transition: opacity 300ms ease-in-out;
     opacity: 0.5;
+  }
+  @media (max-width: 480px) {
+    margin-bottom: 20px;
   }
   font-weight: 900;
   color: var(--textColor);

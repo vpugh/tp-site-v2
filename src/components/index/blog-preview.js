@@ -4,15 +4,7 @@ import React from 'react';
 
 const BlogPreview = ({ data }) => {
   return (
-    <div
-      style={{
-        display: 'grid',
-        gridTemplate: 'auto/repeat(3,1fr)',
-        marginTop: 160,
-        gap: 20,
-        rowGap: 116,
-      }}
-    >
+    <div className='blog-preview-container'>
       {data.edges.map((blogData) => {
         const frontmatter = blogData.node.frontmatter;
         const image = getImage(frontmatter.cover_image);

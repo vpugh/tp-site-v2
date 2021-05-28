@@ -1,17 +1,27 @@
 .footer-container {
   display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    margin-top: 180px;
+  }
   justify-content: space-between;
   align-items: top;
-  margin-top: 180px;
   border-top: 1px solid;
   padding-bottom: 80px;
 }
 
 .footer-cta {
-  width: 530px;
+  @media (min-width: 1200px) {
+    width: 530px;
+  }
   .cta-title {
-    font-size: 73px;
-    line-height: 80px;
+    font-size: 48px;
+    @media (min-width: 1200px) {
+      font-size: 73px;
+      line-height: 80px;
+    }
     margin-bottom: 0;
     font-weight: 800;
   }
@@ -28,7 +38,9 @@
 .footer-social-title {
   font-size: 20px;
   line-height: 32px;
-  margin-top: 83px;
+  @media (min-width: 1200px) {
+    margin-top: 83px;
+  }
 }
 
 .footer-social {

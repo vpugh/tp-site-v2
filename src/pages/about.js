@@ -10,53 +10,55 @@ const AboutPage = ({ data }) => {
     <Layout>
       <Seo title='About Me' />
       <div className='container'>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div className='about-hero-container'>
           <GatsbyImage
             alt='Picture of Tori Pugh'
             image={file.childrenImageSharp[0].gatsbyImageData}
           />
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              maxWidth: 550,
-              marginLeft: 48,
-            }}
-          >
-            <h3
-              style={{
-                fontSize: 48,
-                lineHeight: '50px',
-                margin: 0,
-                fontWeight: '800',
-              }}
-            >
+          <div className='about-hero-text'>
+            <h3 className='about-hero-title'>
               Driven by curiosity and a desire to make things work better.
             </h3>
-            <p style={{ fontSize: 24 }}>
+            <p className='about-hero-subheader'>
               I listen to understand a problem, do research to identify and/or
               confirm it, and then create solutions for them.
             </p>
-            <div className='button'>My Resume</div>
+            <a className='button' href='../tpr.pdf' download='tori-pugh-resume'>
+              Download Resume
+            </a>
           </div>
         </div>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            marginTop: 60,
-          }}
-        >
-          <div style={{ maxWidth: 675 }}>
+        <div className='about-main'>
+          <div>
             <div className='about-main-body'>
               <h2>Overview</h2>
               <p>
+                I'm a naturally curious person who thrives on knowing how
+                everything works. This attitude is especially helpful in the
+                design and development world. I ask a lot of questions, do
+                extensive research, and consider all aspects of what I'm making
+                and who I'm making it for. The more knowledge at my fingertips,
+                the better solution I can make.
+              </p>
+              <p>
+                The changing world of tech, makes a person who constantly learns
+                (me!) very happy. I'm quite adaptable to using any tech,
+                workflow, strategies, etc. If someone is willing to educate me
+                or there is some method of self-learning, I'll be able to pick
+                it up since I can learn new things at amazing speeds. I take
+                great enjoyment in trying to find more efficient ways to create
+                things and upcoming technologies. I’m always looking to expand
+                my knowledge through online learning, classes, going to
+                conferences, or reading articles.
+              </p>
+            </div>
+            <div className='about-main-body'>
+              <h2>My Process</h2>
+              <p>
                 I’m a UI/UX developer who is passionate about creating products
-                that puts the users first. I want to make products that run
-                better and are easier for the user. I've had varied involvement
-                as a visual designer, front-end developer, or email developer. I
-                think there should always be an aspect of user-experience
-                understanding in design, development, or email creation.
+                that puts the users first. I want to make products work better
+                and easier to use. I've worked in different capacities as a
+                visual designer, front-end developer, and email developer.
               </p>
               <p>
                 The idea — “design is more then making it pretty” — is my
@@ -67,39 +69,38 @@ const AboutPage = ({ data }) => {
                 rewarding.
               </p>
               <p>
-                My greatest asset is my eternal passion for learning, due in
-                part to my constant curiosity. I can learn new things at amazing
-                speeds. I take great enjoyment in trying to find more efficient
-                ways to create things and upcoming technologies. I’m always
-                looking to expand my knowledge through online learning, classes,
-                going to conferences, or reading articles.
+                In code creation, I strive for readable, clean, and efficient
+                code. I'm a firm believer in breaking down the pieces as much as
+                I can to keep everything clear and unmuddled. It creates more
+                files but then those files are just doing one thing.
               </p>
             </div>
             <div className='about-main-body'>
-              <h2>Work</h2>
+              <h2>Free Time</h2>
               <p>
-                I'm currently employed at Holman Enterprises, were we are
-                building innovative products for the automotive industry.
-              </p>
-            </div>
-            <div className='about-main-body'>
-              <h2>My Life</h2>
-              <p>
-                I share and interact on Twitter; get inspired and showcase a job
-                on Dribbble; tinker and learn new code on Codepen; work on side
-                projects on Github; and write when I can on Medium or Dev.to.
+                When I've done something worth talking about I like to blog
+                about new technology I've tried or problems I've run into with a
+                project. I've got a few side projects that I've been working on.
+                It helps me use new tech and brush up on my skills in a fairly
+                forgiving environment.
               </p>
               <p>
-                In my free time I spread my attention across many medias. I'm
-                extremely behind on viewing great Netflix shows. I'm an avid
-                reader with a ever-growing backlog of books, I keep buying but
-                don't read them. Trying to get through my game collection for
-                the PS4, currently heavily involved in Assassin's Creed
-                Valhalla, Breath of the Wild.
+                Before I make my side projects, I sit down and plan out the
+                structure and definetly decide on the design. Some fancy designs
+                change drastically when put the test of being accessible and
+                user-friendly.
+              </p>
+              <p>
+                Non-computer related activites are vast, I spread my attention
+                across many medias. I'm extremely behind on viewing great
+                Netflix shows. I'm an avid reader with a ever-growing backlog of
+                books, I keep buying but don't read them. Trying to get through
+                my game collection for the PS4 and Switch, currently heavily
+                involved in Assassin's Creed Valhalla, Breath of the Wild.
               </p>
             </div>
           </div>
-          <div className='about-sidebar' style={{ maxWidth: 400 }}>
+          <div className='about-sidebar'>
             <div className='divided-sections'>
               <h2>Work</h2>
               <div>

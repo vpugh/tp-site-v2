@@ -2,8 +2,11 @@
 
 .work-preview-container {
   display: grid;
-  grid-template: auto/repeat(2, 1fr);
-  gap: 100px;
+  @media (min-width: 1200px) {
+    grid-template: auto/repeat(2, 1fr);
+    gap: 100px;
+  }
+  gap: 40px;
   margin-top: 80px;
 }
 

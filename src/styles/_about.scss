@@ -1,5 +1,50 @@
 $textColor: #000;
 
+.about-hero-container {
+    @media(min-width: 1200px) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.about-hero-text {
+    @media (max-width: 480px) {
+        margin-top: 30px;
+    }
+    @media(min-width: 1200px) {
+    display: flex;
+    flex-direction:  column;
+    max-width: 550px;
+    margin-left: 48px;
+    align-items: flex-start;
+    }
+}
+
+.about-hero-title {
+    font-size: 48px;
+    line-height: 50px;
+    margin: 0;
+    font-weight: 800;
+}
+
+.about-hero-subheader {
+    font-size: 24px;
+}
+
+.about-main {
+    margin-top: 60px;
+    @media(min-width: 1200px) {
+    display: flex;
+    justify-content: space-between;
+    & > div:nth-child(1) {
+        max-width: 675px;
+    }
+    & > div:nth-child(2) {
+        max-width: 400px;
+    }
+}
+}
+
 .about-main-body {
     h2 {
         margin-bottom: .5rem;
@@ -12,6 +57,9 @@ $textColor: #000;
 }
 
 .about-sidebar {
+    @media (max-width: 480px) {
+        font-size: 18px;
+    }
     h2 {
         margin-bottom: .5rem;
         margin-top: 32px;
