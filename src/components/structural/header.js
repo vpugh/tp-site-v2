@@ -6,6 +6,7 @@ const Header = (props) => {
   const { floatNav } = props;
   const logoText = 'Tori Pugh';
   const { currentTheme, setCurrentTheme } = useThemePage();
+  const activeStyle = { borderBottomColor: 'var(--textColor)' };
 
   return (
     <header
@@ -18,10 +19,18 @@ const Header = (props) => {
         {logoText}
       </Link>
       <nav className='link-container'>
-        <Link to='/work'>Work</Link>
-        <Link to='/about'>About</Link>
-        <Link to='/blog'>Blog</Link>
-        <Link to='/contact'>Contact</Link>
+        <Link to='/work' activeStyle={activeStyle}>
+          Work
+        </Link>
+        <Link to='/about' activeStyle={activeStyle}>
+          About
+        </Link>
+        <Link to='/blog' activeStyle={activeStyle}>
+          Blog
+        </Link>
+        <Link to='/contact' activeStyle={activeStyle}>
+          Contact
+        </Link>
         <select
           className='theme-selector'
           value={currentTheme}
