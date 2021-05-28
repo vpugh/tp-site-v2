@@ -1,6 +1,7 @@
 // jumbotron
 .jumbotron-bg {
   background-color: var(--jumbotronBg);
+  background: linear-gradient(180deg, var(--jumbotronBg) 0%, var(--jumbotronBg) 82%, var(--pageBgColor) 100%);
   padding: 160px 0;
 }
 
@@ -66,4 +67,48 @@
   @media (min-width: 1600px) {
     margin: 0 300px;
   }
+  h2 {
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 1s; /* Firefox < 16 */
+      -ms-animation: fadein 1s; /* Internet Explorer */
+       -o-animation: fadein 1s; /* Opera < 12.1 */
+          animation: fadein 1s;
+  }
+  h3 {
+    -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 1.5s; /* Firefox < 16 */
+      -ms-animation: fadein 1.5s; /* Internet Explorer */
+       -o-animation: fadein 1.5s; /* Opera < 12.1 */
+          animation: fadein 1.5s;
+  }
+  div {
+    -webkit-animation: fadein 2.4s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 2.4s; /* Firefox < 16 */
+      -ms-animation: fadein 2.4s; /* Internet Explorer */
+       -o-animation: fadein 2.4s; /* Opera < 12.1 */
+          animation: fadein 2.4s;
+  }
+}
+
+@keyframes fadein {
+  from {transform: translateY(100px); opacity: 0;}
+  to { transform: translateY(0); opacity: 1;}
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {transform: translateY(100px); opacity: 0;}
+  to { transform: translateY(0); opacity: 1;}
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {transform: translateY(100px); opacity: 0;}
+  to { transform: translateY(0); opacity: 1;}
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {transform: translateY(100px); opacity: 0;}
+  to { transform: translateY(0); opacity: 1;}
 }

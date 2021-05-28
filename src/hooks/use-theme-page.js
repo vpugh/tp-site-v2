@@ -38,8 +38,9 @@ const useThemePage = () => {
       setCurrentTheme('Orange');
       isBrowser() && window.localStorage.setItem('siteColor', currentTheme);
       isBrowser() &&
-        (window.document.body.style.backgroundColor =
-          themePalette[currentTheme]);
+        // (window.document.body.style.backgroundColor =
+        //   themePalette[currentTheme]);
+        root.style.setProperty('--pageBgColor', themePalette[currentTheme]);
       isBrowser() &&
         root.style.setProperty(
           '--textColor',
@@ -55,8 +56,9 @@ const useThemePage = () => {
       setCurrentTheme(currentTheme);
       isBrowser() && window.localStorage.setItem('siteColor', currentTheme);
       isBrowser() &&
-        (window.document.body.style.backgroundColor =
-          themePalette[currentTheme]);
+        // (window.document.body.style.backgroundColor =
+        //   themePalette[currentTheme]);
+        root.style.setProperty('--pageBgColor', themePalette[currentTheme]);
       isBrowser() &&
         root.style.setProperty(
           '--textColor',

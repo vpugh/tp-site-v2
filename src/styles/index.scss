@@ -1,6 +1,7 @@
 :root {
   --textColor: #000;
   --jumbotronBg: #000;
+  --pageBgColor: #000;
 }
 
 html {
@@ -11,6 +12,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  background: var(--pageBgColor);
 }
 
 // Utility styles

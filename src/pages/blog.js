@@ -3,12 +3,14 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import BlogPreview from '../components/index/blog-preview';
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ data, titleSection }) => {
   return (
     <Layout>
       <div className='container'>
-        <h2>Latest Articles & Mental Musings</h2>
-        <BlogPreview data={data.allMdx} />
+        <div style={{ marginTop: 80 }}>
+          <h2>Latest Articles & Mental Musings</h2>
+          <BlogPreview data={data.allMdx} />
+        </div>
       </div>
     </Layout>
   );

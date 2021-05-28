@@ -2,10 +2,16 @@ import { Link } from 'gatsby';
 import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-const WorkPreview = ({ data }) => {
+const WorkPreview = ({ data, page }) => {
   return (
     <>
-      <div className='work-preview-container'>
+      <div
+        className={
+          page === 'home'
+            ? 'work-preview-container fade-in'
+            : 'work-preview-container'
+        }
+      >
         {data.edges.map((x) => {
           const frontm = x.node.frontmatter;
           const image = getImage(frontm.cover_image);

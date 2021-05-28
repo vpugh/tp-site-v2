@@ -13,8 +13,8 @@ const IndexPage = ({ data }) => {
       <Jumbotron />
       <Layout floatNav>
         <div className='container'>
-          <WorkPreview data={data.allMdx} />
-          <BlogPreview data={data.blog} />
+          <WorkPreview data={data.allMdx} page='home' />
+          <BlogPreview data={data.blog} displayHeader />
         </div>
       </Layout>
     </>
