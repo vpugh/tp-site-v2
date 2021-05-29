@@ -14,6 +14,16 @@ const themePalette = {
     Green: '#96CD56',
     Blue: '#19CDFF',
   },
+  buttonBg: {
+    Orange: '#995900',
+    Blue: '#006C8A',
+    Green: '#476A20',
+  },
+  buttonBorderBg: {
+    Orange: '#8A5000',
+    Blue: '#005870',
+    Green: '#3F5E1C',
+  },
 };
 
 const isBrowser = () => typeof window !== 'undefined';
@@ -32,14 +42,11 @@ const useThemePage = () => {
     }
     if (savedTheme && !currentTheme) {
       setCurrentTheme(savedTheme);
-      // savedTheme = undefined;
     }
     if (!savedTheme && !currentTheme) {
       setCurrentTheme('Orange');
       isBrowser() && window.localStorage.setItem('siteColor', currentTheme);
       isBrowser() &&
-        // (window.document.body.style.backgroundColor =
-        //   themePalette[currentTheme]);
         root.style.setProperty('--pageBgColor', themePalette[currentTheme]);
       isBrowser() &&
         root.style.setProperty(
@@ -50,14 +57,22 @@ const useThemePage = () => {
         root.style.setProperty(
           '--jumbotronBg',
           themePalette.jumboBg[currentTheme]
+        );
+      isBrowser() &&
+        root.style.setProperty(
+          '--buttonBg',
+          themePalette.buttonBg[currentTheme]
+        );
+      isBrowser() &&
+        root.style.setProperty(
+          '--buttonBorderBg',
+          themePalette.buttonBorderBg[currentTheme]
         );
     }
     if (currentTheme) {
       setCurrentTheme(currentTheme);
       isBrowser() && window.localStorage.setItem('siteColor', currentTheme);
       isBrowser() &&
-        // (window.document.body.style.backgroundColor =
-        //   themePalette[currentTheme]);
         root.style.setProperty('--pageBgColor', themePalette[currentTheme]);
       isBrowser() &&
         root.style.setProperty(
@@ -68,6 +83,16 @@ const useThemePage = () => {
         root.style.setProperty(
           '--jumbotronBg',
           themePalette.jumboBg[currentTheme]
+        );
+      isBrowser() &&
+        root.style.setProperty(
+          '--buttonBg',
+          themePalette.buttonBg[currentTheme]
+        );
+      isBrowser() &&
+        root.style.setProperty(
+          '--buttonBorderBg',
+          themePalette.buttonBorderBg[currentTheme]
         );
     }
   }, [currentTheme]);

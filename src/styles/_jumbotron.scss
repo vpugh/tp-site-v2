@@ -1,4 +1,33 @@
-// jumbotron
+@mixin fadeInSlideUp($time) {
+  -webkit-animation: fadein $time; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein $time; /* Firefox < 16 */
+      -ms-animation: fadein $time; /* Internet Explorer */
+       -o-animation: fadein $time; /* Opera < 12.1 */
+          animation: fadein $time;
+  @keyframes fadein {
+    from {transform: translateY(100px); opacity: 0;}
+    to { transform: translateY(0); opacity: 1;}
+  }
+  
+  /* Firefox < 16 */
+  @-moz-keyframes fadein {
+    from {transform: translateY(100px); opacity: 0;}
+    to { transform: translateY(0); opacity: 1;}
+  }
+  
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes fadein {
+    from {transform: translateY(100px); opacity: 0;}
+    to { transform: translateY(0); opacity: 1;}
+  }
+  
+  /* Internet Explorer */
+  @-ms-keyframes fadein {
+    from {transform: translateY(100px); opacity: 0;}
+    to { transform: translateY(0); opacity: 1;}
+  }
+}
+
 .jumbotron-bg {
   background-color: var(--jumbotronBg);
   background: linear-gradient(180deg, var(--jumbotronBg) 0%, var(--jumbotronBg) 82%, var(--pageBgColor) 100%);
@@ -25,8 +54,8 @@
 .jumbo-buttons {
   margin-top: 53px;
   & .highlighted-btn {
-    border: 2px solid var(--textColor);
-    background-color: var(--textColor);
+    border: 2px solid var(--buttonBorderBg);
+    background-color: var(--buttonBg);
     border-radius: 6px;
     padding: 12px 20px;
     color: #fff;
@@ -68,47 +97,12 @@
     margin: 0 300px;
   }
   h2 {
-    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-     -moz-animation: fadein 1s; /* Firefox < 16 */
-      -ms-animation: fadein 1s; /* Internet Explorer */
-       -o-animation: fadein 1s; /* Opera < 12.1 */
-          animation: fadein 1s;
+    @include fadeInSlideUp(1s);
   }
   h3 {
-    -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
-     -moz-animation: fadein 1.5s; /* Firefox < 16 */
-      -ms-animation: fadein 1.5s; /* Internet Explorer */
-       -o-animation: fadein 1.5s; /* Opera < 12.1 */
-          animation: fadein 1.5s;
+    @include fadeInSlideUp(1.3s);
   }
   div {
-    -webkit-animation: fadein 2.4s; /* Safari, Chrome and Opera > 12.1 */
-     -moz-animation: fadein 2.4s; /* Firefox < 16 */
-      -ms-animation: fadein 2.4s; /* Internet Explorer */
-       -o-animation: fadein 2.4s; /* Opera < 12.1 */
-          animation: fadein 2.4s;
+    @include fadeInSlideUp(2.4s);
   }
-}
-
-@keyframes fadein {
-  from {transform: translateY(100px); opacity: 0;}
-  to { transform: translateY(0); opacity: 1;}
-}
-
-/* Firefox < 16 */
-@-moz-keyframes fadein {
-  from {transform: translateY(100px); opacity: 0;}
-  to { transform: translateY(0); opacity: 1;}
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-  from {transform: translateY(100px); opacity: 0;}
-  to { transform: translateY(0); opacity: 1;}
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
-  from {transform: translateY(100px); opacity: 0;}
-  to { transform: translateY(0); opacity: 1;}
 }
