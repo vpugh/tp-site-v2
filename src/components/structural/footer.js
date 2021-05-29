@@ -13,7 +13,10 @@ const Footer = () => {
             </p>
             <p className='cta-text'>
               Drop me a line:{' '}
-              <a className='text-link' href='mailto:hello@toripugh.com'>
+              <a
+                className='text-link'
+                href='mailto:hello@toripugh.com?subject=Hey Tori!'
+              >
                 hello@toripugh.com
               </a>
             </p>

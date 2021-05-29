@@ -13,6 +13,7 @@ const AboutPage = ({ data }) => {
         <div className='about-hero-container'>
           <GatsbyImage
             alt='Picture of Tori Pugh'
+            className='about-image'
             image={file.childrenImageSharp[0].gatsbyImageData}
           />
           <div className='about-hero-text'>
