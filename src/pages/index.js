@@ -68,8 +68,8 @@ export const indexQuery = graphql`
             cover_image {
               childImageSharp {
                 gatsbyImageData(
-                  width: 420
-                  height: 264
+                  width: 840
+                  height: 528
                   placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
                   transformOptions: { fit: COVER, cropFocus: ATTENTION }

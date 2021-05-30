@@ -2,10 +2,15 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import BlogPreview from '../components/index/blog-preview';
+import Seo from '../components/seo';
 
-const BlogPage = ({ data, titleSection }) => {
+const BlogPage = ({ data }) => {
   return (
     <Layout>
+      <Seo
+        title='Blog'
+        description='Collection of mental musings, articles, problems, and whatever else comes to mind.'
+      />
       <div className='container'>
         <div style={{ marginTop: 80 }}>
           <h2>Latest Articles & Mental Musings</h2>
@@ -35,8 +40,8 @@ export const indexQuery = graphql`
             cover_image {
               childImageSharp {
                 gatsbyImageData(
-                  width: 420
-                  height: 264
+                  width: 840
+                  height: 528
                   placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
                   transformOptions: { fit: COVER, cropFocus: ATTENTION }
