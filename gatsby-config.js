@@ -10,7 +10,21 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-mdx',
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              terminal: 'carbon',
+              theme: 'monokai',
+            },
+          },
+        ],
+        extensions: [`.md`, `.mdx`],
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -55,6 +69,26 @@ module.exports = {
       options: {
         fonts: [`nunito sans\:400,700,800,900`],
         display: 'swap',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: false,
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: '@weknow/gatsby-remark-codepen',
+            options: {
+              theme: 'dark',
+              height: 400,
+            },
+          },
+        ],
       },
     },
   ],

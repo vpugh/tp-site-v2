@@ -4,6 +4,8 @@ import Layout from '../components/layout';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Seo from '../components/seo';
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+deckDeckGoHighlightElement();
 
 const BlogTemplate = ({ data }) => {
   const post = data.allMdx.edges[0].node.frontmatter;
@@ -18,7 +20,7 @@ const BlogTemplate = ({ data }) => {
           <h2 style={{ fontSize: 36 }}>{post.title}</h2>
           <p>Published: {post.date}</p>
         </div>
-        <div className='body'>
+        <div className='blog-body'>
           <MDXRenderer>{body}</MDXRenderer>
         </div>
       </div>
