@@ -17,6 +17,7 @@ const Header = (props) => {
       <Link className='logo' to='/'>
         {logoText}
       </Link>
+      <ThemeSwitcher />
       <nav className='link-container'>
         <Link to='/work' activeStyle={activeStyle}>
           Work
@@ -30,7 +31,6 @@ const Header = (props) => {
         <Link to='/contact' activeStyle={activeStyle}>
           Contact
         </Link>
-        <ThemeSwitcher />
       </nav>
     </header>
   );
