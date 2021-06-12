@@ -36,9 +36,10 @@
   }
   gap: 40px;
   margin-top: 80px;
-  &.fade-in {
-    @include fadeInSlideUp(2.4s);
-  }
+}
+
+.work.fade-in {
+  @include fadeInSlideUp(2.4s);
 }
 
 .work-link {

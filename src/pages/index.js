@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 import { graphql } from 'gatsby';
 import Seo from '../components/seo';
 import BlogPreview from '../components/index/blog-preview';
+import PersonalBlurb from '../components/index/personal-blurb';
 
 const IndexPage = ({ data }) => {
   return (
@@ -13,7 +14,8 @@ const IndexPage = ({ data }) => {
       <Jumbotron />
       <Layout floatNav>
         <div className='container'>
-          <WorkPreview data={data.allMdx} page='home' />
+          <WorkPreview data={data.allMdx} page='home' displayHeader />
+          <PersonalBlurb />
           <BlogPreview data={data.blog} displayHeader />
         </div>
       </Layout>

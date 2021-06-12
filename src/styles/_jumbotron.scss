@@ -28,10 +28,13 @@
   }
 }
 
+$textColor: var(--textColor);
+
 .jumbotron-bg {
   background-color: var(--jumbotronBg);
-  background: linear-gradient(180deg, var(--jumbotronBg) 0%, var(--jumbotronBg) 62%, var(--pageBgColor) 100%);
-  padding: 160px 0;
+  background: linear-gradient(180deg, var(--jumbotronBg) 0%, var(--jumbotronBg) 46%, var(--pageBgColor) 100%);
+  padding: 200px 0 0 0;
+  height: 90vh;
 }
 
 .jumbo-header {
@@ -39,16 +42,25 @@
   font-size: 54px;
   line-height: 1;
   @media (min-width: 1200px) {
-    font-size: 64px;
-    line-height: 72px;
-    margin-bottom: .25rem;
+    // font-size: 64px;
+    // line-height: 72px;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 0;
   }
 }
 
 .jumbo-subheader {
-  font-size: 24px;
-  line-height: 32px;
+  // font-size: 24px;
+  // line-height: 32px;
+  font-size: 32px;
+  line-height: 56px;
   font-weight: 400;
+  margin-top: .75rem;
+  .emphasize {
+    font-style: italic;
+    border-bottom: 3px solid rgba(#000, 0.2);
+  }
 }
 
 .jumbo-buttons {
@@ -92,9 +104,13 @@
   margin: 0 20px;
   @media (min-width: 1200px) {
   margin: 0 240px;
+  margin-top: 150px;
+  margin-bottom: 50px;
   }
   @media (min-width: 1600px) {
-    margin: 0 300px;
+    // margin: 0 300px;
+    margin-left: 200px;
+    margin-left: 200px;
   }
   h2 {
     @include fadeInSlideUp(1s);

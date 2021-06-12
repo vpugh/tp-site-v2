@@ -1,17 +1,19 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import DisplayHeader from '../shared/display-header';
 
-const WorkPreview = ({ data, page }) => {
+const WorkPreview = ({ data, page, displayHeader }) => {
   return (
-    <>
-      <div
-        className={
-          page === 'home'
-            ? 'work-preview-container fade-in'
-            : 'work-preview-container'
-        }
-      >
+    <div className={page === 'home' && 'work fade-in'}>
+      {displayHeader && (
+        <DisplayHeader
+          headerTitle='Selected Projects'
+          headerLink='/work'
+          linkTitle='See All Projects'
+        />
+      )}
+      <div className='work-preview-container'>
         {data.edges.map((x) => {
           const frontm = x.node.frontmatter;
           const image = getImage(frontm.cover_image);
@@ -30,7 +32,7 @@ const WorkPreview = ({ data, page }) => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

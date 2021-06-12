@@ -1,22 +1,17 @@
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
+import DisplayHeader from '../shared/display-header';
 
 const BlogPreview = ({ data, displayHeader }) => {
   return (
     <div style={{ marginTop: displayHeader ? 160 : null }}>
       {displayHeader && (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: 40,
-          }}
-        >
-          <h2 style={{ fontSize: 36 }}>Blog</h2>
-          <Link to='/blog'>See All Posts</Link>
-        </div>
+        <DisplayHeader
+          headerTitle='Blog'
+          headerLink='/blog'
+          linkTitle='See All Posts'
+        />
       )}
       <div
         style={{ marginTop: displayHeader ? null : 160 }}
