@@ -54,6 +54,15 @@ body {
   }
 }
 
+.textLink {
+  text-decoration: none;
+  color: var(--textColor);
+  transition: 300ms ease-in-out;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
 @import './footer';
 @import './header-navigation';
 @import './jumbotron';

@@ -144,15 +144,15 @@ const AboutPage = ({ data }) => {
               </div>
               <div className='ts-section'>
                 <h3>Development</h3>
-                <h4>Skills:</h4>
                 <p>
                   HTML, CSS, SASS/SCSS, Javascript, Git, NodeJs, Vue, React,
-                  Jest, Gatsby, Wordpress, React Testing Library
+                  Jest, Gatsby, Wordpress, React Testing Library, Styled
+                  Components
                 </p>
                 <h4>Tools:</h4>
                 <p>
                   GitHub, VSCode, Webstorm, SendGrid, MailChimp, Affinity
-                  Designer
+                  Designer, Storybook
                 </p>
               </div>
             </div>

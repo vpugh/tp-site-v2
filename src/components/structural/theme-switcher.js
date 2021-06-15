@@ -8,6 +8,10 @@ import {
 const ThemeSwitcher = () => {
   const { currentTheme, setCurrentTheme } = useThemePage();
 
+  if (!currentTheme) {
+    return null;
+  }
+
   return (
     <SwitcherContainer currentTheme={currentTheme}>
       <ThemeLabel
