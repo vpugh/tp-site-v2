@@ -7,6 +7,7 @@ module.exports = {
     author: 'Tori Pugh',
   },
   plugins: [
+    `gatsby-plugin-scroll-reveal`,
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',

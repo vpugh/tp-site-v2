@@ -113,12 +113,12 @@ $textColor: var(--textColor);
     margin-left: 200px;
   }
   h2 {
-    @include fadeInSlideUp(1s);
+    // @include fadeInSlideUp(1s);
   }
   h3 {
-    @include fadeInSlideUp(1.3s);
+    // @include fadeInSlideUp(1.3s);
   }
   div {
-    @include fadeInSlideUp(2.4s);
+    // @include fadeInSlideUp(2.4s);
   }
 }

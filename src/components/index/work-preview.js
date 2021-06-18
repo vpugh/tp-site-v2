@@ -5,7 +5,7 @@ import DisplayHeader from '../shared/display-header';
 
 const WorkPreview = ({ data, page, displayHeader }) => {
   return (
-    <div className={page === 'home' && 'work fade-in'}>
+    <div>
       {displayHeader && (
         <DisplayHeader
           headerTitle='Selected Projects'
@@ -18,7 +18,15 @@ const WorkPreview = ({ data, page, displayHeader }) => {
           const frontm = x.node.frontmatter;
           const image = getImage(frontm.cover_image);
           return (
-            <Link to={frontm.path} key={frontm.title} className='work-link'>
+            <Link
+              to={frontm.path}
+              key={frontm.title}
+              className='work-link'
+              data-sal='slide-up'
+              data-sal-delay='0'
+              data-sal-duration='800'
+              data-sal-easing='ease-in-out'
+            >
               <GatsbyImage
                 image={image}
                 alt={`${frontm.title} Screenshot`}
