@@ -17,38 +17,36 @@ order: 1
 date: 2018-01-03
 ---
 
-### Background
+### The Challenge
 
-At the beginning of the pandemic, like many people I was worried and wanted something to take my mind off of the news and things. Thankfully, my mom was trying to pass time by baking/cooking up a storm. The issue was, she kept taking out her files with her recipes and then losing them. I'd always talked about making a system so she could have access to her recipes and save them more securely without a risk of 'misplacing' them.
+At the beginning of the pandemic, like many people, I was worried and wanted something to take my mind off of the news and things. Thankfully, my mom was trying to pass time by baking/cooking up a storm. The issue was she kept taking out her files with her recipes and then losing them. I'd always talked about making a system so she could have access to her recipes and save them more securely without a risk of 'misplacing' them.
 
 [Insert Pictures of Lists and Beginning Sketches - maybe some 4x4]
 
-### Starting Off
+### The Solution
+
+I created an app, that requires users to sign up and sign in. Then they are able to add recipes to their account and view or edit them from anywhere. This version solves all the important issues that were faced by a physical folder system of paper recipes. Easy access to recipes from anywhere (computer, tablet, etc...) and ability to safely save them.
+
+[Pictures of application]
+
+[Homepage Pics (top search area and bottom categories)]
+
+[Add Page - Ability to add recipes and options]
+
+[Different ways of content being sorted - easy of finding something]
+
+### Technical Details
+
+## Starting Off
 
 Since I'd never done anything this large by myself, as a team I've done some of these steps at work, I'd started at the simplest place, planning. I sat down and wrote down what the base level of success would look like. Then I decided what software I was going to use. If it's something I wasn't comfortable with doing, then I should potentially use things I've never used before.
 
 It took a bit of time but I settled on using React, GraphQL, Heroku, and Auth0. Auth0 came a little later in the process because I originally was writing the backend to login and decided that was a bit too risky for a first time project. Better to stick to something that's easier and guaranteed secure. I did all the login and storing of PII correctly, I hashed with bcrypt and salted the passwords before saving into the account table.
 
-### Create a Look to Get Started
-
 After figuring out the pages that I needed/wanted I started coming up with some designs. I started with something more Dribbble geared, it looked really nice but maybe wasn't the most functional. It then morphed into what I thought made the most sense for how I was using it, with some feedback from my mom (the original intended user).
 
-[Dribbble Initial Designs and More Current Look and feel - 4x4]
-
-I got influenced in doing things I don't normally do, hence the initial theme is an interesting pale pink. I saw some designs and thought it looked fancy and decided to make this app look and feel fancy. There was a lot of desire to use a lot of color but use it sparingly. I didn't want a kalidiscope of colors to confuse anyone.
-
-### Time to Develop!
+## Code Journey
 
 Having something to work with I was able to start work on coding. I decided to keep it simple and not use any React frameworks. I could have tried to use Gatsby, Next, or something else. Deciding to keep it simple, I just went with regular React. It's something I'm comfortable with and can use well.
 
-The only real issue I had in my initial implementation was trying to think with a API practicallity but not actually wanting to build and implement that API setup first. Backend architecture isn't my strong point so I'd get lost in a maze of wondering if I did it right and having to go back and forth between the backend and the frontend. Thankfully I'd been seeing something I thought would be perfect for this project, MirageJS. It let's you make mock api calls all on your local system. I'd used other mock apps, but that would require access to the internet. I wanted it all on one system.
-
-[Images of MirageJS setup and code]
-
-This took sometime to really get the hang of but it was really fun to use. I could instantly make changes when I realized the 'fake database' wasn't displaying, saving, or manipulating the data the way I expected. I could use all the features of a RESTful api and I felt secure in making something that was working correctly.
-
-### Setting up Heroku and GraphQL queries
-
-### Using Auth0
-
-### Bringing it all together
+The only real issue I had in my initial implementation was trying to think with a API practicallity but not actually wanting to build and implement that API setup first. Backend architecture isn't my strong point so I'd get lost in a maze of wondering if I did it right and having to go back and forth between the backend and the frontend. Thankfully I'd been seeing something I thought would be perfect for this project, MirageJS. It let's you make mock api calls all on your local system. I'd used other mock apps, but that would require access to the internet. I wanted something that I could use locally without the internet.
