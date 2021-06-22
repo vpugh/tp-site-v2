@@ -3,7 +3,7 @@ import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import DisplayHeader from '../shared/display-header';
 
-const WorkPreview = ({ data, page, displayHeader }) => {
+const WorkPreview = ({ data, displayHeader }) => {
   return (
     <div>
       {displayHeader && (

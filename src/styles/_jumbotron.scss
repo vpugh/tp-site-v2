@@ -1,33 +1,3 @@
-@mixin fadeInSlideUp($time) {
-  -webkit-animation: fadein $time; /* Safari, Chrome and Opera > 12.1 */
-     -moz-animation: fadein $time; /* Firefox < 16 */
-      -ms-animation: fadein $time; /* Internet Explorer */
-       -o-animation: fadein $time; /* Opera < 12.1 */
-          animation: fadein $time;
-  @keyframes fadein {
-    from {transform: translateY(100px); opacity: 0;}
-    to { transform: translateY(0); opacity: 1;}
-  }
-  
-  /* Firefox < 16 */
-  @-moz-keyframes fadein {
-    from {transform: translateY(100px); opacity: 0;}
-    to { transform: translateY(0); opacity: 1;}
-  }
-  
-  /* Safari, Chrome and Opera > 12.1 */
-  @-webkit-keyframes fadein {
-    from {transform: translateY(100px); opacity: 0;}
-    to { transform: translateY(0); opacity: 1;}
-  }
-  
-  /* Internet Explorer */
-  @-ms-keyframes fadein {
-    from {transform: translateY(100px); opacity: 0;}
-    to { transform: translateY(0); opacity: 1;}
-  }
-}
-
 $textColor: var(--textColor);
 
 .jumbotron-bg {
@@ -111,14 +81,5 @@ $textColor: var(--textColor);
     // margin: 0 300px;
     margin-left: 200px;
     margin-left: 200px;
-  }
-  h2 {
-    // @include fadeInSlideUp(1s);
-  }
-  h3 {
-    // @include fadeInSlideUp(1.3s);
-  }
-  div {
-    // @include fadeInSlideUp(2.4s);
   }
 }

@@ -10,27 +10,62 @@ const AboutPage = ({ data }) => {
     <Layout>
       <Seo title='About Me' />
       <div className='container'>
-        <div className='about-hero-container'>
+        <div
+          className='about-hero-container'
+          data-sal='slide-up'
+          data-sal-delay='0'
+          data-sal-duration='800'
+          data-sal-easing='ease-in-out'
+        >
           <GatsbyImage
             alt='Picture of Tori Pugh'
             className='about-image'
+            data-sal='slide-up'
+            data-sal-delay='0'
+            data-sal-duration='1300'
+            data-sal-easing='ease-in-out'
             image={file.childrenImageSharp[0].gatsbyImageData}
           />
           <div className='about-hero-text'>
-            <h3 className='about-hero-title'>
+            <h3
+              className='about-hero-title'
+              data-sal='slide-up'
+              data-sal-delay='0'
+              data-sal-duration='1000'
+              data-sal-easing='ease-in-out'
+            >
               Driven by curiosity and a desire to make things work better.
             </h3>
-            <p className='about-hero-subheader'>
+            <p
+              className='about-hero-subheader'
+              data-sal='slide-up'
+              data-sal-delay='250'
+              data-sal-duration='1000'
+              data-sal-easing='ease-in-out'
+            >
               I listen to understand a problem, do research to identify and/or
               confirm it, and then create solutions for them.
             </p>
-            <a className='button' href='../tpr.pdf' download='tori-pugh-resume'>
+            <a
+              className='button'
+              href='../tpr.pdf'
+              download='tori-pugh-resume'
+              data-sal='slide-up'
+              data-sal-delay='350'
+              data-sal-duration='800'
+              data-sal-easing='ease-in-out'
+            >
               Download Resume
             </a>
           </div>
         </div>
         <div className='about-main'>
-          <div>
+          <div
+            data-sal='slide-up'
+            data-sal-delay='0'
+            data-sal-duration='800'
+            data-sal-easing='ease-in-out'
+          >
             <div className='about-main-body'>
               <h2>Overview</h2>
               <p>
@@ -101,7 +136,13 @@ const AboutPage = ({ data }) => {
               </p>
             </div>
           </div>
-          <div className='about-sidebar'>
+          <div
+            className='about-sidebar'
+            data-sal='slide-up'
+            data-sal-delay='250'
+            data-sal-duration='800'
+            data-sal-easing='ease-in-out'
+          >
             <div className='divided-sections'>
               <h2>Work</h2>
               <div>

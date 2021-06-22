@@ -1,32 +1,3 @@
-@mixin fadeInSlideUp($time) {
--webkit-animation: fadein $time; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein $time; /* Firefox < 16 */
-    -ms-animation: fadein $time; /* Internet Explorer */
-        -o-animation: fadein $time; /* Opera < 12.1 */
-        animation: fadein $time;
-@keyframes fadein {
-    from {transform: translateY(100px); opacity: 0;}
-    to { transform: translateY(0); opacity: 1;}
-}
-
-/* Firefox < 16 */
-@-moz-keyframes fadein {
-    from {transform: translateY(100px); opacity: 0;}
-    to { transform: translateY(0); opacity: 1;}
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-    from {transform: translateY(100px); opacity: 0;}
-    to { transform: translateY(0); opacity: 1;}
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
-    from {transform: translateY(100px); opacity: 0;}
-    to { transform: translateY(0); opacity: 1;}
-}
-}
 $textColor: #000;
 
 .about-hero-container {
@@ -38,7 +9,7 @@ $textColor: #000;
 }
 
 .about-image {
-   @include fadeInSlideUp(1.3s);
+//    @include fadeInSlideUp(1.3s);
 }
 
 .about-hero-text {
@@ -52,13 +23,13 @@ $textColor: #000;
     margin-left: 48px;
     align-items: flex-start;
     }
-    .button {
-        @include fadeInSlideUp(1.3s);
-    }
+    // .button {
+    //     @include fadeInSlideUp(1.3s);
+    // }
 }
 
 .about-hero-title {
-    @include fadeInSlideUp(1s);
+    // @include fadeInSlideUp(1s);
     font-size: 48px;
     line-height: 50px;
     margin: 0;
@@ -66,12 +37,12 @@ $textColor: #000;
 }
 
 .about-hero-subheader {
-    @include fadeInSlideUp(1.2s);
+    // @include fadeInSlideUp(1.2s);
     font-size: 24px;
 }
 
 .about-main {
-    @include fadeInSlideUp(2s);
+    // @include fadeInSlideUp(2s);
     margin-top: 60px;
     @media(min-width: 1200px) {
     display: flex;

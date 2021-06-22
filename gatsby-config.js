@@ -7,10 +7,15 @@ module.exports = {
     author: 'Tori Pugh',
   },
   plugins: [
-    `gatsby-plugin-scroll-reveal`,
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+        threshold: 0.25, // Percentage of an element's area that needs to be visible to launch animation
+      },
+    },
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
