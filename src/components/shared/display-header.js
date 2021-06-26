@@ -9,10 +9,10 @@ const DisplayHeader = ({ headerTitle, headerLink, linkTitle }) => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: 40,
+        marginBottom: 10,
       }}
     >
-      <h2 style={{ fontSize: 36 }}>{headerTitle}</h2>
+      <h2 style={{ fontSize: 22 }}>{headerTitle}</h2>
       <Link style={{ color: 'var(--textColor)' }} to={headerLink}>
         {linkTitle}
       </Link>

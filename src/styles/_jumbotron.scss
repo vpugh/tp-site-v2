@@ -2,9 +2,17 @@ $textColor: var(--textColor);
 
 .jumbotron-bg {
   background-color: var(--jumbotronBg);
-  background: linear-gradient(180deg, var(--jumbotronBg) 0%, var(--jumbotronBg) 46%, var(--pageBgColor) 100%);
-  padding: 200px 0 0 0;
-  height: 90vh;
+  // background: linear-gradient(180deg, var(--jumbotronBg) 0%, var(--pageBgColor) 30%);
+  background: linear-gradient(180deg, var(--jumbotronBg) 0%, var(--jumbotronBg) 74%, var(--pageBgColor) 100%);
+  height: calc(100vh - 40rem);
+  padding-top: 300px;
+  @media (min-width: 768px) {
+    padding: 200px 0 0 0;
+    height: 40vh;
+  }
+  @media (min-width: 1200px) {
+    height: 60vh;
+  }
 }
 
 .jumbo-header {
@@ -12,21 +20,28 @@ $textColor: var(--textColor);
   font-size: 54px;
   line-height: 1;
   @media (min-width: 1200px) {
-    // font-size: 64px;
-    // line-height: 72px;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 4.5rem;
+    line-height: 1.2;
     margin-bottom: 0;
+  }
+  @media (min-width: 1600px) {
+    font-size: 6.25rem;
+    line-height: 1;
   }
 }
 
 .jumbo-subheader {
-  // font-size: 24px;
-  // line-height: 32px;
-  font-size: 32px;
-  line-height: 56px;
   font-weight: 400;
-  margin-top: .75rem;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  @media (min-width: 1200px) {
+    font-size: 1.75rem;
+    margin-top: .75rem;
+  }
+  @media (min-width: 1600px) {
+    font-size: 2.25rem;
+    margin-top: 1.2rem;
+  }
   .emphasize {
     font-style: italic;
     border-bottom: 3px solid rgba(#000, 0.2);
@@ -71,15 +86,17 @@ $textColor: var(--textColor);
 }
 
 .jumbo-text {
-  margin: 0 20px;
+  // margin: 0 20px;
+  width: 80%;
+  @media (max-width: 1199px) {
+    max-width: 540px;
+  }
   @media (min-width: 1200px) {
-  margin: 0 240px;
   margin-top: 150px;
   margin-bottom: 50px;
+  width: 749px;
   }
   @media (min-width: 1600px) {
-    // margin: 0 300px;
-    margin-left: 200px;
-    margin-left: 200px;
+    width: 900px;
   }
 }

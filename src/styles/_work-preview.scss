@@ -30,12 +30,15 @@
 
 .work-preview-container {
   display: grid;
-  @media (min-width: 1200px) {
+  @media (min-width: 768px) {
     grid-template: auto/repeat(2, 1fr);
-    gap: 100px;
+    gap: 30px;
+  }
+  @media (min-width: 1200px) {
+    gap: 30px 100px;
   }
   gap: 40px;
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 // .work.fade-in {
@@ -56,11 +59,13 @@
 
 .work-preview-image {
   background-color: #000;
-  max-width: 600px;
+  width: 100%;
   height: auto;
   color: #fff;
-  width: 100%;
   transition: 300ms ease-in-out;
+  @media (min-width: 1200px) {
+    max-width: 600px;
+  }
 }
 
 .work-preview-text {
@@ -78,5 +83,6 @@
     line-height: 32px;
     color: var(--textColor);
     width: 80%;
+    margin-top: .35rem;
   }
 }
