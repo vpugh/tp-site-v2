@@ -4,11 +4,16 @@ $textColor: var(--textColor);
   background-color: var(--jumbotronBg);
   // background: linear-gradient(180deg, var(--jumbotronBg) 0%, var(--pageBgColor) 30%);
   background: linear-gradient(180deg, var(--jumbotronBg) 0%, var(--jumbotronBg) 74%, var(--pageBgColor) 100%);
-  height: calc(100vh - 40rem);
-  padding-top: 300px;
+  // padding-top: 200px;
+  // height: 60vh;
+  height: calc(100vh - 10rem);
+  display: flex;
+  align-items: flex-end;
   @media (min-width: 768px) {
+    height: calc(100vh - 40rem);
     padding: 200px 0 0 0;
     height: 40vh;
+    align-items: flex-start;
   }
   @media (min-width: 1200px) {
     height: 60vh;
@@ -17,8 +22,11 @@ $textColor: var(--textColor);
 
 .jumbo-header {
   font-weight: 800;
-  font-size: 54px;
   line-height: 1;
+  font-size: 31px;
+  @media (min-width: 768px) {
+    font-size: 54px;
+  }
   @media (min-width: 1200px) {
     font-size: 4.5rem;
     line-height: 1.2;
@@ -32,8 +40,9 @@ $textColor: var(--textColor);
 
 .jumbo-subheader {
   font-weight: 400;
-  font-size: 1.35rem;
-  line-height: 1.4;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 0;
   @media (min-width: 1200px) {
     font-size: 1.75rem;
     margin-top: .75rem;
@@ -86,9 +95,8 @@ $textColor: var(--textColor);
 }
 
 .jumbo-text {
-  // margin: 0 20px;
-  width: 80%;
-  @media (max-width: 1199px) {
+  width: 95%;
+  @media (min-width: 768px) and (max-width: 1199px) {
     max-width: 540px;
   }
   @media (min-width: 1200px) {
@@ -97,6 +105,6 @@ $textColor: var(--textColor);
   width: 749px;
   }
   @media (min-width: 1600px) {
-    width: 900px;
+    width: 1000px;
   }
 }

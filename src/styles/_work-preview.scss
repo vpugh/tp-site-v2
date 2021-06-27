@@ -1,49 +1,15 @@
-@mixin fadeInSlideUp($time) {
-  -webkit-animation: fadein $time; /* Safari, Chrome and Opera > 12.1 */
-     -moz-animation: fadein $time; /* Firefox < 16 */
-      -ms-animation: fadein $time; /* Internet Explorer */
-       -o-animation: fadein $time; /* Opera < 12.1 */
-          animation: fadein $time;
-  @keyframes fadein {
-    from {transform: translateY(100px); opacity: 0;}
-    to { transform: translateY(0); opacity: 1;}
-  }
-  
-  /* Firefox < 16 */
-  @-moz-keyframes fadein {
-    from {transform: translateY(100px); opacity: 0;}
-    to { transform: translateY(0); opacity: 1;}
-  }
-  
-  /* Safari, Chrome and Opera > 12.1 */
-  @-webkit-keyframes fadein {
-    from {transform: translateY(100px); opacity: 0;}
-    to { transform: translateY(0); opacity: 1;}
-  }
-  
-  /* Internet Explorer */
-  @-ms-keyframes fadein {
-    from {transform: translateY(100px); opacity: 0;}
-    to { transform: translateY(0); opacity: 1;}
-  }
-}
-
 .work-preview-container {
   display: grid;
+  gap: 40px;
   @media (min-width: 768px) {
     grid-template: auto/repeat(2, 1fr);
     gap: 30px;
+    margin-top: 40px;
   }
   @media (min-width: 1200px) {
     gap: 30px 100px;
   }
-  gap: 40px;
-  margin-top: 40px;
 }
-
-// .work.fade-in {
-//   @include fadeInSlideUp(2.4s);
-// }
 
 .work-link {
   text-decoration: none;
@@ -71,18 +37,27 @@
 .work-preview-text {
   transition: 300ms ease-in-out;
   .work-preview-title {
-    margin-bottom: 0;
-    // font-size: 39px;
-    font-size: 28px;
-    // line-height: 48px;
-    line-height: 32px;
     color: var(--textColor);
+    margin-bottom: 0;
+    font-size: 23px;
+    @media (max-width: 360px) {
+      margin-top: .5rem;
+    }
+    @media (min-width: 1200px) {
+      font-size: 28px;
+      line-height: 32px;
+    }
   }
   .work-preview-description {
-    font-size: 20px;
-    line-height: 32px;
     color: var(--textColor);
-    width: 80%;
     margin-top: .35rem;
+    @media (max-width: 360px) {
+      margin-bottom: .5rem;
+    }
+    @media (min-width: 1200px) {
+      font-size: 20px;
+      line-height: 32px;
+      width: 80%;
+    }
   }
 }

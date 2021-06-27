@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const SwitcherContainer = styled.div`
+  @media (max-width: 460px) {
+    display: none;
+  }
   display: inline-block;
   border-radius: 24px;
   padding: 4px;

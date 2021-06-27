@@ -40,7 +40,7 @@ const Jumbotron = () => {
     <div className='jumbotron-bg' ref={ref}>
       <div className='container'>
         <div className='jumbo-text'>
-          <h2 className='jumbo-header'>UI/UX Developer & Problem Solver</h2>
+          <h2 className='jumbo-header'>UI/UX Designer & Front-End Developer</h2>
           <h3 className='jumbo-subheader'>
             Quick and constantly learning creative that loves creating great{' '}
             <span className='emphasize'>solutions</span>,{' '}

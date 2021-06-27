@@ -3,9 +3,9 @@ import React from 'react';
 
 const PersonalBlurb = () => {
   return (
-    <div style={{ padding: '180px 0 120px 0' }}>
-      <h2 style={{ fontSize: 36 }}>About Me</h2>
-      <div style={{ fontSize: 24, maxWidth: '80%' }}>
+    <div className='blurb-container'>
+      <h2 className='blurb-title'>About Me</h2>
+      <div className='blurb-text-container'>
         <p>
           Currently working for Holman Enterprises as a Front-End Developer. I
           have 8 years experience as a front-end developer and UX/UI designer.

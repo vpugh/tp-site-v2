@@ -38,6 +38,7 @@ const WorkPreview = ({ data, displayHeader }) => {
         y: 0,
         delay: 2.5,
         duration: 1.25,
+        ease: 'expo.inOut',
       }
     );
   }, []);
