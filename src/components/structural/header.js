@@ -5,7 +5,7 @@ import ThemeSwitcher from './theme-switcher';
 const Header = (props) => {
   const { floatNav } = props;
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const logoText = 'T/P';
+  const logoText = 'T—P';
   const activeStyle = { borderBottomColor: 'var(--textColor)' };
 
   const openMobileMenu = () => setIsMenuOpen(!isMenuOpen);

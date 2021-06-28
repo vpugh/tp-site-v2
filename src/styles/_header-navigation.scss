@@ -34,6 +34,7 @@
   font-size: 32px;
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .hamburger-menu {
@@ -46,14 +47,17 @@
   border: 0;
   justify-content: center;
   z-index: 20;
+  color: #000;
   color: var(--textColor);
   svg {
+    fill: #fff;
     fill: var(--textColor);
   }
   @media (min-width: 768px) {
     display: none;
   }
   .close-icon {
+    color: #fff;
     color: var(--pageBgColor)
   }
 }
@@ -64,6 +68,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  background: #000;
   background: var(--textColor);
   z-index: 16;
   .menu-container {
@@ -73,6 +78,7 @@
     justify-content: center;
     a {
       text-decoration: none;
+      color: #fff;
       color: var(--pageBgColor);
       font-size: 34px;
       margin-bottom: 10px;

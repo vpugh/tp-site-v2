@@ -2,10 +2,7 @@ $textColor: var(--textColor);
 
 .jumbotron-bg {
   background-color: var(--jumbotronBg);
-  // background: linear-gradient(180deg, var(--jumbotronBg) 0%, var(--pageBgColor) 30%);
   background: linear-gradient(180deg, var(--jumbotronBg) 0%, var(--jumbotronBg) 74%, var(--pageBgColor) 100%);
-  // padding-top: 200px;
-  // height: 60vh;
   height: calc(100vh - 10rem);
   display: flex;
   align-items: flex-end;
@@ -15,7 +12,7 @@ $textColor: var(--textColor);
     height: 40vh;
     align-items: flex-start;
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     height: 60vh;
   }
 }
@@ -27,12 +24,12 @@ $textColor: var(--textColor);
   @media (min-width: 768px) {
     font-size: 54px;
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     font-size: 4.5rem;
     line-height: 1.2;
     margin-bottom: 0;
   }
-  @media (min-width: 1600px) {
+  @media (min-width: 1920px) {
     font-size: 6.25rem;
     line-height: 1;
   }
@@ -43,11 +40,15 @@ $textColor: var(--textColor);
   font-size: 1.05rem;
   line-height: 1.6;
   margin-bottom: 0;
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     font-size: 1.75rem;
     margin-top: .75rem;
   }
-  @media (min-width: 1600px) {
+  // @media (min-width: 1600px) {
+  //   font-size: 2.25rem;
+  //   margin-top: 1.2rem;
+  // }
+  @media (min-width: 1920px) {
     font-size: 2.25rem;
     margin-top: 1.2rem;
   }
@@ -98,13 +99,17 @@ $textColor: var(--textColor);
   width: 95%;
   @media (min-width: 768px) and (max-width: 1199px) {
     max-width: 540px;
+    margin-top: 150px;
   }
-  @media (min-width: 1200px) {
-  margin-top: 150px;
+  @media (min-width: 1024px) {
+  margin-top: 0;
   margin-bottom: 50px;
   width: 749px;
   }
   @media (min-width: 1600px) {
+    width: 820px;
+  }
+  @media (min-width: 1920px) {
     width: 1000px;
   }
 }
