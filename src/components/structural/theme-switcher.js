@@ -32,14 +32,14 @@ const ThemeSwitcher = () => {
             cy='9.5'
             r='8.44444'
             stroke='var(--textColor)'
-            stroke-width='2.11111'
+            strokeWidth='2.11111'
           />
           <circle
             cx='9.5'
             cy='9.5'
             r='8.44444'
             stroke='var(--textColor)'
-            stroke-width='2.11111'
+            strokeWidth='2.11111'
           />
           <path
             d='M18.5777 9.5C18.5777 14.367 14.6531 18.3528 9.71104 18.5686V0.431422C14.6531 0.647247 18.5777 4.633 18.5777 9.5Z'
@@ -52,12 +52,12 @@ const ThemeSwitcher = () => {
           <path
             d='M18.5777 9.5C18.5777 14.367 14.6531 18.3528 9.71104 18.5686V0.431422C14.6531 0.647247 18.5777 4.633 18.5777 9.5Z'
             stroke='var(--textColor)'
-            stroke-width='0.844444'
+            strokeWidth='0.844444'
           />
           <path
             d='M18.5777 9.5C18.5777 14.367 14.6531 18.3528 9.71104 18.5686V0.431422C14.6531 0.647247 18.5777 4.633 18.5777 9.5Z'
             stroke='var(--textColor)'
-            stroke-width='0.844444'
+            strokeWidth='0.844444'
           />
         </svg>
         <select

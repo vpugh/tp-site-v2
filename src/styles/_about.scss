@@ -8,10 +8,6 @@ $textColor: #000;
     }
 }
 
-.about-image {
-//    @include fadeInSlideUp(1.3s);
-}
-
 .about-hero-text {
     @media (max-width: 480px) {
         margin-top: 30px;
@@ -23,13 +19,9 @@ $textColor: #000;
     margin-left: 48px;
     align-items: flex-start;
     }
-    // .button {
-    //     @include fadeInSlideUp(1.3s);
-    // }
 }
 
 .about-hero-title {
-    // @include fadeInSlideUp(1s);
     font-size: 48px;
     line-height: 50px;
     margin: 0;
@@ -37,12 +29,10 @@ $textColor: #000;
 }
 
 .about-hero-subheader {
-    // @include fadeInSlideUp(1.2s);
     font-size: 24px;
 }
 
 .about-main {
-    // @include fadeInSlideUp(2s);
     margin-top: 60px;
     @media(min-width: 1200px) {
     display: flex;

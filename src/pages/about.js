@@ -3,69 +3,117 @@ import Layout from '../components/layout';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
 import Seo from '../components/seo';
+import { gsap } from 'gsap';
 
 const AboutPage = ({ data }) => {
+  const ref = React.useRef(null);
   const file = data.allFile.edges[0].node;
+
+  React.useEffect(() => {
+    const element = ref.current;
+    gsap.fromTo(
+      element.querySelector('.about-image'),
+      {
+        opacity: 0,
+        y: -40,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 2,
+        ease: 'power1.inOut',
+      }
+    );
+
+    gsap.fromTo(
+      element.querySelector('.about-hero-title'),
+      {
+        opacity: 0,
+        y: -70,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.25,
+        ease: 'power1.inOut',
+        delay: 0.25,
+      }
+    );
+
+    gsap.fromTo(
+      element.querySelector('.about-hero-subheader'),
+      {
+        opacity: 0,
+        y: -70,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power1.inOut',
+        delay: 0.35,
+      }
+    );
+
+    gsap.fromTo(
+      element.querySelector('.about-hero-button'),
+      {
+        opacity: 0,
+        y: 10,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power1.inOut',
+        delay: 0.45,
+      }
+    );
+
+    gsap.fromTo(
+      element.querySelector('.about-main'),
+      {
+        opacity: 0,
+        y: -20,
+      },
+      {
+        delay: 2,
+        opacity: 1,
+        duration: 2,
+        y: 0,
+      }
+    );
+  }, []);
+
   return (
     <Layout>
       <Seo title='About Me' />
-      <div className='container'>
-        <div
-          className='about-hero-container'
-          data-sal='slide-up'
-          data-sal-delay='0'
-          data-sal-duration='800'
-          data-sal-easing='ease-in-out'
-        >
+      <div className='container' ref={ref}>
+        <div className='about-hero-container'>
           <GatsbyImage
             alt='Picture of Tori Pugh'
             className='about-image'
-            data-sal='slide-up'
-            data-sal-delay='0'
-            data-sal-duration='1300'
-            data-sal-easing='ease-in-out'
             image={file.childrenImageSharp[0].gatsbyImageData}
           />
           <div className='about-hero-text'>
-            <h3
-              className='about-hero-title'
-              data-sal='slide-up'
-              data-sal-delay='0'
-              data-sal-duration='1000'
-              data-sal-easing='ease-in-out'
-            >
+            <h3 className='about-hero-title'>
               Driven by curiosity and a desire to make things work better.
             </h3>
-            <p
-              className='about-hero-subheader'
-              data-sal='slide-up'
-              data-sal-delay='250'
-              data-sal-duration='1000'
-              data-sal-easing='ease-in-out'
-            >
+            <p className='about-hero-subheader'>
               I listen to understand a problem, do research to identify and/or
               confirm it, and then create solutions for them.
             </p>
             <a
-              className='button'
+              className='button about-hero-button'
               href='../tpr.pdf'
               download='tori-pugh-resume'
-              data-sal='slide-up'
-              data-sal-delay='350'
-              data-sal-duration='800'
-              data-sal-easing='ease-in-out'
             >
               Download Resume
             </a>
           </div>
         </div>
         <div className='about-main'>
-          <div
-            data-sal='slide-up'
-            data-sal-delay='0'
-            data-sal-duration='800'
-            data-sal-easing='ease-in-out'
-          >
+          <div>
             <div className='about-main-body'>
               <h2>Overview</h2>
               <p>
@@ -136,13 +184,7 @@ const AboutPage = ({ data }) => {
               </p>
             </div>
           </div>
-          <div
-            className='about-sidebar'
-            data-sal='slide-up'
-            data-sal-delay='250'
-            data-sal-duration='800'
-            data-sal-easing='ease-in-out'
-          >
+          <div className='about-sidebar'>
             <div className='divided-sections'>
               <h2>Work</h2>
               <div>
