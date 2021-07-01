@@ -38,7 +38,9 @@ const useThemePage = () => {
     let savedTheme;
     if (!savedTheme) {
       savedTheme =
-        (isBrowser() && window.localStorage.getItem('siteColor')) || undefined;
+        (isBrowser() &&
+          window.localStorage.getItem('siteColor') !== 'undefined') ||
+        setCurrentTheme('Orange');
     }
     if (savedTheme && !currentTheme) {
       setCurrentTheme(savedTheme);
