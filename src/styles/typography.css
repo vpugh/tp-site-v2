@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "QuincyCFMedium";
+  font-weight: 'normal';
+  font-style: 'normal';
+  src: url("../fonts/QuincyCF-Medium.eot");
+  src: url("../fonts/QuincyCF-Medium.woff2"),
+      url("../fonts/QuincyCF-Medium.woff");
+}
+
+@font-face {
+  font-family: "QuincyCFMediumItalic";
+  font-weight: 'normal';
+  font-style: 'normal';
+  src: url("../fonts/QuincyCF-MediumItalic.eot");
+  src: url("../fonts/QuincyCF-MediumItalic.woff2"),
+  url("../fonts/QuincyCF-MediumItalic.woff");
+}
+
+@font-face {
+  font-family: "QuincyCFRegular";
+  font-weight: 'normal';
+  font-style: 'normal';
+  src: url("../fonts/QuincyCF-Regular.eot");
+  src: url("../fonts/QuincyCF-Regular.woff2"),
+  url("../fonts/QuincyCF-Regular.woff");
+}
+
+@font-face {
+  font-family: "QuincyCFRegularItalic";
+  font-weight: 'normal';
+  font-style: 'normal';
+  src: url("../fonts/QuincyCF-RegularItalic.eot");
+  src: url("../fonts/QuincyCF-RegularItalic.woff2"),
+  url("../fonts/QuincyCF-RegularItalic.woff");
+}

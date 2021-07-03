@@ -10,23 +10,6 @@ const WorkPreview = ({ data, displayHeader }) => {
 
   React.useEffect(() => {
     const element = ref.current;
-    // gsap.fromTo(
-    //   element.querySelector('.work-preview-container'),
-    //   {
-    //     opacity: 0,
-    //     y: -20,
-    //   },
-    //   {
-    //     opacity: 1,
-    //     y: 0,
-    //     scrollTrigger: {
-    //       trigger: element.querySelector('.work-link'),
-    //       start: 'top top',
-    //       end: 'bottom center',
-    //       scrub: true,
-    //     },
-    //   }
-    // );
     gsap.fromTo(
       element.querySelector('.work-body'),
       {
@@ -36,8 +19,8 @@ const WorkPreview = ({ data, displayHeader }) => {
       {
         opacity: 1,
         y: 0,
-        delay: 2.5,
-        duration: 1.25,
+        delay: 1.2,
+        duration: 2,
         ease: 'expo.inOut',
       }
     );

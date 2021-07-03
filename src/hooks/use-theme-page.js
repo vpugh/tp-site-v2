@@ -37,10 +37,12 @@ const useThemePage = () => {
   React.useEffect(() => {
     let savedTheme;
     if (!savedTheme) {
-      savedTheme =
-        (isBrowser() &&
-          window.localStorage.getItem('siteColor') !== 'undefined') ||
+      const localTheme = window.localStorage.getItem('siteColor');
+      if ((isBrowser() && localTheme !== 'undefined') || localTheme !== true) {
+        savedTheme = localTheme;
+      } else {
         setCurrentTheme('Orange');
+      }
     }
     if (savedTheme && !currentTheme) {
       setCurrentTheme(savedTheme);

@@ -14,7 +14,7 @@ const PersonalBlurb = () => {
       element.querySelector('.blurb-container'),
       {
         opacity: 0,
-        y: -50,
+        y: 50,
       },
       {
         opacity: 1,

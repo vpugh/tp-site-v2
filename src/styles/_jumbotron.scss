@@ -1,11 +1,12 @@
 $textColor: var(--textColor);
 
 .jumbotron-bg {
-  background-color: var(--jumbotronBg);
-  background: linear-gradient(180deg, var(--jumbotronBg) 0%, var(--jumbotronBg) 74%, var(--pageBgColor) 100%);
   height: calc(100vh - 10rem);
   display: flex;
   align-items: flex-end;
+  @media (min-width:640px) and (max-width: 767px) {
+    height: 90vh;
+  }
   @media (min-width: 768px) {
     height: calc(100vh - 40rem);
     padding: 200px 0 0 0;
@@ -18,9 +19,10 @@ $textColor: var(--textColor);
 }
 
 .jumbo-header {
-  font-weight: 800;
+  font-weight: 900;
   line-height: 1;
-  font-size: 31px;
+  font-size: 30px;
+  letter-spacing: 1.4px;
   @media (min-width: 768px) {
     font-size: 54px;
   }
@@ -44,13 +46,11 @@ $textColor: var(--textColor);
     font-size: 1.75rem;
     margin-top: .75rem;
   }
-  // @media (min-width: 1600px) {
-  //   font-size: 2.25rem;
-  //   margin-top: 1.2rem;
-  // }
   @media (min-width: 1920px) {
-    font-size: 2.25rem;
-    margin-top: 1.2rem;
+    font-size: 1.85rem;
+    margin-top: 1.8rem;
+    line-height: 1.4;
+    max-width: 92%;
   }
   .emphasize {
     font-style: italic;
@@ -97,6 +97,9 @@ $textColor: var(--textColor);
 
 .jumbo-text {
   width: 95%;
+  @media (min-width:640px) and (max-width: 767px) {
+    margin-top: 200px;
+  }
   @media (min-width: 768px) and (max-width: 1199px) {
     max-width: 540px;
     margin-top: 150px;

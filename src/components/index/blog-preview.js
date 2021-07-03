@@ -5,7 +5,7 @@ import DisplayHeader from '../shared/display-header';
 
 const BlogPreview = ({ data, displayHeader }) => {
   return (
-    <div style={{ marginTop: displayHeader ? 160 : null }}>
+    <div className={`${displayHeader && 'top-margin'}`}>
       {displayHeader && (
         <DisplayHeader
           headerTitle='Blog'
@@ -13,10 +13,7 @@ const BlogPreview = ({ data, displayHeader }) => {
           linkTitle='See All Posts'
         />
       )}
-      <div
-        style={{ marginTop: displayHeader ? null : 160 }}
-        className='blog-preview-container'
-      >
+      <div className='blog-preview-container'>
         {data.edges.map((blogData) => {
           const frontmatter = blogData.node.frontmatter;
           const image = getImage(frontmatter.cover_image);

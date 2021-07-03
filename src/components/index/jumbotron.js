@@ -25,12 +25,12 @@ const Jumbotron = () => {
       element.querySelector('.jumbo-subheader'),
       {
         opacity: 0,
-        y: 40,
+        y: -60,
       },
       {
         opacity: 1,
         y: 0,
-        delay: 1.5,
+        delay: 0.5,
         duration: 1.5,
       }
     );
@@ -40,7 +40,9 @@ const Jumbotron = () => {
     <div className='jumbotron-bg' ref={ref}>
       <div className='container'>
         <div className='jumbo-text'>
-          <h2 className='jumbo-header'>UI/UX Designer & Front-End Developer</h2>
+          <h2 className='jumbo-header bold-quincy'>
+            UI/UX Designer & Front-End Developer
+          </h2>
           <h3 className='jumbo-subheader'>
             Quick and constantly learning creative that loves creating great{' '}
             <span className='emphasize'>solutions</span>,{' '}

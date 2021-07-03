@@ -6,6 +6,8 @@
   --buttonBorderBg: #000;
 }
 
+@import './typography.css';
+
 html {
   font-family: 'Nunito Sans', sans-serif;
   color: var(--textColor);
@@ -18,6 +20,14 @@ body {
 }
 
 // Utility styles
+.bold-quincy {
+  font-family: 'QuincyCFMedium', serif;
+}
+
+.reg-quincy {
+  font-family: 'QuincyCFRegular', serif;
+}
+
 .container {
   width: 100%;
   max-width: 1460px;
