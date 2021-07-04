@@ -5,9 +5,14 @@ const themePalette = {
   Blue: '#B3EEFF',
   Green: '#DFF0CC',
   textColors: {
-    Orange: '#573300',
-    Blue: '#003C4D',
-    Green: '#2D4314',
+    Orange: '#754400',
+    Blue: '#005870',
+    Green: '#3d5a1b',
+  },
+  bgBoxShading: {
+    Orange: '#FFBC5C',
+    Blue: '#7adcfa',
+    Green: '#bde094',
   },
   jumboBg: {
     Orange: '#FFA119',
@@ -76,6 +81,11 @@ const useThemePage = () => {
           '--buttonBorderBg',
           themePalette.buttonBorderBg[currentTheme]
         );
+      isBrowser() &&
+        root.style.setProperty(
+          '--boxShading',
+          themePalette.bgBoxShading[currentTheme]
+        );
     }
     if (currentTheme) {
       setCurrentTheme(currentTheme);
@@ -105,6 +115,11 @@ const useThemePage = () => {
         root.style.setProperty(
           '--buttonBorderBg',
           themePalette.buttonBorderBg[currentTheme]
+        );
+      isBrowser() &&
+        root.style.setProperty(
+          '--boxShading',
+          themePalette.bgBoxShading[currentTheme]
         );
     }
   }, [currentTheme]);

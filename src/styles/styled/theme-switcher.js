@@ -5,33 +5,21 @@ export const SwitcherContainer = styled.div`
     display: none;
   }
   display: inline-block;
-  /* border-radius: 24px; */
   padding: 4px;
   background: var(--text-transparent);
   position: relative;
   white-space: nowrap;
-  /* opacity: 0.05; */
   transition: 300ms ease-in-out;
   &:hover {
     opacity: 1;
   }
-  /* &::before {
-    content: '';
-    background: var(--textColor);
-    width: 33%;
-    position: absolute;
-    top: 6px;
-    right: 4px;
-    border-radius: 20px;
-    height: 31px;
-    transition: all 0.5s;
-    right: ${(props) =>
-    props.currentTheme === 'Orange'
-      ? 'calc(66% - 4px)'
-      : props.currentTheme === 'Green'
-      ? 'calc(31% - 4px)'
-      : 'calc(1% - 4px)'};
-  } */
+  .mobile-menu & {
+    display: block;
+    opacity: 1;
+    select {
+      opacity: 1;
+    }
+  }
 `;
 
 export const ThemeLabel = styled.span`

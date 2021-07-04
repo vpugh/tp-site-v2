@@ -34,8 +34,8 @@ const PersonalBlurb = () => {
   return (
     <div ref={ref}>
       <div className='blurb-container'>
-        <h2 className='blurb-title'>About Me</h2>
         <div className='blurb-text-container'>
+          <h2 className='blurb-title bold-quincy'>About Me</h2>
           <p>
             Hi, I'm Tori Pugh. Currently working for Holman Enterprises as a
             Front-End Developer. I have 8 years experience as a front-end
@@ -54,7 +54,7 @@ const PersonalBlurb = () => {
             user experience, usability, and accessibility.
           </p>
           <Link className='textLink' to='/about'>
-            — Read More
+            More About Me
           </Link>
         </div>
       </div>

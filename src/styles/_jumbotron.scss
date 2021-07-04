@@ -3,18 +3,18 @@ $textColor: var(--textColor);
 .jumbotron-bg {
   height: calc(100vh - 10rem);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   @media (min-width:640px) and (max-width: 767px) {
     height: 90vh;
+    align-items: flex-end;
   }
   @media (min-width: 768px) {
-    height: calc(100vh - 40rem);
     padding: 200px 0 0 0;
     height: 40vh;
     align-items: flex-start;
   }
   @media (min-width: 1024px) {
-    height: 60vh;
+    height: 55vh;
   }
 }
 
@@ -27,8 +27,8 @@ $textColor: var(--textColor);
     font-size: 54px;
   }
   @media (min-width: 1024px) {
-    font-size: 4.5rem;
-    line-height: 1.2;
+    font-size: 4.6rem;
+    line-height: 1.1;
     margin-bottom: 0;
   }
   @media (min-width: 1920px) {
@@ -43,8 +43,10 @@ $textColor: var(--textColor);
   line-height: 1.6;
   margin-bottom: 0;
   @media (min-width: 1024px) {
-    font-size: 1.75rem;
-    margin-top: .75rem;
+    font-size: 1.3rem;
+    margin-top: 0.75rem;
+    max-width: 72%;
+    line-height: 1.4;
   }
   @media (min-width: 1920px) {
     font-size: 1.85rem;
@@ -54,7 +56,7 @@ $textColor: var(--textColor);
   }
   .emphasize {
     font-style: italic;
-    border-bottom: 3px solid rgba(#000, 0.2);
+    // border-bottom: 3px solid rgba(#000, 0.2);
   }
 }
 
@@ -100,7 +102,7 @@ $textColor: var(--textColor);
   @media (min-width:640px) and (max-width: 767px) {
     margin-top: 200px;
   }
-  @media (min-width: 768px) and (max-width: 1199px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     max-width: 540px;
     margin-top: 150px;
   }

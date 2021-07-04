@@ -11,14 +11,25 @@
     margin-bottom: 40px;
     margin-top: 0;
   }
-  // @media (min-width: 1200px) {
-  //   font-size: 36px;
-  // }
+  @media (min-width: 1200px) {
+    font-size: 43px;
+  }
 }
 
 .blurb-text-container {
+  background: var(--boxShading);
+  @media (min-width: 768px) {
+    margin: 0 auto;
+  }
   @media (min-width: 1200px) {
     font-size: 24px;
     max-width: 71%;
+    padding: 79px 109px;
+  }
+  .textLink {
+    padding: 20px 30px;
+    margin-top: 20px;
+    display: inline-block;
+    background-color: var(--jumbotronBg);
   }
 }

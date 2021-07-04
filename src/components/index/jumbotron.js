@@ -16,7 +16,7 @@ const Jumbotron = () => {
       {
         opacity: 1,
         y: 0,
-        duration: 2,
+        duration: 1,
         ease: 'power1.inOut',
       }
     );
@@ -31,7 +31,7 @@ const Jumbotron = () => {
         opacity: 1,
         y: 0,
         delay: 0.5,
-        duration: 1.5,
+        duration: 0.5,
       }
     );
   }, []);
