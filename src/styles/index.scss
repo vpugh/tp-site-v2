@@ -43,11 +43,13 @@ body {
 }
 
 .button-container {
-  & a:last-child {
-    margin-left: 20px;
-  }
-  & a:first-child {
-    margin-left: 0;
+  @media (min-width: 1024px) {
+    & a:last-child {
+      margin-left: 20px;
+    }
+    & a:first-child {
+      margin-left: 0;
+    }
   }
 }
 
@@ -85,4 +87,5 @@ body {
 @import './about';
 @import './blog-preview';
 @import './blog-post';
+@import './contact';
 @import './theme-switcher';

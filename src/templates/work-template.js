@@ -14,27 +14,10 @@ const WorkTemplate = ({ data }) => {
         description={project.description}
       />
       <div className='container'>
-        <div
-          className='work-jumbo'
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
-            margin: '0 110px',
-          }}
-        >
-          <div style={{ width: 530 }}>
-            <h4
-              style={{
-                fontWeight: 800,
-                fontSize: 48,
-                lineHeight: '56px',
-                marginBottom: 28,
-              }}
-            >
-              {project.work_jumbo_title}
-            </h4>
-            <p style={{ fontSize: 22 }}>
+        <div className='work-jumbo'>
+          <div className='work-description'>
+            <h4 className='project-title'>{project.work_jumbo_title}</h4>
+            <p className='project-body'>
               <strong>Role:</strong> {project.role}
               <br />
               <strong>Deliverable:</strong> {project.deliverable}
@@ -70,7 +53,7 @@ const WorkTemplate = ({ data }) => {
           </div>
           <div>
             <img
-              style={{ maxWidth: 516, height: 'auto', marginBottom: 20 }}
+              className='mock-laptop'
               src={project.laptop_image}
               alt='mock-laptop'
             />

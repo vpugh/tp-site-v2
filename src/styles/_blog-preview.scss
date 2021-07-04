@@ -7,6 +7,11 @@
     row-gap: 116px;
     margin-top: 40px;
   }
+  &.blog-page {
+    @media (min-width: 1024px) {
+      margin-top: 120px;
+    }
+  }
 }
 
 .top-margin {

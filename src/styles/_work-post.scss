@@ -1,7 +1,62 @@
 // work page
+.work-jumbo {
+  @media (min-width: 1024px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 110px;
+  }
+  .project-title {
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 0;
+    @media (min-width: 1024px) {
+      font-size: 48px;
+      line-height: 56px;
+      margin-bottom: 28px;
+    }
+  }
+  .project-body {
+    font-size: 18px;
+    @media (min-width: 1024px) {
+      font-size: 22px;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    @media (max-width: 480px) {
+      flex-direction: column;
+      & a:first-child {
+        margin-bottom: 20px;
+      }
+      margin-bottom: 40px;
+    }
+  }
+  
+  .mock-laptop {
+    width: 100%;
+    height: auto;
+    @media (min-width: 1024px) {
+      max-width: 516px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.work-description {
+  @media (min-width: 1024px) {
+    width: 530px;
+  }
+}
+
 .body {
   max-width: 750px;
-  margin: 200px auto 100px auto;
+  margin-top: 40px;
+  @media (min-width: 1024px) {
+    margin: 200px auto 100px auto;
+  }
   & img {
     width: 100%;
   }

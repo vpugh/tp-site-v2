@@ -15,7 +15,7 @@ const AboutPage = ({ data }) => {
       element.querySelector('.about-image'),
       {
         opacity: 0,
-        y: -40,
+        y: 40,
       },
       {
         opacity: 1,
@@ -29,12 +29,12 @@ const AboutPage = ({ data }) => {
       element.querySelector('.about-hero-title'),
       {
         opacity: 0,
-        y: -70,
+        y: 70,
       },
       {
         opacity: 1,
         y: 0,
-        duration: 1.25,
+        duration: 1,
         ease: 'power1.inOut',
         delay: 0.25,
       }
@@ -44,7 +44,7 @@ const AboutPage = ({ data }) => {
       element.querySelector('.about-hero-subheader'),
       {
         opacity: 0,
-        y: -70,
+        y: 70,
       },
       {
         opacity: 1,
@@ -74,12 +74,12 @@ const AboutPage = ({ data }) => {
       element.querySelector('.about-main'),
       {
         opacity: 0,
-        y: -20,
+        y: 40,
       },
       {
         delay: 2,
         opacity: 1,
-        duration: 2,
+        duration: 1.5,
         y: 0,
       }
     );
