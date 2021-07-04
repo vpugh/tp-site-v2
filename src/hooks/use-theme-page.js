@@ -37,90 +37,49 @@ let root;
 
 root = isBrowser() ? window?.document?.documentElement : null;
 
+const setBaseDefaults = (setCurrentTheme, currentTheme) => {
+  setCurrentTheme(currentTheme);
+  isBrowser() && window.localStorage.setItem('siteColor', currentTheme);
+  isBrowser() &&
+    document
+      .getElementsByTagName('html')[0]
+      .setAttribute('class', currentTheme);
+  isBrowser() &&
+    root.style.setProperty('--pageBgColor', themePalette[currentTheme]);
+  isBrowser() &&
+    root.style.setProperty(
+      '--textColor',
+      themePalette.textColors[currentTheme]
+    );
+  isBrowser() &&
+    root.style.setProperty('--jumbotronBg', themePalette.jumboBg[currentTheme]);
+  isBrowser() &&
+    root.style.setProperty('--buttonBg', themePalette.buttonBg[currentTheme]);
+  isBrowser() &&
+    root.style.setProperty(
+      '--buttonBorderBg',
+      themePalette.buttonBorderBg[currentTheme]
+    );
+  isBrowser() &&
+    root.style.setProperty(
+      '--boxShading',
+      themePalette.bgBoxShading[currentTheme]
+    );
+};
+
 const useThemePage = () => {
   const [currentTheme, setCurrentTheme] = React.useState();
+
   React.useEffect(() => {
-    let savedTheme;
-    if (!savedTheme) {
-      const localTheme = window.localStorage.getItem('siteColor');
-      if ((isBrowser() && localTheme !== 'undefined') || localTheme !== true) {
-        savedTheme = localTheme;
+    if (isBrowser()) {
+      const storedTheme = window.localStorage.getItem('siteColor');
+      if (currentTheme) {
+        setBaseDefaults(setCurrentTheme, currentTheme);
+      } else if (storedTheme && !currentTheme) {
+        setBaseDefaults(setCurrentTheme, storedTheme);
       } else {
-        setCurrentTheme('Orange');
+        setBaseDefaults(setCurrentTheme, 'Orange');
       }
-    }
-    if (savedTheme && !currentTheme) {
-      setCurrentTheme(savedTheme);
-    }
-    if (!savedTheme && !currentTheme) {
-      setCurrentTheme('Orange');
-      isBrowser() && window.localStorage.setItem('siteColor', currentTheme);
-      isBrowser() &&
-        document
-          .getElementsByTagName('html')[0]
-          .setAttribute('class', currentTheme);
-      isBrowser() &&
-        root.style.setProperty('--pageBgColor', themePalette[currentTheme]);
-      isBrowser() &&
-        root.style.setProperty(
-          '--textColor',
-          themePalette.textColors[currentTheme]
-        );
-      isBrowser() &&
-        root.style.setProperty(
-          '--jumbotronBg',
-          themePalette.jumboBg[currentTheme]
-        );
-      isBrowser() &&
-        root.style.setProperty(
-          '--buttonBg',
-          themePalette.buttonBg[currentTheme]
-        );
-      isBrowser() &&
-        root.style.setProperty(
-          '--buttonBorderBg',
-          themePalette.buttonBorderBg[currentTheme]
-        );
-      isBrowser() &&
-        root.style.setProperty(
-          '--boxShading',
-          themePalette.bgBoxShading[currentTheme]
-        );
-    }
-    if (currentTheme) {
-      setCurrentTheme(currentTheme);
-      isBrowser() && window.localStorage.setItem('siteColor', currentTheme);
-      isBrowser() &&
-        document
-          .getElementsByTagName('html')[0]
-          .setAttribute('class', currentTheme);
-      isBrowser() &&
-        root.style.setProperty('--pageBgColor', themePalette[currentTheme]);
-      isBrowser() &&
-        root.style.setProperty(
-          '--textColor',
-          themePalette.textColors[currentTheme]
-        );
-      isBrowser() &&
-        root.style.setProperty(
-          '--jumbotronBg',
-          themePalette.jumboBg[currentTheme]
-        );
-      isBrowser() &&
-        root.style.setProperty(
-          '--buttonBg',
-          themePalette.buttonBg[currentTheme]
-        );
-      isBrowser() &&
-        root.style.setProperty(
-          '--buttonBorderBg',
-          themePalette.buttonBorderBg[currentTheme]
-        );
-      isBrowser() &&
-        root.style.setProperty(
-          '--boxShading',
-          themePalette.bgBoxShading[currentTheme]
-        );
     }
   }, [currentTheme]);
 
