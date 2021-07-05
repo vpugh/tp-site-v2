@@ -10,10 +10,15 @@
     gap: 30px 100px;
   }
   &.work-page {
+    opacity: 0;
     @media (min-width: 1024px) {
       margin-top: 120px;
     }
   }
+}
+
+.work-body {
+  opacity: 0;
 }
 
 .work-link {

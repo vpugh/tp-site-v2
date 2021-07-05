@@ -13,7 +13,7 @@ const WorkPage = ({ data }) => {
   React.useEffect(() => {
     const element = ref.current;
     gsap.fromTo(
-      element.querySelector('.container'),
+      element.querySelector('.work-page'),
       {
         opacity: 0,
         y: 50,
@@ -24,8 +24,7 @@ const WorkPage = ({ data }) => {
         duration: 1,
         ease: 'power1.inOut',
         scrollTrigger: {
-          trigger: '.work-page',
-          // markers: true,
+          trigger: '.work-link',
           start: 'top center',
           end: 'bottom 80px',
         },
