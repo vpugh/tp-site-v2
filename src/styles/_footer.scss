@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 60px;
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     flex-direction: row;
     margin-top: 180px;
   }
@@ -13,12 +13,12 @@
 }
 
 .footer-cta {
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     width: 530px;
   }
   .cta-title {
     font-size: 48px;
-    @media (min-width: 1200px) {
+    @media (min-width: 1024px) {
       font-size: 73px;
       line-height: 80px;
     }
@@ -38,7 +38,7 @@
 .footer-social-title {
   font-size: 20px;
   line-height: 32px;
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     margin-top: 83px;
   }
 }

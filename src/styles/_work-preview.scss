@@ -6,7 +6,7 @@
     gap: 30px;
     margin-top: 40px;
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     gap: 30px 100px;
   }
   &.work-page {
@@ -45,7 +45,7 @@
   height: auto;
   color: #fff;
   transition: 300ms ease-in-out;
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     max-width: 600px;
   }
 }
@@ -59,7 +59,7 @@
     @media (max-width: 360px) {
       margin-top: .5rem;
     }
-    @media (min-width: 1200px) {
+    @media (min-width: 1024px) {
       font-size: 28px;
       line-height: 32px;
     }
@@ -70,7 +70,7 @@
     @media (max-width: 360px) {
       margin-bottom: .5rem;
     }
-    @media (min-width: 1200px) {
+    @media (min-width: 1024px) {
       font-size: 20px;
       line-height: 32px;
       width: 80%;

@@ -2,7 +2,7 @@
   display: grid;
   gap: 20px;
   row-gap: 40px;
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     grid-template: auto/repeat(3,1fr);
     row-gap: 116px;
     margin-top: 40px;

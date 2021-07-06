@@ -1,20 +1,15 @@
 $textColor: var(--textColor);
 
 .jumbotron-bg {
-  height: calc(100vh - 14rem);
+  height: calc(100vh - 24rem);
   display: flex;
   align-items: flex-end;
-  @media (min-width:640px) and (max-width: 767px) {
-    height: 90vh;
-    align-items: flex-end;
-  }
   @media (min-width: 768px) {
-    padding: 200px 0 0 0;
-    height: 40vh;
+    padding: 100px 0 0 0;
     align-items: flex-start;
   }
   @media (min-width: 1024px) {
-    height: 55vh;
+    padding: 200px 0 0 0;
   }
 }
 
