@@ -1,0 +1,115 @@
+$textColor: var(--textColor);
+
+.jumbotron-bg {
+  height: calc(100vh - 24rem);
+  display: flex;
+  align-items: flex-end;
+  @media (min-width: 768px) {
+    padding: 100px 0 0 0;
+    align-items: flex-start;
+  }
+  @media (min-width: 1024px) {
+    padding: 200px 0 0 0;
+  }
+}
+
+.jumbo-header {
+  font-weight: 900;
+  line-height: 1;
+  font-size: 30px;
+  letter-spacing: 1.4px;
+  @media (min-width: 768px) {
+    font-size: 54px;
+  }
+  @media (min-width: 1024px) {
+    font-size: 4.6rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+  }
+  @media (min-width: 1920px) {
+    font-size: 6.25rem;
+    line-height: 1;
+  }
+}
+
+.jumbo-subheader {
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  @media (min-width: 1024px) {
+    font-size: 1.3rem;
+    margin-top: 0.75rem;
+    max-width: 72%;
+    line-height: 1.4;
+  }
+  @media (min-width: 1920px) {
+    font-size: 1.85rem;
+    margin-top: 1.8rem;
+    line-height: 1.4;
+    max-width: 92%;
+  }
+  .emphasize {
+    font-style: italic;
+    // border-bottom: 3px solid rgba(#000, 0.2);
+  }
+}
+
+.jumbo-buttons {
+  margin-top: 53px;
+  & .highlighted-btn {
+    border: 2px solid var(--buttonBorderBg);
+    background-color: var(--buttonBg);
+    border-radius: 6px;
+    padding: 12px 20px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 300ms ease-in-out;
+    &:hover {
+      opacity: 0.8
+    }
+  }
+  & > a {
+    border: 2px solid var(--textColor);
+    border-radius: 6px;
+    padding: 12px 20px;
+    color: var(--textColor);
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 300ms ease-in-out;
+    &:hover {
+      background-color: var(--textColor);
+      color: #fff;
+    }
+    &:last-child {
+      margin-left: 20px;
+    }
+  }
+}
+
+.jumbo-text {
+  width: 95%;
+  @media (min-width:640px) and (max-width: 767px) {
+    margin-top: 200px;
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    max-width: 540px;
+    margin-top: 150px;
+  }
+  @media (min-width: 1024px) {
+  margin-top: 0;
+  margin-bottom: 50px;
+  width: 749px;
+  }
+  @media (min-width: 1600px) {
+    width: 820px;
+  }
+  @media (min-width: 1920px) {
+    width: 1000px;
+  }
+}

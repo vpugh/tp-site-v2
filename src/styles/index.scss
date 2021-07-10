@@ -1,0 +1,91 @@
+:root {
+  --textColor: #000;
+  --jumbotronBg: #000;
+  --pageBgColor: #000;
+  --buttonBg: #000;
+  --buttonBorderBg: #000;
+}
+
+@import './typography.css';
+
+html {
+  font-family: 'Nunito Sans', sans-serif;
+  color: var(--textColor);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--pageBgColor);
+}
+
+// Utility styles
+.bold-quincy {
+  font-family: 'QuincyCFMedium', serif;
+}
+
+.reg-quincy {
+  font-family: 'QuincyCFRegular', serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1460px;
+  box-sizing: border-box;
+  margin: 40px auto;
+  padding: 0 20px;
+  @media (min-width: 440px) {
+    padding: 0 60px;
+  }
+  @media (min-width: 768px) {
+    padding: 0 80px;
+  }
+}
+
+.button-container {
+  @media (min-width: 1024px) {
+    & a:last-child {
+      margin-left: 20px;
+    }
+    & a:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.button {
+  border: 2px solid var(--textColor);
+  border-radius: 6px;
+  padding: 10px 20px;
+  color: var(--textColor);
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 300ms ease-in-out;
+  &:hover {
+    background-color: var(--textColor);
+    color: #fff;
+  }
+}
+
+.textLink {
+  text-decoration: none;
+  color: var(--textColor);
+  transition: 300ms ease-in-out;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+@import './footer';
+@import './header-navigation';
+@import './jumbotron';
+@import './personal-blurb';
+@import './work-preview';
+@import './work-post';
+@import './about';
+@import './blog-preview';
+@import './blog-post';
+@import './contact';
+@import './theme-switcher';

@@ -1,0 +1,22 @@
+.blog-preview-container {
+  display: grid;
+  gap: 20px;
+  row-gap: 40px;
+  @media (min-width: 1024px) {
+    grid-template: auto/repeat(3,1fr);
+    row-gap: 116px;
+    margin-top: 40px;
+  }
+  &.blog-page {
+    @media (min-width: 1024px) {
+      margin-top: 120px;
+    }
+  }
+}
+
+.top-margin {
+  margin-top: 60px;
+  @media (min-width: 768px) {
+    margin-top: 160px;
+  }
+}

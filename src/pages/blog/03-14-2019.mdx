@@ -1,0 +1,42 @@
+---
+path: '/blog/deployment-struggles-react-app-to-heroku'
+title: 'Deployment Struggles - React app to Heroku'
+excerpt: 'Some issues I ran into trying to deploy my app'
+tags: ['web development', 'learning', 'frontend', 'heroku']
+cover_image: ../../images/compressed/christopher-lemercier-12yvdCiLaVE-unsplash.jpg
+draft: false
+type: blog
+date: 2019-03-14
+---
+
+### Starting my deployment journey
+
+I started on this journey because I wanted to launch an app into the world, it's one of my resolutions for the year. I wanted to know more about this process of deploying and what that entailed. Most importantly I wanted to deploy so people could eventually see it and then I could test and use it the way it was meant to be, through the internet.
+
+With no experience of deploying to Heroku or deploying a React app this test app would be the best time and place to do that. Unsurprisingly, I ran into a few problems. Some related to Heroku, to Github, and human error.
+
+## Github error
+
+The Github error was the most subtle and hardest one to solve. Like most bugs, it's something painfully simple — I capitalized my filenames. That's it. Github doesn't acknowledge capitalization changes, so kept getting an error of not able to find file because on Github it was still lowercase.
+
+On one hand I know I shouldn't have switched my naming convention after creating my files but I thought it wouldn't be an issue, so why not? In future I'll stick to camelCase, pascalCase, snakeCase, etc beforehand and not change it after the files are made and pushed to Github. **Lesson learned: make a decision early then stick with it and read the error log carefully.**
+
+## (My) Human errors
+
+Almost all my errors were caused by not reading the error log properly for extended periods of time, not running `npm install` after adding assets or making changes to Webpack, or problems with my assets.
+
+I was trying to add sound to my app and it wouldn't work for days. I'd made a vue app with these sounds and had no problem. I couldn't understand why replication in React wasn't working. After running into the problem of a Promise with `.play()` and finding a supposed solution, it still wasn't working.
+
+Simple solution, the audio file was bad. I assumed it was working, but it wouldn't play on my computer. **Rule: Always check your assets when troubleshooting, don't assume they aren't the problem.**
+
+## Heroku _misunderstanding_
+
+A lot of the problems stemmed from my lack of knowledge of how Heroku works. I didn't know anything about configuring my .envs or how to properly set my scripts so they run correctly and build in the right order.
+
+All in all it was a significant learning curve, especially with how the Webpack build would affect things in Heroku. Without being to able to directly look at the dist folder it was really hard to troubleshoot sometimes. It would build with no errors and the page still wasn't showing. Those were the worst times of not knowing what went wrong.
+
+## Knowledge Gained
+
+I ran into a lot of problems but when your starting something new that's not unexpected. With determination and the use of trust Google, I prevailed. It may be annoying that you can't seem to figure something out, it's ok though. Take a few days and collect your thoughts; don't forget to read the error logs, check all your files and double check your naming conventions; and test on your local when you can't see what the problem is.
+
+These should help you find a solution to your problem. Otherwise, keep messing around and it'll come in time.
