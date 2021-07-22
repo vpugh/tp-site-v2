@@ -1,12 +1,12 @@
 .blurb-container {
+  padding: 60px 0;
   @media (min-width: 1024px) {
     padding: 180px 0 120px 0;
   }
 }
 
 .blurb-title {
-  font-size: 22px;
-  margin-top: 40px;
+  font-size: 26px;
   @media (min-width: 768px) {
     margin-bottom: 40px;
     margin-top: 0;
@@ -18,6 +18,7 @@
 
 .blurb-text-container {
   background: var(--boxShading);
+  padding: 10px 30px 20px 30px;
   @media (min-width: 768px) {
     margin: 0 auto;
   }

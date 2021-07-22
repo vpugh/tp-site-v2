@@ -20,10 +20,10 @@ const Header = (props) => {
       <Link className='logo' to='/'>
         {logoText}
       </Link>
-      <ThemeSwitcher />
+      <ThemeSwitcher iconColors='var(--textColor)' />
       {isMenuOpen && (
         <nav className='mobile-menu' style={{ padding: 40 }}>
-          <ThemeSwitcher />
+          <ThemeSwitcher iconColors='var(--pageBgColor)' />
           <div className='menu-container'>
             <Link to='/work' activeStyle={activeStyle}>
               Work

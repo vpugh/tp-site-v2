@@ -1,15 +1,25 @@
 $textColor: var(--textColor);
 
 .jumbotron-bg {
-  height: calc(100vh - 24rem);
   display: flex;
   align-items: flex-end;
-  @media (min-width: 768px) {
-    padding: 100px 0 0 0;
-    align-items: flex-start;
-  }
-  @media (min-width: 1024px) {
+  padding: 100px 0 0 0;
+  // @media (min-width: 768px) {
+  //   align-items: flex-start;
+  // }
+  @media only screen and (min-width: 1024px) {
     padding: 200px 0 0 0;
+    height: calc(100vh - 24rem);
+  }
+  // @media only screen 
+  // and (min-device-width: 1024px) 
+  // and (max-device-width: 1366px)
+  // and (-webkit-min-device-pixel-ratio: 2) {
+  //   height: auto;
+  // }
+  @media (min-width: 2040px) {
+    height: calc(100vh - 34rem);
+    align-items: baseline;
   }
 }
 
@@ -26,7 +36,7 @@ $textColor: var(--textColor);
     line-height: 1.1;
     margin-bottom: 0;
   }
-  @media (min-width: 1920px) {
+  @media (min-width: 2040px) {
     font-size: 6.25rem;
     line-height: 1;
   }
@@ -43,7 +53,7 @@ $textColor: var(--textColor);
     max-width: 72%;
     line-height: 1.4;
   }
-  @media (min-width: 1920px) {
+  @media (min-width: 2040px) {
     font-size: 1.85rem;
     margin-top: 1.8rem;
     line-height: 1.4;
@@ -107,9 +117,9 @@ $textColor: var(--textColor);
   width: 749px;
   }
   @media (min-width: 1600px) {
-    width: 820px;
+    width: 910px;
   }
-  @media (min-width: 1920px) {
+  @media (min-width: 2040px) {
     width: 1000px;
   }
 }

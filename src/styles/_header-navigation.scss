@@ -71,6 +71,10 @@
   background: #000;
   background: var(--textColor);
   z-index: 16;
+  select {
+    color: var(--pageBgColor);
+    background-color: var(--pageBgColor);
+  }
   .menu-container {
     display: flex;
     flex-direction: column;
