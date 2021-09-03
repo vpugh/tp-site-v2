@@ -1,38 +1,9 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const PersonalBlurb = () => {
-  gsap.registerPlugin(ScrollTrigger);
-  const ref = React.useRef(null);
-
-  React.useEffect(() => {
-    const element = ref.current;
-
-    gsap.fromTo(
-      element.querySelector('.blurb-container'),
-      {
-        opacity: 0,
-        y: 50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power1.inOut',
-        scrollTrigger: {
-          trigger: '.blurb-title',
-          // markers: true,
-          start: 'top center',
-          end: 'bottom 80px',
-        },
-      }
-    );
-  }, []);
-
   return (
-    <div ref={ref}>
+    <div>
       <div className='blurb-container'>
         <div className='blurb-text-container'>
           <h2 className='blurb-title bold-quincy'>Little About Me</h2>

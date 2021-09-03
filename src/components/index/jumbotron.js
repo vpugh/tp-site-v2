@@ -69,7 +69,7 @@ const Jumbotron = () => {
             <Link to='/work' className='button dark'>
               My Work
             </Link>
-            <Link to='/about' className='button light'>
+            <Link to='/contact' className='button light'>
               Let's Chat!
             </Link>
           </div>

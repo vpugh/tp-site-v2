@@ -38,4 +38,9 @@
 
 .button-container-jumbotron {
   margin-top: 2.563rem; // 58px - 17 = 41
+  @media (min-width: 768px) {
+    & > .button:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
 }
