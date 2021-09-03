@@ -35,25 +35,19 @@ const PersonalBlurb = () => {
     <div ref={ref}>
       <div className='blurb-container'>
         <div className='blurb-text-container'>
-          <h2 className='blurb-title bold-quincy'>About Me</h2>
+          <h2 className='blurb-title bold-quincy'>Little About Me</h2>
           <p>
-            Hi, I'm Tori Pugh. Currently working for Holman Enterprises as a
-            Front-End Developer. I have 8 years experience as a front-end
-            developer and UX/UI designer.
+            Hello, I'm Tori Pugh — a Front-End Developer currently working for
+            Holman Enterprises. I'm constantly trying to balance the power and
+            beauty of design and the practicality and usability of development.
+            I strive to make things that look great and work equally as well.
           </p>
           <p>
-            For me, design is the culmination of conceptualizing and
-            implementing a solution with an understanding of your audience and
-            their needs then proceeding to solve problems using critical
-            thinking skills.
+            I love to learn and also enjoy teaching or speaking about my
+            experiences. I give talks at conferences when I can and share some
+            content on dribbble when I get a chance.
           </p>
-          <p>
-            I use Javascript and React frameworks to develop interactive
-            experiences and products. When creating solutions, I always thinking
-            about the user first. I keep the balance of good looking UI with
-            user experience, usability, and accessibility.
-          </p>
-          <Link className='textLink' to='/about'>
+          <Link className='button dark blurb-button' to='/about'>
             More About Me
           </Link>
         </div>

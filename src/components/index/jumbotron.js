@@ -1,6 +1,7 @@
 // import { Link } from 'gatsby';
 import React from 'react';
 import { gsap } from 'gsap';
+import { Link } from 'gatsby';
 
 const Jumbotron = () => {
   const ref = React.useRef(null);
@@ -11,7 +12,7 @@ const Jumbotron = () => {
       element.querySelector('.jumbo-header'),
       {
         opacity: 0,
-        y: -40,
+        y: 180,
       },
       {
         opacity: 1,
@@ -25,7 +26,21 @@ const Jumbotron = () => {
       element.querySelector('.jumbo-subheader'),
       {
         opacity: 0,
-        y: -60,
+        y: 60,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        delay: 0.5,
+        duration: 0.5,
+      }
+    );
+
+    gsap.fromTo(
+      element.querySelector('.button-container-jumbotron'),
+      {
+        opacity: 0,
+        y: 40,
       },
       {
         opacity: 1,
@@ -40,16 +55,24 @@ const Jumbotron = () => {
     <div className='jumbotron-bg' ref={ref}>
       <div className='container'>
         <div className='jumbo-text'>
-          <h2 className='jumbo-header bold-quincy'>
-            UI/UX Designer & Front-End Developer
+          <h2 className='jumbo-header reg-quincy'>
+            I’m a UX/UI Designer & Front End Developer
           </h2>
           <h3 className='jumbo-subheader'>
-            Quick and constantly learning creative that loves creating great{' '}
-            <span className='emphasize'>solutions</span>,{' '}
-            <span className='emphasize'>coding</span> cool stuff, &{' '}
-            <span className='emphasize'>designing</span> things. Striving to
-            make things better than I found them.
+            With a passion for user-centered solutions, problem-solving, and
+            eternally learning. I love to figure out the best way to execute a
+            clever solution, delving into the who, what and why. Good design and
+            strong development are the cornerstone to a great digital
+            experience.
           </h3>
+          <div className='button-container-jumbotron'>
+            <Link to='/work' className='button dark'>
+              My Work
+            </Link>
+            <Link to='/about' className='button light'>
+              Let's Chat!
+            </Link>
+          </div>
         </div>
       </div>
     </div>

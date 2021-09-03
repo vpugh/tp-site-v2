@@ -9,7 +9,7 @@
 @import './typography.css';
 
 html {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   color: var(--textColor);
 }
 
@@ -54,18 +54,35 @@ body {
 }
 
 .button {
-  border: 2px solid var(--textColor);
-  border-radius: 6px;
-  padding: 10px 20px;
-  color: var(--textColor);
+  @media (max-width: 767px) {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  padding: 19px 60px;
+  border-radius: 8px;
+  border: none;
+  color: #573300;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all ease-in-out 300ms;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
-  font-weight: bold;
-  transition: 300ms ease-in-out;
   &:hover {
+    opacity: 0.4;
+  }
+  &.default {
     background-color: var(--textColor);
-    color: #fff;
+  color: #fff;
+  }
+  &.dark {
+    background-color: var(--jumbotronBg);
+  }
+  &.light {
+    background: #FFBC5C;
   }
 }
 

@@ -29,12 +29,11 @@
     transition: opacity 300ms ease-in-out;
     opacity: 0.5;
   }
-  font-weight: 900;
+  font-weight: 700;
   color: var(--textColor);
   font-size: 32px;
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: -0.5px;
 }
 
 .hamburger-menu {

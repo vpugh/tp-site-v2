@@ -66,10 +66,20 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      // resolve: `gatsby-plugin-google-fonts`,
+      // options: {
+      //   fonts: [`inter\:wght@400;600;700;800`],
+      //   display: 'swap',
+      // },
+      resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
-        fonts: [`nunito sans\:400,700,800,900`],
-        display: 'swap',
+        fonts: [
+          {
+            family: 'Inter',
+            weights: ['400..900'],
+            variable: true,
+          },
+        ],
       },
     },
     {

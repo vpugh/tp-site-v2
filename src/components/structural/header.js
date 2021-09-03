@@ -1,11 +1,10 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import ThemeSwitcher from './theme-switcher';
 
 const Header = (props) => {
   const { floatNav } = props;
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const logoText = 'T—P';
+  const logoText = 'Tori';
   const activeStyle = { borderBottomColor: 'var(--textColor)' };
 
   const openMobileMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -20,10 +19,8 @@ const Header = (props) => {
       <Link className='logo' to='/'>
         {logoText}
       </Link>
-      <ThemeSwitcher iconColors='var(--textColor)' />
       {isMenuOpen && (
         <nav className='mobile-menu' style={{ padding: 40 }}>
-          <ThemeSwitcher iconColors='var(--pageBgColor)' />
           <div className='menu-container'>
             <Link to='/work' activeStyle={activeStyle}>
               Work

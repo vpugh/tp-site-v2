@@ -5,7 +5,7 @@ import DisplayHeader from '../shared/display-header';
 
 const BlogPreview = ({ data, displayHeader }) => {
   return (
-    <div className={`${displayHeader && 'top-margin'}`}>
+    <div className={`${displayHeader && 'top-margin'} container`}>
       {displayHeader && (
         <DisplayHeader
           headerTitle='Blog'
