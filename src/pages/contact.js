@@ -23,9 +23,14 @@ const ContactPage = () => {
             data-netlify='true'
             className='contact-form'
           >
-            <input type='text' placeholder='Your Name' />
-            <input type='email' placeholder='Your Email' />
-            <textarea rows='4' placeholder='What did you want to talk about?' />
+            <input type='hidden' name='form-name' value='contact' />
+            <input name='name' type='text' placeholder='Your Name' />
+            <input name='email' type='email' placeholder='Your Email' />
+            <textarea
+              name='message'
+              rows='4'
+              placeholder='What did you want to talk about?'
+            />
             <button type='submit' className='button dark transition'>
               Send Email
             </button>
