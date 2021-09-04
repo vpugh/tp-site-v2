@@ -18,7 +18,7 @@ const PersonalBlurb = () => {
             experiences. I give talks at conferences when I can and share some
             content on dribbble when I get a chance.
           </p>
-          <Link className='button dark blurb-button' to='/about'>
+          <Link className='button dark blurb-button transition' to='/about'>
             More About Me
           </Link>
         </div>

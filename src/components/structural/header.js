@@ -4,7 +4,7 @@ import React from 'react';
 const Header = (props) => {
   const { floatNav } = props;
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const logoText = 'Tori';
+  const logoText = 'Tori Pugh';
   const activeStyle = { borderBottomColor: 'var(--textColor)' };
 
   const openMobileMenu = () => setIsMenuOpen(!isMenuOpen);

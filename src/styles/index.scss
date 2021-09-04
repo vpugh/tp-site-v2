@@ -65,12 +65,14 @@ body {
   padding: 19px 60px;
   border-radius: 8px;
   border: none;
-  color: #573300;
+  color: var(--textColor);
   font-weight: 600;
   font-size: 18px;
-  transition: all ease-in-out 300ms;
   text-decoration: none;
   display: inline-block;
+  &.transition {
+    transition: all ease-in-out 300ms;
+  }
   &:hover {
     opacity: 0.4;
   }
@@ -82,7 +84,7 @@ body {
     background-color: var(--jumbotronBg);
   }
   &.light {
-    background: #FFBC5C;
+    background: var(--boxShading);
   }
 }
 
@@ -101,6 +103,7 @@ body {
 @import './personal-blurb';
 @import './work-preview';
 @import './work-post';
+@import './work';
 @import './about';
 @import './blog-preview';
 @import './blog-post';

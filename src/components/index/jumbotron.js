@@ -1,4 +1,3 @@
-// import { Link } from 'gatsby';
 import React from 'react';
 import { gsap } from 'gsap';
 import { Link } from 'gatsby';
@@ -66,10 +65,16 @@ const Jumbotron = () => {
             experience.
           </h3>
           <div className='button-container-jumbotron'>
-            <Link to='/work' className='button dark'>
+            <Link
+              to='/work'
+              className={`button dark ${ref.current && 'transition'}`}
+            >
               My Work
             </Link>
-            <Link to='/contact' className='button light'>
+            <Link
+              to='/contact'
+              className={`button light ${ref.current && 'transition'}`}
+            >
               Let's Chat!
             </Link>
           </div>

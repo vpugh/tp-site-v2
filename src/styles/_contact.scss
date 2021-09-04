@@ -12,11 +12,21 @@
       font-size: 46px;
     }
   }
+  .availability {
+    @media (min-width: 1024px) {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+  }
+  .availability-status {
+    font-weight: 800;
+  }
   .contact-subheader {
     margin-bottom: 40px;
     @media (min-width: 1024px) {
-      font-size: 20px;
-      margin-top: .5rem;
+      font-size: 18px;
+      margin-top: 0;
+      line-height: 1.4;
     }
   }
 }
@@ -24,11 +34,36 @@
 .contact-form {
   input, textarea {
     display: inline-block;
-    border: solid 1px var(--buttonBorderBg);
+    border: none;
+    border-bottom: solid 1px var(--buttonBorderBg);
     margin-bottom: 14px;
     padding: 12px 10px;
-    border-radius: 4px;
+    background-color: var(--pageBgColor);
+    /* border-radius: 4px; */
     width: calc(100% - 20px);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      color: var(--textColor);
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color: var(--textColor);
+     opacity:  1;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color: var(--textColor);
+     opacity:  1;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+     color: var(--textColor);
+  }
+  &::-ms-input-placeholder { /* Microsoft Edge */
+     color: var(--textColor);
+  }
+  
+  &::placeholder { /* Most modern browsers support this now. */
+     color: var(--textColor);
+  }
     @media (min-width: 1024px) {
       width: 100%;
       

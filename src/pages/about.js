@@ -15,12 +15,12 @@ const AboutPage = ({ data }) => {
       element.querySelector('.about-image'),
       {
         opacity: 0,
-        y: 40,
+        y: 80,
       },
       {
         opacity: 1,
         y: 0,
-        duration: 2,
+        duration: 1,
         ease: 'power1.inOut',
       }
     );
@@ -29,14 +29,13 @@ const AboutPage = ({ data }) => {
       element.querySelector('.about-hero-title'),
       {
         opacity: 0,
-        y: 70,
+        y: 80,
       },
       {
         opacity: 1,
         y: 0,
         duration: 1,
         ease: 'power1.inOut',
-        delay: 0.25,
       }
     );
 
@@ -49,24 +48,24 @@ const AboutPage = ({ data }) => {
       {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 0.5,
         ease: 'power1.inOut',
-        delay: 0.35,
+        delay: 0.5,
       }
     );
 
     gsap.fromTo(
-      element.querySelector('.about-hero-button'),
+      element.querySelector('.button'),
       {
         opacity: 0,
-        y: 10,
+        y: 70,
       },
       {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 0.5,
         ease: 'power1.inOut',
-        delay: 0.45,
+        delay: 0.5,
       }
     );
 
@@ -77,9 +76,9 @@ const AboutPage = ({ data }) => {
         y: 40,
       },
       {
-        delay: 2,
+        delay: 1,
         opacity: 1,
-        duration: 1.5,
+        duration: 0.5,
         y: 0,
       }
     );
@@ -87,35 +86,36 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title='About Me' />
+      <Seo title='About' />
       <div className='container' ref={ref}>
         <div className='about-hero-container'>
-          <GatsbyImage
-            alt='Picture of Tori Pugh'
-            className='about-image'
-            image={file.childrenImageSharp[0].gatsbyImageData}
-          />
           <div className='about-hero-text'>
-            <h3 className='about-hero-title'>
-              Driven by curiosity and a desire to make things work better.
+            <h3 className='about-hero-title reg-quincy'>
+              Driven by curiosity &amp; a desire to make things work better.
             </h3>
             <p className='about-hero-subheader'>
               I listen to understand a problem, do research to identify and/or
               confirm it, and then create solutions for them.
             </p>
             <a
-              className='button about-hero-button'
+              className='button light resume-button'
               href='../tpr.pdf'
               download='tori-pugh-resume'
             >
               Download Resume
             </a>
           </div>
+          <div className='about-image-container'>
+            <GatsbyImage
+              alt='Picture of Tori Pugh'
+              className='about-image'
+              image={file.childrenImageSharp[0].gatsbyImageData}
+            />
+          </div>
         </div>
         <div className='about-main'>
           <div>
             <div className='about-main-body'>
-              <h2>Overview</h2>
               <p>
                 I'm a naturally curious person who thrives on knowing how
                 everything works. This attitude is especially helpful in the
@@ -135,9 +135,6 @@ const AboutPage = ({ data }) => {
                 my knowledge through online learning, classes, going to
                 conferences, or reading articles.
               </p>
-            </div>
-            <div className='about-main-body'>
-              <h2>My Process</h2>
               <p>
                 I’m a UI/UX developer who is passionate about creating products
                 that puts the users first. I want to make products work better
@@ -158,9 +155,6 @@ const AboutPage = ({ data }) => {
                 I can to keep everything clear and unmuddled. It creates more
                 files but then those files are just doing one thing.
               </p>
-            </div>
-            <div className='about-main-body'>
-              <h2>Free Time</h2>
               <p>
                 When I've done something worth talking about I like to blog
                 about new technology I've tried or problems I've run into with a
@@ -190,26 +184,33 @@ const AboutPage = ({ data }) => {
               <div>
                 <h4 className='work-title'>Oct 2018 - Present</h4>
                 <p className='work-info'>
-                  UX/UI Developer, <em>Holman Enterprises</em>
+                  <span className='company'>Holman Enterprises</span>
+                  <br />
+                  Front End Developer
                 </p>
               </div>
               <div>
                 <h4 className='work-title'>Feb 2018 - Oct 2018</h4>
                 <p className='work-info'>
-                  Front End Developer/Designer, <em>Creative Circle</em>
+                  <span className='company'>Creative Circle</span>
+                  <br />
+                  Front End Developer/Designer
                 </p>
               </div>
               <div>
                 <h4 className='work-title'>Oct 2017 - Feb 2018</h4>
                 <p className='work-info'>
-                  Email Developer, <em>MNG Direct</em>
+                  <span className='company'>MNG Direct</span>
+                  <br />
+                  Email Developer
                 </p>
               </div>
               <div>
                 <h4 className='work-title'>Mar 2013 - Oct 2017</h4>
                 <p className='work-info'>
-                  Front End Designer/Email Developer,{' '}
-                  <em>AEGIS Communications</em>
+                  <span className='company'>AEGIS Communications</span>
+                  <br />
+                  Front End Designer/Email Developer
                 </p>
               </div>
             </div>
@@ -217,12 +218,10 @@ const AboutPage = ({ data }) => {
               <h2>Tools & Skills</h2>
               <div className='ts-section'>
                 <h3>Design</h3>
-                <h4>Skills:</h4>
                 <p>
                   Responsive Web Design, UX/UI, Interaction Design, Typography,
                   Branding, Prototyping, Email Design, Design Strategy
                 </p>
-                <h4>Tools:</h4>
                 <p>Sketch, Figma, Adobe Suite, Affinity Designer</p>
               </div>
               <div className='ts-section'>
@@ -232,7 +231,6 @@ const AboutPage = ({ data }) => {
                   Jest, Gatsby, Wordpress, React Testing Library, Styled
                   Components
                 </p>
-                <h4>Tools:</h4>
                 <p>
                   GitHub, VSCode, Webstorm, SendGrid, MailChimp, Affinity
                   Designer, Storybook
