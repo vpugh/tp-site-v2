@@ -18,28 +18,29 @@ const WorkTemplate = ({ data }) => {
           <div className='work-description'>
             <h4 className='project-title'>{project.work_jumbo_title}</h4>
             <p className='project-body'>
-              <strong>Role:</strong> {project.role}
+              <span style={{ fontWeight: 600 }}>Role:</span> {project.role}
               <br />
-              <strong>Deliverable:</strong> {project.deliverable}
-              <br />
-              <strong>Client:</strong> {project.client}
+              <span style={{ fontWeight: 600 }}>Deliverable:</span>{' '}
+              {project.deliverable}
+              {/* <br />
+              <span style={{ fontWeight: 600 }}>Client:</span> {project.client} */}
             </p>
             {(project.github || project.url) && (
               <div className='button-container'>
                 {project.github && (
                   <a
-                    className='button'
+                    className='button dark-outlined transition'
                     href={project.github}
                     target='_blank'
                     rel='noopener noreferrer'
-                    title='Github Project'
+                    title='Github'
                   >
                     Github Project
                   </a>
                 )}
                 {project.url && (
                   <a
-                    className='button'
+                    className='button dark transition'
                     href={project.url}
                     target='_blank'
                     rel='noopener noreferrer'

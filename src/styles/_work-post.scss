@@ -4,10 +4,10 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin: 0 110px;
+    margin: 0 48px;
   }
   .project-title {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 30px;
     line-height: 1.2;
     margin-bottom: 0;
@@ -19,9 +19,7 @@
   }
   .project-body {
     font-size: 18px;
-    @media (min-width: 1024px) {
-      font-size: 22px;
-    }
+    line-height: 1.78;
   }
 
   .button-container {
@@ -33,6 +31,7 @@
       }
       margin-bottom: 40px;
     }
+    margin-top: 30px;
   }
   
   .mock-laptop {

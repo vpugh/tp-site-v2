@@ -86,6 +86,9 @@ body {
   &.light {
     background: var(--boxShading);
   }
+  &.dark-outlined {
+    border: 1px solid var(--textColor);
+  }
 }
 
 .textLink {
