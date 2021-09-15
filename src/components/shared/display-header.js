@@ -12,7 +12,7 @@ const DisplayHeader = ({ headerTitle, headerLink, linkTitle }) => {
         marginBottom: 10,
       }}
     >
-      <h2 style={{ fontSize: 22 }}>{headerTitle}</h2>
+      <h2 style={{ fontSize: 32 }}>{headerTitle}</h2>
       <Link style={{ color: 'var(--textColor)' }} to={headerLink}>
         {linkTitle}
       </Link>

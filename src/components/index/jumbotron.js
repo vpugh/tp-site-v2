@@ -67,13 +67,13 @@ const Jumbotron = () => {
           <div className='button-container-jumbotron'>
             <Link
               to='/work'
-              className={`button dark ${ref.current && 'transition'}`}
+              className={`button dark ${ref?.current ? 'transition' : ''}`}
             >
               My Work
             </Link>
             <Link
               to='/contact'
-              className={`button light ${ref.current && 'transition'}`}
+              className={`button ${ref?.current ? 'transition' : ''}`}
             >
               Let's Chat!
             </Link>

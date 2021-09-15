@@ -5,7 +5,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  @media (max-width: 480px) {
+  @media (max-width: 1023px) {
     &.container {
       margin-top: 20px;
     }
@@ -52,7 +52,7 @@
     fill: #fff;
     fill: var(--textColor);
   }
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: none;
   }
   .close-icon {
@@ -91,7 +91,7 @@
 }
 
 .link-container {
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     display: none;
     width: 0;
   }

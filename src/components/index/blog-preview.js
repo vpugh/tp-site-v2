@@ -8,9 +8,9 @@ const BlogPreview = ({ data, displayHeader }) => {
     <div className={`${displayHeader && 'top-margin'} container`}>
       {displayHeader && (
         <DisplayHeader
-          headerTitle='Blog'
+          headerTitle='Articles'
           headerLink='/blog'
-          linkTitle='See All Posts'
+          linkTitle='See All Articles'
         />
       )}
       <div className='blog-preview-container'>

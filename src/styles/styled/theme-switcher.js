@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 
 export const SwitcherContainer = styled.div`
-  @media (max-width: 460px) {
-    display: none;
+  @media (max-width: 1023px) {
+    left: 20px;
+    bottom: 90px;
+    opacity: 0.5;
   }
+  position: fixed;
   display: inline-block;
-  padding: 4px;
+  padding: 8px;
+  border-radius: 6px;
   background: var(--text-transparent);
-  position: relative;
+  border: 1px solid var(--textColor);
   white-space: nowrap;
   transition: 300ms ease-in-out;
+  left: 40px;
+  bottom: 45px;
   &:hover {
     opacity: 1;
   }
@@ -38,20 +44,21 @@ export const ThemeLabel = styled.span`
 export const SwitchButton = styled.div`
   display: flex;
   align-items: center;
-  /* opacity: 0.05; */
-  svg {
-    margin-right: 8px;
-  }
   select {
-    opacity: 0.05;
-    transition: 300ms ease-in-out;
+    width: 0;
+    opacity: 0.25;
+    transition: 600ms ease-in-out;
     border: none;
     background: transparent;
   }
   &:hover {
+    svg {
+      margin-right: 8px;
+    }
     cursor: pointer;
     & > select {
       opacity: 1;
+      width: auto;
     }
   }
 `;
