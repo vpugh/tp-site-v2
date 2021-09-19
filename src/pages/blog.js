@@ -68,7 +68,6 @@ const BlogPage = ({ data }) => {
                     {frontmatter.date} | {blogData.node.timeToRead}{' '}
                     {blogData.node.timeToRead > 1 ? 'Minutes' : 'Minute'}
                   </p>
-                  <p>{frontmatter.excerpt}</p>
                 </Link>
               );
             })}

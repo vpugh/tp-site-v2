@@ -27,6 +27,7 @@ const ReturnToTop = () => {
     <ReturnToTopContainer>
       <div
         className='icon-holder'
+        aria-hidden='true'
         style={{
           opacity: currentScrollPosition?.theposition >= 0.8 ? 1 : 0,
         }}

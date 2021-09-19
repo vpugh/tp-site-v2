@@ -14,7 +14,7 @@ export const SwitcherContainer = styled.div`
   border: 1px solid var(--textColor);
   white-space: nowrap;
   transition: 300ms ease-in-out;
-  left: 40px;
+  left: 20px;
   bottom: 45px;
   &:hover {
     opacity: 1;

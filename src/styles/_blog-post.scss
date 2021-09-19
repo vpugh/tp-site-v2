@@ -30,6 +30,11 @@
     line-height: 32px;
     margin-top: 0;
   }
+  code {
+    background: var(--boxShading);
+    padding: 4px;
+    font-size: 0.9em;
+  }
   blockquote {
     margin-left: 0;
     padding-left: 23px;

@@ -8,7 +8,7 @@
   }
   .project-title {
     font-weight: 700;
-    font-size: 30px;
+    font-size: 36px;
     line-height: 1.2;
     margin-bottom: 0;
     @media (min-width: 1024px) {
@@ -24,6 +24,8 @@
 
   .button-container {
     display: flex;
+    margin-bottom: 40px;
+    margin-top: 30px;
     @media (max-width: 480px) {
       flex-direction: column;
       & a:first-child {
@@ -31,7 +33,6 @@
       }
       margin-bottom: 40px;
     }
-    margin-top: 30px;
   }
   
   .mock-laptop {

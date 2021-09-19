@@ -14,9 +14,13 @@ const BlogTemplate = ({ data }) => {
   return (
     <Layout>
       <Seo title={`Blog - ${post.title}`} description={post.excerpt} />
+      <GatsbyImage
+        image={image}
+        alt='trshtr'
+        style={{ margin: '0 auto', display: 'table' }}
+      />
       <div className='container'>
         <div style={{ margin: '80px auto 0 auto', textAlign: 'center' }}>
-          <GatsbyImage image={image} alt='trshtr' />
           <h2 style={{ fontSize: 36 }}>{post.title}</h2>
           <p>Published: {post.date}</p>
         </div>
@@ -43,7 +47,7 @@ export const workpageQuery = graphql`
             cover_image {
               childImageSharp {
                 gatsbyImageData(
-                  width: 920
+                  width: 1340
                   height: 611
                   placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]

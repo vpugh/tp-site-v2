@@ -1,0 +1,148 @@
+---
+path: '/blog/quick-ui-with-miragejs'
+title: 'Creating a Recipe App - Quick UI with MirageJS'
+excerpt: 'Generating a fully functional api without ever setting one up'
+tags: ['development', 'react', 'miragejs', 'front-end']
+cover_image: ../../images/compressed/naomi-august-aLnqDp3B3YU-unsplash.jpg
+draft: true
+type: blog
+date: 2021-09-05
+---
+
+## Part One:
+
+### Research and Starting the UI
+
+I had the idea to create a recipe app. In terms of design work I'd looked around the web and looked for other apps or websites that was similar to what I wanted. After gathering some inspiration and ideas I used Sketch to quickly come up with a rough idea.
+
+I decided to then jump very quickly into development since I was still a bit blurry and wanted to mess around with data and get a feel for how everything could look. One thing I really hate is not having data to make my designs based on. To that end I found 5-6 recipes and made some manual data in code that used them. This was good for the moment but I knew I'd need to figure out how to implement calling endpoints.
+
+### Using an API without having an API
+
+Originally I was using [Mockapi.io](https://mockapi.io/), which I really enjoyed using. The problem I kept running into was since this was at the beginning of 2020 and being quarantined, the demands on the internet were great and sometimes it wasn't working or wasn't working well. It hurt me to abandon Mockapi but I needed something that was a little more self reliant.
+
+In steps [MirageJS](https://miragejs.com/), something that I'd seen written about before. With the tagline of 'Build complete frontend features, even if your API doesn't exist.' I felt this was the perfect time to potentially use it.
+
+```javascript
+Mirage runs in the browser. It intercepts any XMLHttpRequest or fetch requests your JavaScript app makes and lets you mock the response. That means you can develop and test your app just as if it were talking to a real server.
+```
+
+Using MirageJS is a bit complicated but it was well worth it for me.
+
+- First you need to create a server, this will be located in your `app.js`
+
+From here we can do so many things, add routes; a database and models; factories and fixtures for stubbing data; serializers for formatting responses. It can get complicated but you that's what makes it so usable. You can handle so many things and it all feels realistic.
+
+Adding a static route. With the below code you can just fetch `/movies` and you will get a payload of these 3 movies.
+
+```javascript
+import { createServer } from 'miragejs';
+
+createServer({
+  routes() {
+    this.namespace = 'api';
+
+    this.get('/movies', () => {
+      return {
+        movies: [
+          { id: 1, name: 'Inception', year: 2010 },
+          { id: 2, name: 'Interstellar', year: 2014 },
+          { id: 3, name: 'Dunkirk', year: 2017 },
+        ],
+      };
+    });
+  },
+});
+```
+
+You aren't stopped at just using static routes. You can use dynamic ones and setup a model and database and some fixtures to generate some data. You can even control things in the route like if there was a delay, if the endpoint was to show you an error, and many other functions.
+
+Setting up a server is straightforward but the complexity can easily go up. In the example below, your setting up a new server, deciding how the data should be returned (ApplicationSerializer), attaching a Model, and adding Factories (which are use to generate or hardcode the data in the database). This can be static data, just a random list you made a second ago, or something dynamic that you can generate from Faker ,which is something I did, or pulling from some data you possess.
+
+```javascript
+let server = new Server({
+  serializers: {
+    application: ApplicationSerializer,
+    recipe: ApplicationSerializer.extend({...}),
+  },
+  models: {
+    recipe: Model,
+  },
+  factories: {
+    recipe: Factory.extend({
+      id(i) {
+        return i;
+      },
+      course() {
+        return RecipeDetailsSelection(this.id, 'course');
+      },
+      title() {
+        return RecipeDetailsSelection(this.id, 'title');
+      },
+      ...
+    }),
+  }
+```
+
+To setup a database you need to 'seed' it with data. This determines how much content will be generated. In the below, your generating 10 recipes, that will have an id equal to their index `i`, have a course from a list I've made, and a title from that same list.
+
+```javascript
+seeds(server) {
+  server.createList('recipe', 10);
+},
+```
+
+### Making a working UI using the api mocking service
+
+Now we've talked about the complexity that is possible from using MirageJS to mock the api. We can now use it to interact with our UI so we can write all the code to as close as realistic as possible. Since at this point it's unknow how the data that will be returned from the Hasura GraphQL endpoint might look, I just stuck with what I had done. Once I got everything working and hooked it up to the real api, I would make an effort to clean it up if the real api vastly changed the look.
+
+Calling MirageJS in your UI code is literally the same as calling out to a real API. It felt strange if you didn't know and felt this shouldn't work, but once you started using it that wasn't an issue. For me, since this whole project was so new I wasn't going to do anything fancy and just used fetch directly in a lot of places. I could probably clean it up and use Axios but getting it working was my goal at the time.
+
+In my app, I needed to get a list of recipes, add new recipes, and make updates to existing recipes. The api calls for those were pretty straightforward.
+
+```javascript
+// In the UI
+{
+  fetch('/api/v1/recipe', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  }).then((result) => result.ok && setRecipeSaved(true));
+}
+
+// In MirageJS
+routes() {
+  this.namespace = '/api';
+
+  this.get('/v1/recipes');
+}
+
+```
+
+That seems pretty straightforward, right? Thankfully simple gets can be streamlined and are easy looking. If your looking for a specific recipe it looks like this.
+
+```javascript
+// In the UI
+{
+  fetch(`/api/v1/recipe/${id}`, {
+    method: 'PATCH',
+    body: JSON.stringify(data),
+  }).then((result) => result.ok && setRecipeSaved(true));
+}
+
+// In MirageJS
+routes() {
+  this.namespace = '/api';
+
+  this.get('/v1/recipes');
+
+  this.get('/v1/recipe/:id', (schema, request) => {
+    let recipeId = request.params.id;
+    return schema.recipes.findBy({ id: recipeId });
+  });
+}
+
+```
+
+With these two 'endpoints', you can now call a list of generated recipes and edit them to your hearts content. Then you can make 'endpoints' to add new recipes. As long as you do not restart the server they will be interactive and function just like making a call to an external server. This is why I enjoyed using MirageJS and it helped me develop pretty quickly.
+
+Using MirageJS does not help you overcome any errors from not really understanding how you should be setting up your endpoints. Which sadly was one of my problems, but that's a lesson learned.
