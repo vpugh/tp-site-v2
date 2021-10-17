@@ -6,7 +6,7 @@ module.exports = {
     description: `A UX Engineer bumbling through tech, also known as a front end developer & UX designer. This is a place to showoff my work and ideas and writing about my experiences and my learning adventures.`,
     author: 'Tori Pugh',
   },
-  flags: { PRESERVE_WEBPACK_CACHE: true },
+  flags: { PRESERVE_WEBPACK_CACHE: true, PARALLEL_SOURCING: true },
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-image',

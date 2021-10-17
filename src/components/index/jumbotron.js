@@ -11,12 +11,12 @@ const Jumbotron = () => {
       element.querySelector('.jumbo-header'),
       {
         opacity: 0,
-        y: 180,
+        y: 60,
       },
       {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 1.25,
         ease: 'power1.inOut',
       }
     );
@@ -31,7 +31,7 @@ const Jumbotron = () => {
         opacity: 1,
         y: 0,
         delay: 0.5,
-        duration: 0.5,
+        duration: 0.75,
       }
     );
 
@@ -44,8 +44,8 @@ const Jumbotron = () => {
       {
         opacity: 1,
         y: 0,
-        delay: 0.5,
-        duration: 0.5,
+        delay: 1,
+        duration: 1,
       }
     );
   }, []);
@@ -67,13 +67,15 @@ const Jumbotron = () => {
           <div className='button-container-jumbotron'>
             <Link
               to='/work'
-              className={`button dark ${ref?.current ? 'transition' : ''}`}
+              className={`button dark ${
+                Boolean(ref?.current) ? 'transition' : ''
+              }`}
             >
               My Work
             </Link>
             <Link
               to='/contact'
-              className={`button ${ref?.current ? 'transition' : ''}`}
+              className={`button ${Boolean(ref?.current) ? 'transition' : ''}`}
             >
               Let's Chat!
             </Link>
