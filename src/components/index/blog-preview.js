@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Img from 'gatsby-image';
 import React from 'react';
 import DisplayHeader from '../shared/display-header';
 
@@ -16,14 +16,14 @@ const BlogPreview = ({ data, displayHeader }) => {
       <div className='blog-preview-container'>
         {data.edges.map((blogData) => {
           const frontmatter = blogData.node.frontmatter;
-          const image = getImage(frontmatter.cover_image);
+          const image = frontmatter?.coverPhoto?.fixed;
           return (
             <Link
               style={{ color: 'var(--textColor)', textDecoration: 'none' }}
               to={frontmatter.path}
               key={frontmatter.title}
             >
-              <GatsbyImage image={image} alt='test' />
+              <Img fixed={image} alt='test' />
               <h4 style={{ fontSize: 20, lineHeight: '24px', marginBottom: 0 }}>
                 {frontmatter.title}
               </h4>

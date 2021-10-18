@@ -3,7 +3,16 @@ path: '/blog/intro-to-gatsby--getting-started'
 title: 'Intro to Gatsby - Getting Started'
 excerpt: 'First local development of Gatsby and some important info'
 tags: ['web development', 'gatsby', 'react', 'javascript', 'learning']
-cover_image: ../../images/compressed/david-iskander-iWTamkU5kiI-unsplash.jpg
+coverPhoto:
+  {
+    cloudinaryAssetData: true,
+    cloudName: 'dmocgebcq',
+    publicId: 'portfolio/blog-covers/david-iskander-iWTamkU5kiI-unsplash_z7365r.jpg',
+    originalHeight: 2720,
+    originalWidth: 4096,
+    defaultBase64: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMMXG/8HwAEwAI0Bj1bnwAAAABJRU5ErkJggg==',
+    defaultTracedSVG: 'data:image/svg+xml,%3Csvg%20height%3D%229999%22%20viewBox%3D%220%200%209999%209999%22%20width%3D%229999%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m0%200h9999v9999h-9999z%22%20fill%3D%22%23f9fafb%22%2F%3E%3C%2Fsvg%3E',
+  }
 draft: false
 type: blog
 date: 2019-09-08
@@ -22,10 +31,10 @@ Now I’m React trained and I think it’s time to give this another shot. After
 This is one of the easiest setups I've encountered.
 
 <ul>
-<li>Install the CLI</li>
-<li>Create a new site</li>
-<li>Move into the newly created site folder</li>
-<li>Develop the Gatsby site</li>
+  <li>Install the CLI</li>
+  <li>Create a new site</li>
+  <li>Move into the newly created site folder</li>
+  <li>Develop the Gatsby site</li>
 </ul>
 
 **Technical Directions:**
@@ -130,11 +139,38 @@ res.data.workPages.edges.forEach(({ node }) => {
 
 Resources:
 
-<a class="inline-link" aria-label="GatsbyJS Node APIs"  title="Gatsby Node APIs" href="https://www.gatsbyjs.org/docs/node-apis/" target="_blank" rel="noopener noreferrer">Gatsby Node APIs</a>
+<a
+  class='inline-link'
+  aria-label='GatsbyJS Node APIs'
+  title='Gatsby Node APIs'
+  href='https://www.gatsbyjs.org/docs/node-apis/'
+  target='_blank'
+  rel='noopener noreferrer'
+>
+  Gatsby Node APIs
+</a>
 
-<a class="inline-link" aria-label="GatsbyJS Tutorial Part Seven - Programmatically create pages from data"  title="Gatsby Tutorial Part Seven - Programmatically create pages from data" href="https://www.gatsbyjs.org/tutorial/part-seven/" target="_blank" rel="noopener noreferrer">Gatsby Tutorial Part Seven - Programmatically create pages from data</a>
+<a
+  class='inline-link'
+  aria-label='GatsbyJS Tutorial Part Seven - Programmatically create pages from data'
+  title='Gatsby Tutorial Part Seven - Programmatically create pages from data'
+  href='https://www.gatsbyjs.org/tutorial/part-seven/'
+  target='_blank'
+  rel='noopener noreferrer'
+>
+  Gatsby Tutorial Part Seven - Programmatically create pages from data
+</a>
 
-<a class="inline-link" aria-label="GatsbyJS Tutorials #5 - Building A Blog With Markdown Part 2"  title="GatsbyJS Tutorials #5 - Building A Blog With Markdown Part 2" href="https://www.youtube.com/watch?v=VxVKMJThh04&list=PLLnpHn493BHHfoINKLELxDch3uJlSapxg&index=5" target="_blank" rel="noopener noreferrer">GatsbyJS Tutorials #5 - Building A Blog With Markdown Part 2</a> - Should watch Part 1 to understand the foundations for this part.
+<a
+  class='inline-link'
+  aria-label='GatsbyJS Tutorials #5 - Building A Blog With Markdown Part 2'
+  title='GatsbyJS Tutorials #5 - Building A Blog With Markdown Part 2'
+  href='https://www.youtube.com/watch?v=VxVKMJThh04&list=PLLnpHn493BHHfoINKLELxDch3uJlSapxg&index=5'
+  target='_blank'
+  rel='noopener noreferrer'
+>
+  GatsbyJS Tutorials #5 - Building A Blog With Markdown Part 2
+</a> - Should watch Part 1 to understand the foundations for this part.
 
 ### The Page Folder
 
@@ -155,7 +191,16 @@ export default AboutPage;
 
 Something as simple as the code above would generate a new page in Gatsby. You could then go to `localhost:8000/about` and see your new page.
 
-<a class="inline-link" aria-label="GatsbyJS Docs for Creating Pages Automatically"  title="Creating Pages Automatically" href="https://www.gatsbyjs.org/docs/recipes/#creating-pages-automatically" target="_blank" rel="noopener noreferrer">Creating Pages Automatically</a>
+<a
+  class='inline-link'
+  aria-label='GatsbyJS Docs for Creating Pages Automatically'
+  title='Creating Pages Automatically'
+  href='https://www.gatsbyjs.org/docs/recipes/#creating-pages-automatically'
+  target='_blank'
+  rel='noopener noreferrer'
+>
+  Creating Pages Automatically
+</a>
 
 ## Were do you go from here
 

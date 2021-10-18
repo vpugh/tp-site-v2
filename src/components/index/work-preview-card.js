@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import Img from 'gatsby-image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -38,8 +38,8 @@ const WorkPreviewCard = (props) => {
   return (
     <div ref={ref} className={`preview-container-${nameTitle}`}>
       <Link to={frontmatter.path} key={frontmatter.title} className='work-link'>
-        <GatsbyImage
-          image={image}
+        <Img
+          fixed={image}
           alt={`${frontmatter.title} Screenshot`}
           className='work-preview-image'
         />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Seo from '../components/seo';
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
@@ -10,12 +10,12 @@ deckDeckGoHighlightElement();
 const BlogTemplate = ({ data }) => {
   const post = data.allMdx.edges[0].node.frontmatter;
   const body = data.allMdx.edges[0].node.body;
-  const image = getImage(post.cover_image);
+  const image = post.coverPhoto?.fixed;
   return (
     <Layout>
       <Seo title={`Blog - ${post.title}`} description={post.excerpt} />
-      <GatsbyImage
-        image={image}
+      <Img
+        fixed={image}
         alt='trshtr'
         style={{ margin: '0 auto', display: 'table' }}
       />
@@ -44,15 +44,13 @@ export const workpageQuery = graphql`
             title
             path
             date(formatString: "MMMM Do, YYYY")
-            cover_image {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 1340
-                  height: 611
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                  transformOptions: { fit: COVER, cropFocus: ATTENTION }
-                )
+            coverPhoto {
+              fixed(
+                width: 1340
+                height: 611
+                transformations: ["ar_1:5", "c_fill"]
+              ) {
+                ...CloudinaryAssetFixed
               }
             }
           }

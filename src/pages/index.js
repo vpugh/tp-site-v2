@@ -37,15 +37,9 @@ export const indexQuery = graphql`
             description
             path
             tags
-            cover_image {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 1064
-                  height: 624
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                  transformOptions: { fit: OUTSIDE }
-                )
+            coverPhoto {
+              fixed(width: 1300) {
+                ...CloudinaryAssetFixed
               }
             }
           }
@@ -66,15 +60,9 @@ export const indexQuery = graphql`
             excerpt
             title
             tags
-            cover_image {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 840
-                  height: 528
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                  transformOptions: { fit: COVER, cropFocus: ATTENTION }
-                )
+            coverPhoto {
+              fixed(width: 420, height: 264, transformations: ["c_fill"]) {
+                ...CloudinaryAssetFixed
               }
             }
             date(formatString: "MMMM Do, YYYY")

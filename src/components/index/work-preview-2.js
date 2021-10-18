@@ -1,5 +1,4 @@
 import React from 'react';
-import { getImage } from 'gatsby-plugin-image';
 import ScrollTrigger, { gsap } from 'gsap';
 import WorkPreviewCard from './work-preview-card';
 
@@ -32,7 +31,7 @@ const WorkPreview2 = ({ data }) => {
         <div className='work-preview-container'>
           {data.edges.map((x) => {
             const frontm = x.node.frontmatter;
-            const image = getImage(frontm.cover_image);
+            const image = frontm?.coverPhoto?.fixed;
             const tags = frontm.tags.join(', ');
             return (
               <WorkPreviewCard

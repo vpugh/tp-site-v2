@@ -74,40 +74,6 @@ exports.createPages = ({ actions, graphql }) => {
       });
     });
 
-    // res.data.blogPages.edges.forEach((_, index, postsArr) => {
-    //   const postsPerPage = 6;
-    //   const totalPages = Math.ceil(postsArr.length / postsPerPage);
-    //   const currentPage = index + 1;
-    //   const isFirstPage = index === 0;
-    //   const isLastPage = currentPage === totalPages;
-
-    //   !(currentPage > totalPages) &&
-    //     createPage({
-    //       path: isFirstPage ? '/blog' : `/blog/${currentPage}`,
-    //       component: blogTemplate,
-    //       context: {
-    //         limit: postsPerPage,
-    //         skip: index * postsPerPage,
-    //         isFirstPage,
-    //         isLastPage,
-    //         currentPage,
-    //         totalPages,
-    //       },
-    //     });
-    // });
-
-    // const tags = res.data.tagsGroup.group;
-
-    // tags.forEach((tag) => {
-    //   createPage({
-    //     path: `/tags/${_.kebabCase(tag.fieldValue)}`,
-    //     component: tagsTemplate,
-    //     context: {
-    //       tag: tag.fieldValue,
-    //     },
-    //   });
-    // });
-
     res.data.workPages.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,

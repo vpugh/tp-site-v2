@@ -5,7 +5,7 @@ import Seo from '../components/seo';
 import { Link } from 'gatsby';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Img from 'gatsby-image';
 
 const BlogPage = ({ data }) => {
   gsap.registerPlugin(ScrollTrigger);
@@ -44,7 +44,7 @@ const BlogPage = ({ data }) => {
           <div className='blog-preview-container blog-page'>
             {data.allMdx.edges.map((blogData) => {
               const frontmatter = blogData.node.frontmatter;
-              const image = getImage(frontmatter.cover_image);
+              const image = frontmatter?.coverPhoto?.fixed;
               return (
                 <Link
                   style={{
@@ -54,7 +54,7 @@ const BlogPage = ({ data }) => {
                   to={frontmatter.path}
                   key={frontmatter.title}
                 >
-                  <GatsbyImage image={image} alt='test' />
+                  <Img fixed={image} alt={`${frontmatter.title} previews`} />
                   <h4
                     style={{
                       fontSize: 20,
@@ -94,15 +94,9 @@ export const indexQuery = graphql`
             excerpt
             title
             tags
-            cover_image {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 840
-                  height: 528
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                  transformOptions: { fit: COVER, cropFocus: ATTENTION }
-                )
+            coverPhoto {
+              fixed(width: 420, height: 264, transformations: ["c_fill"]) {
+                ...CloudinaryAssetFixed
               }
             }
             date(formatString: "MMMM Do, YYYY")
