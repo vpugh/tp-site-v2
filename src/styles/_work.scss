@@ -1,6 +1,5 @@
 .work-container {
   display: grid;
-  gap: 40px;
   @media (min-width: 768px) {
     grid-template: auto/repeat(2, 1fr);
     gap: 30px;

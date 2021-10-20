@@ -10,14 +10,14 @@ deckDeckGoHighlightElement();
 const BlogTemplate = ({ data }) => {
   const post = data.allMdx.edges[0].node.frontmatter;
   const body = data.allMdx.edges[0].node.body;
-  const image = post.coverPhoto?.fixed;
+  const image = post.coverPhoto?.fluid;
   return (
     <Layout>
       <Seo title={`Blog - ${post.title}`} description={post.excerpt} />
       <Img
-        fixed={image}
+        fluid={image}
         alt='trshtr'
-        style={{ margin: '0 auto', display: 'table' }}
+        // style={{ margin: '0 auto', display: 'table' }}
       />
       <div className='container'>
         <div style={{ margin: '80px auto 0 auto', textAlign: 'center' }}>
@@ -45,12 +45,11 @@ export const workpageQuery = graphql`
             path
             date(formatString: "MMMM Do, YYYY")
             coverPhoto {
-              fixed(
-                width: 1340
-                height: 611
-                transformations: ["ar_1:5", "c_fill"]
+              fluid(
+                maxWidth: 1340
+                transformations: ["ar_2.22", "c_fill", "h_611"]
               ) {
-                ...CloudinaryAssetFixed
+                ...CloudinaryAssetFluid
               }
             }
           }

@@ -16,14 +16,14 @@ const BlogPreview = ({ data, displayHeader }) => {
       <div className='blog-preview-container'>
         {data.edges.map((blogData) => {
           const frontmatter = blogData.node.frontmatter;
-          const image = frontmatter?.coverPhoto?.fixed;
+          const image = frontmatter?.coverPhoto?.fluid;
           return (
             <Link
               style={{ color: 'var(--textColor)', textDecoration: 'none' }}
               to={frontmatter.path}
               key={frontmatter.title}
             >
-              <Img fixed={image} alt='test' />
+              <Img fluid={image} alt='test' />
               <h4 style={{ fontSize: 20, lineHeight: '24px', marginBottom: 0 }}>
                 {frontmatter.title}
               </h4>

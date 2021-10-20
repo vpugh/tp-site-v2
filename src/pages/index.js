@@ -38,8 +38,8 @@ export const indexQuery = graphql`
             path
             tags
             coverPhoto {
-              fixed(width: 1300) {
-                ...CloudinaryAssetFixed
+              fluid(maxWidth: 1300, transformations: ["c_fill"]) {
+                ...CloudinaryAssetFluid
               }
             }
           }
@@ -61,8 +61,11 @@ export const indexQuery = graphql`
             title
             tags
             coverPhoto {
-              fixed(width: 420, height: 264, transformations: ["c_fill"]) {
-                ...CloudinaryAssetFixed
+              fluid(
+                maxWidth: 420
+                transformations: ["ar_2.22", "c_fill", "h_264"]
+              ) {
+                ...CloudinaryAssetFluid
               }
             }
             date(formatString: "MMMM Do, YYYY")

@@ -44,7 +44,7 @@ const BlogPage = ({ data }) => {
           <div className='blog-preview-container blog-page'>
             {data.allMdx.edges.map((blogData) => {
               const frontmatter = blogData.node.frontmatter;
-              const image = frontmatter?.coverPhoto?.fixed;
+              const image = frontmatter?.coverPhoto?.fluid;
               return (
                 <Link
                   style={{
@@ -54,7 +54,7 @@ const BlogPage = ({ data }) => {
                   to={frontmatter.path}
                   key={frontmatter.title}
                 >
-                  <Img fixed={image} alt={`${frontmatter.title} previews`} />
+                  <Img fluid={image} alt={`${frontmatter.title} previews`} />
                   <h4
                     style={{
                       fontSize: 20,
@@ -95,8 +95,11 @@ export const indexQuery = graphql`
             title
             tags
             coverPhoto {
-              fixed(width: 420, height: 264, transformations: ["c_fill"]) {
-                ...CloudinaryAssetFixed
+              fluid(
+                maxWidth: 420
+                transformations: ["ar_2.22", "c_fill", "h_264"]
+              ) {
+                ...CloudinaryAssetFluid
               }
             }
             date(formatString: "MMMM Do, YYYY")

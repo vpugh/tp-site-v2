@@ -31,7 +31,7 @@ const WorkPreview2 = ({ data }) => {
         <div className='work-preview-container'>
           {data.edges.map((x) => {
             const frontm = x.node.frontmatter;
-            const image = frontm?.coverPhoto?.fixed;
+            const image = frontm?.coverPhoto?.fluid;
             const tags = frontm.tags.join(', ');
             return (
               <WorkPreviewCard
