@@ -14,15 +14,17 @@ const BlogTemplate = ({ data }) => {
   return (
     <Layout>
       <Seo title={`Blog - ${post.title}`} description={post.excerpt} />
-      <Img
-        fluid={image}
-        alt='trshtr'
-        // style={{ margin: '0 auto', display: 'table' }}
-      />
       <div className='container'>
         <div style={{ margin: '80px auto 0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: 36 }}>{post.title}</h2>
-          <p>Published: {post.date}</p>
+          <p style={{ marginBottom: 36, marginTop: 0 }}>
+            Published: {post.date}
+          </p>
+          <Img
+            fluid={image}
+            alt='trshtr'
+            style={{ margin: '0 auto', borderRadius: 8 }}
+          />
         </div>
         <div className='blog-body'>
           <MDXRenderer>{body}</MDXRenderer>
@@ -46,8 +48,8 @@ export const workpageQuery = graphql`
             date(formatString: "MMMM Do, YYYY")
             coverPhoto {
               fluid(
-                maxWidth: 1340
-                transformations: ["ar_2.22", "c_fill", "h_611"]
+                maxWidth: 920
+                transformations: ["ar_1.73", "c_fill", "dpr_2.0"]
               ) {
                 ...CloudinaryAssetFluid
               }

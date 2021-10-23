@@ -38,7 +38,7 @@ export const indexQuery = graphql`
             path
             tags
             coverPhoto {
-              fluid(maxWidth: 1300, transformations: ["c_fill"]) {
+              fluid(maxWidth: 1300, transformations: ["c_fill", "dpr_2.0"]) {
                 ...CloudinaryAssetFluid
               }
             }

@@ -24,9 +24,9 @@ const BlogPreview = ({ data, displayHeader }) => {
               key={frontmatter.title}
             >
               <Img fluid={image} alt='test' />
-              <h4 style={{ fontSize: 20, lineHeight: '24px', marginBottom: 0 }}>
+              <h2 style={{ fontSize: 20, lineHeight: '24px', marginBottom: 0 }}>
                 {frontmatter.title}
-              </h4>
+              </h2>
               <p style={{ marginTop: '.25rem' }}>
                 {frontmatter.date} | {blogData.node.timeToRead}{' '}
                 {blogData.node.timeToRead > 1 ? 'Minutes' : 'Minute'}
