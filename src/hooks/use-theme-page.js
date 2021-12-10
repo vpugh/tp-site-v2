@@ -68,7 +68,9 @@ const setBaseDefaults = (setCurrentTheme, currentTheme) => {
 };
 
 const useThemePage = () => {
-  const lastVisit = window.localStorage.getItem('visitedPage');
+  const lastVisit = isBrowser()
+    ? window.localStorage.getItem('visitedPage')
+    : undefined;
   const [currentTheme, setCurrentTheme] = React.useState();
   const [pageVisited, setPageVisited] = React.useState(lastVisit);
 
@@ -90,13 +92,15 @@ const useThemePage = () => {
     const fiveMin = 1000 * 60 * 5;
     const pageViewIsOld = new Date().getTime() - fiveMin > past;
 
-    if (!lastVisit) {
-      const currentTime = new Date();
-      window.localStorage.setItem('visitedPage', currentTime);
-      setPageVisited(currentTime);
-    } else if (pageViewIsOld) {
-      window.localStorage.removeItem('visitedPage');
-      setPageVisited(null);
+    if (isBrowser) {
+      if (!lastVisit) {
+        const currentTime = new Date();
+        window.localStorage.setItem('visitedPage', currentTime);
+        setPageVisited(currentTime);
+      } else if (pageViewIsOld) {
+        window.localStorage.removeItem('visitedPage');
+        setPageVisited(null);
+      }
     }
   }, [lastVisit]);
 
