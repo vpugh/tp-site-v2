@@ -1,28 +1,34 @@
 import React from 'react';
 import ScrollTrigger, { gsap } from 'gsap';
 import WorkPreviewCard from './work-preview-card';
+import useThemePage from '../../hooks/use-theme-page';
 
 const WorkPreview2 = ({ data }) => {
   gsap.registerPlugin(ScrollTrigger);
   const ref = React.useRef(null);
+  const { pageVisited } = useThemePage();
 
   React.useEffect(() => {
     const element = ref.current;
-    gsap.fromTo(
-      element.querySelector('.work-body'),
-      {
-        opacity: 0,
-        y: 40,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        delay: 1.2,
-        duration: 2,
-        ease: 'expo.inOut',
-      }
-    );
-  }, []);
+    if (!pageVisited) {
+      gsap.fromTo(
+        element.querySelector('.work-body'),
+        {
+          opacity: 0,
+          y: 40,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          delay: 1.2,
+          duration: 2,
+          ease: 'expo.inOut',
+        }
+      );
+    } else {
+      gsap.to(element.querySelector('.work-body'), { opacity: 1 });
+    }
+  }, [pageVisited]);
 
   return (
     <div className='container' ref={ref}>

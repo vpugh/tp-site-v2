@@ -68,7 +68,9 @@ const setBaseDefaults = (setCurrentTheme, currentTheme) => {
 };
 
 const useThemePage = () => {
+  const lastVisit = window.localStorage.getItem('visitedPage');
   const [currentTheme, setCurrentTheme] = React.useState();
+  const [pageVisited, setPageVisited] = React.useState(lastVisit);
 
   React.useEffect(() => {
     if (isBrowser()) {
@@ -83,9 +85,25 @@ const useThemePage = () => {
     }
   }, [currentTheme]);
 
+  React.useEffect(() => {
+    const past = new Date(lastVisit).getTime();
+    const fiveMin = 1000 * 60 * 5;
+    const pageViewIsOld = new Date().getTime() - fiveMin > past;
+
+    if (!lastVisit) {
+      const currentTime = new Date();
+      window.localStorage.setItem('visitedPage', currentTime);
+      setPageVisited(currentTime);
+    } else if (pageViewIsOld) {
+      window.localStorage.removeItem('visitedPage');
+      setPageVisited(null);
+    }
+  }, [lastVisit]);
+
   return {
     currentTheme,
     setCurrentTheme,
+    pageVisited: Boolean(pageVisited),
   };
 };
 
