@@ -25,8 +25,6 @@ const WorkPreview2 = ({ data }) => {
           ease: 'expo.inOut',
         }
       );
-    } else {
-      gsap.to(element.querySelector('.work-body'), { opacity: 1 });
     }
   }, [pageVisited]);
 
