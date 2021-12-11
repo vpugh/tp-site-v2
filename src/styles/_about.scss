@@ -71,13 +71,13 @@ $textColor: #000;
     justify-content: space-between;
     & > div:nth-child(1) {
         @media(min-width: 1024px) {
-            max-width: 635px;
+            max-width: 735px;
             padding-right: 40px;
         }
-        @media (min-width: 1600px) {
-            max-width: 675px;
-            padding-right: 0;
-        }
+        // @media (min-width: 1600px) {
+        //     max-width: 675px;
+        //     padding-right: 0;
+        // }
     }
     & > div:nth-child(2) {
         max-width: 400px;
@@ -91,7 +91,7 @@ $textColor: #000;
         margin-top: 1.5rem;
     }
     p {
-        font-size: 18px;
+        font-size: 26px;
         line-height: 1.56;
         margin-top: 0;
     }
@@ -118,7 +118,7 @@ $textColor: #000;
     }
     .work-info {
         margin-top: .25rem;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1.4;
     }
     .divided-sections {

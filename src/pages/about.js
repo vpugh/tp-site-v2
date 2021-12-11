@@ -94,8 +94,9 @@ const AboutPage = ({ data }) => {
               Driven by curiosity &amp; a desire to make things work better.
             </h3>
             <p className='about-hero-subheader'>
-              I listen to understand a problem, do research to identify and/or
-              confirm it, and then create solutions for them.
+              Naturally curious and thrives on knowing how everything works. I
+              ask a lot of questions, do extensive research, and consider all
+              aspects of what I'm making and who I'm making it for.
             </p>
             <a
               className='button light resume-button'
@@ -117,64 +118,29 @@ const AboutPage = ({ data }) => {
           <div>
             <div className='about-main-body'>
               <p>
-                I'm a naturally curious person who thrives on knowing how
-                everything works. This attitude is especially helpful in the
-                design and development world. I ask a lot of questions, do
-                extensive research, and consider all aspects of what I'm making
-                and who I'm making it for. The more knowledge at my fingertips,
-                the better solution I can make.
-              </p>
-              <p>
-                The changing world of tech, makes a person who constantly learns
-                (me!) very happy. I'm quite adaptable to using any tech,
-                workflow, strategies, etc. If someone is willing to educate me
-                or there is some method of self-learning, I'll be able to pick
-                it up since I can learn new things at amazing speeds. I take
-                great enjoyment in trying to find more efficient ways to create
-                things and upcoming technologies. I’m always looking to expand
-                my knowledge through online learning, classes, going to
+                I'm adaptable to using any tech, workflow, strategies, etc. If I
+                can be taught or self-learn, I'll pick it up. Since I can learn
+                new things at amazing speeds I’m always looking to expand my
+                knowledge through online learning, classes, going to
                 conferences, or reading articles.
               </p>
               <p>
-                I’m a UI/UX developer who is passionate about creating products
-                that puts the users first. I want to make products work better
-                and easier to use. I've worked in different capacities as a
-                visual designer, front-end developer, and email developer.
+                A UI/UX designer and front-end developer who creates products
+                that are user-oriented, work better, and easier to navigate.
+                “Design is more then making it pretty” — is my driving
+                principle. It's the culmination of creation and execution of a
+                solution; understanding your audience; and critical thinking to
+                solve problems. This combination of thought and execution is
+                what I find most enjoyable and rewarding with design and
+                development.
               </p>
               <p>
-                The idea — “design is more then making it pretty” — is my
-                driving principle. Design is the culmination of creation and
-                execution of a solution; understanding your audience; and
-                critical thinking skills to solve problems. This combination of
-                thought and execution is what I find most enjoyable and
-                rewarding.
-              </p>
-              <p>
-                In code creation, I strive for readable, clean, and efficient
-                code. I'm a firm believer in breaking down the pieces as much as
-                I can to keep everything clear and unmuddled. It creates more
-                files but then those files are just doing one thing.
-              </p>
-              <p>
-                When I've done something worth talking about I like to blog
-                about new technology I've tried or problems I've run into with a
-                project. I've got a few side projects that I've been working on.
-                It helps me use new tech and brush up on my skills in a fairly
-                forgiving environment.
-              </p>
-              <p>
-                Before I make my side projects, I sit down and plan out the
-                structure and definetly decide on the design. Some fancy designs
-                change drastically when put the test of being accessible and
-                user-friendly.
-              </p>
-              <p>
-                Non-computer related activites are vast, I spread my attention
-                across many medias. I'm extremely behind on viewing great
-                Netflix shows. I'm an avid reader with a ever-growing backlog of
-                books, I keep buying but don't read them. Trying to get through
-                my game collection for the PS4 and Switch, currently heavily
-                involved in Assassin's Creed Valhalla, Breath of the Wild.
+                In my spare time I spread my attention across many things. I'm
+                extremely behind on watching Netflix shows. An avid reader with
+                a ever-growing backlog of books, I keep buying but don't read
+                them. Always trying to get through my game collection for the
+                PS4 and Switch, currently heavily involved in Assassin's Creed
+                Valhalla and Animal Crossing New Horizon.
               </p>
             </div>
           </div>
@@ -184,32 +150,28 @@ const AboutPage = ({ data }) => {
               <div>
                 <h4 className='work-title'>Oct 2018 - Present</h4>
                 <p className='work-info'>
-                  <span className='company'>Holman Enterprises</span>
-                  <br />
+                  <span className='company'>Holman Enterprises - </span>
                   Front End Developer
                 </p>
               </div>
               <div>
                 <h4 className='work-title'>Feb 2018 - Oct 2018</h4>
                 <p className='work-info'>
-                  <span className='company'>Creative Circle</span>
-                  <br />
+                  <span className='company'>Creative Circle - </span>
                   Front End Developer/Designer
                 </p>
               </div>
               <div>
                 <h4 className='work-title'>Oct 2017 - Feb 2018</h4>
                 <p className='work-info'>
-                  <span className='company'>MNG Direct</span>
-                  <br />
+                  <span className='company'>MNG Direct - </span>
                   Email Developer
                 </p>
               </div>
               <div>
                 <h4 className='work-title'>Mar 2013 - Oct 2017</h4>
                 <p className='work-info'>
-                  <span className='company'>AEGIS Communications</span>
-                  <br />
+                  <span className='company'>AEGIS Communications - </span>
                   Front End Designer/Email Developer
                 </p>
               </div>
