@@ -148,30 +148,30 @@ const AboutPage = ({ data }) => {
             <div className='divided-sections'>
               <h2>Work</h2>
               <div>
-                <h4 className='work-title'>Oct 2018 - Present</h4>
+                <h4 className='work-title'>2018 - Present</h4>
                 <p className='work-info'>
-                  <span className='company'>Holman Enterprises - </span>
+                  <span className='company'>Holman Enterprises • </span>
                   Front End Developer
                 </p>
               </div>
               <div>
-                <h4 className='work-title'>Feb 2018 - Oct 2018</h4>
+                <h4 className='work-title'>2018</h4>
                 <p className='work-info'>
-                  <span className='company'>Creative Circle - </span>
+                  <span className='company'>Creative Circle • </span>
                   Front End Developer/Designer
                 </p>
               </div>
               <div>
-                <h4 className='work-title'>Oct 2017 - Feb 2018</h4>
+                <h4 className='work-title'>2017 - 2018</h4>
                 <p className='work-info'>
-                  <span className='company'>MNG Direct - </span>
+                  <span className='company'>MNG Direct • </span>
                   Email Developer
                 </p>
               </div>
               <div>
-                <h4 className='work-title'>Mar 2013 - Oct 2017</h4>
+                <h4 className='work-title'>2013 - 2017</h4>
                 <p className='work-info'>
-                  <span className='company'>AEGIS Communications - </span>
+                  <span className='company'>AEGIS Communications • </span>
                   Front End Designer/Email Developer
                 </p>
               </div>

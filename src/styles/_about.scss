@@ -15,10 +15,12 @@ $textColor: #000;
     @media(min-width: 1024px) {
     display: flex;
     flex-direction:  column;
-    max-width: 630px;
-    // margin-left: 48px;
+    max-width: 530px;
     margin-right: 85px;
     align-items: flex-start;
+    }
+    @media(min-width: 1440px) {
+        max-width: 630px;
     }
 }
 
@@ -37,7 +39,7 @@ $textColor: #000;
     overflow: hidden;
     position: relative;
     border-radius: 24px;
-    width: 360px;
+    // width: 360px;
     height: 360px;
     margin-top: 48px;
     & > div {
@@ -91,7 +93,10 @@ $textColor: #000;
         margin-top: 1.5rem;
     }
     p {
-        font-size: 26px;
+        font-size: 18px;
+        @media (min-width: 768px) {
+            font-size: 26px;
+        }
         line-height: 1.56;
         margin-top: 0;
     }
