@@ -9,11 +9,20 @@
   }
   .work-preview-text {
     transition: 300ms ease-in-out;
+    @media (min-width: 768px) {
+      width: 25%;
+    }
   }
   &:hover {
     .work-preview-image {
       transform: scale(.9804);
     }
+  }
+}
+
+.preview-container {
+  @media (min-width: 1024px) {
+    margin-bottom: 140px;
   }
 }
 
@@ -41,21 +50,20 @@
       margin-top: .75rem;
     }
     @media (min-width: 1024px) {
-      font-size: 28px;
-      line-height: 32px;
+      font-size: 22px;
+      line-height: 1.2;
     }
   }
   .work-preview-description {
     color: var(--textColor);
     margin-top: .35rem;
     margin-bottom: .5rem;
+    line-height: 1.3;
     @media (max-width: 360px) {
       margin-bottom: .5rem;
     }
     @media (min-width: 1024px) {
-      font-size: 20px;
-      line-height: 32px;
-      width: 80%;
+      font-size: 18px;
     }
   }
 

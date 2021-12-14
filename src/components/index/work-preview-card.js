@@ -5,7 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const WorkPreviewCard = (props) => {
-  const { frontmatter, image, tags } = props;
+  const { frontmatter, image } = props;
 
   gsap.registerPlugin(ScrollTrigger);
   const ref = React.useRef(null);
@@ -36,7 +36,10 @@ const WorkPreviewCard = (props) => {
   }, [nameTitle]);
 
   return (
-    <div ref={ref} className={`preview-container-${nameTitle}`}>
+    <div
+      ref={ref}
+      className={`preview-container preview-container-${nameTitle}`}
+    >
       <Link to={frontmatter.path} key={frontmatter.title} className='work-link'>
         <Img
           fluid={image}
@@ -46,7 +49,6 @@ const WorkPreviewCard = (props) => {
         <div className='work-preview-text'>
           <h4 className='work-preview-title'>{frontmatter.title}</h4>
           <p className='work-preview-description'>{frontmatter.description}</p>
-          <p className='work-preview-tags'>{tags}</p>
         </div>
       </Link>
     </div>
