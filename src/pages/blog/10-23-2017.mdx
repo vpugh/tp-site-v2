@@ -1,0 +1,57 @@
+---
+path: '/blog/creating-my-own-gulp-based-email-workflow-system'
+title: 'Creating my own Gulp-based email workflow system'
+excerpt: 'Wanting modular + dynamic content so badly I made my own system.'
+tags: ['web development', 'templating', 'gulp', 'email']
+coverPhoto:
+  {
+    cloudinaryAssetData: true,
+    cloudName: 'dmocgebcq',
+    publicId: 'portfolio/blog-covers/1_f94McgIqNUwognsge7EXtg_2x_dxoks2.jpg',
+    originalHeight: 1182,
+    originalWidth: 2048,
+    defaultBase64: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMMXG/8HwAEwAI0Bj1bnwAAAABJRU5ErkJggg==',
+    defaultTracedSVG: 'data:image/svg+xml,%3Csvg%20height%3D%229999%22%20viewBox%3D%220%200%209999%209999%22%20width%3D%229999%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m0%200h9999v9999h-9999z%22%20fill%3D%22%23f9fafb%22%2F%3E%3C%2Fsvg%3E',
+  }
+draft: false
+type: blog
+date: 2017-10-23
+---
+
+I’m an email fanatic, an #emailgeek if you will. I attended Litmus Live Boston 2016 and heard people swearing by modularity and using data driven design to save us all. Wanting to be apart of the change and not the problem lead me to wonder if there was a Gulp based solution that would help me at work. Most use the modularity functions in something like Litmus or within their own ESP. My company had neither available as an option, our ESP is awful and we don’t use Litmus. In a constant struggle to keep emails maintainable, on brand, error free, and as customizable as possible I needed to get this workflow up and running.
+
+## Searching for a starting point
+
+The idea was to find something to build upon that would allow me to template our emails, create modules for the templates, make them easy to maintain, help reduce errors and increase consistency. I stumbled across A Gulp Workflow for Building HTML Emails by ireade and saw that it was a perfect starting point. Removing the PostCSS options, and disregarding the capability to inline css (due to time constraint I had to hardwiring all the templates). It did everything that I had wanted it to.
+
+## Using a templating system
+
+The workflow used Nunjucks for templating, which is similar to Swig/Twig/Dwoo, a simple but powerful templating language. Before this I’d never really used one, since it required using PHP and my knowledge is lacking. Nunjucks uses a simple language and no PHP, its easy to learn and their is strong documentation if you forget. Having a templating system makes creating modules for the emails so much easier, controlled, and clean.
+
+It helped exponentially with changes, which was one of the biggest problems we had with our emails. When I copied and pasted past emails and had to keep remaking changes from one group of emails to another. I’d forget what changes were done to which email and it became a huge problem of consistency. There were emails without the “new” changes and some with even more changes. The templating system reduced these errors and inconsistencies drastically and helped to document the various changes.
+
+## Using data is a real game changer
+
+The best part of this system was using Gulp-data to incorporate data files. They are .json files, that can be named and referenced in the template files. Personally, I created a data file specifically for the main content of the site: the logo, the homepage link, the social links, etc. If it‘s something to be permanently found on all of the emails it’s in this file. Now I never had to code header or footer links again, which increased consistency and reduced errors.
+
+In my specific usage case, an event that spans different cities and uses similar but different information. This was paramount in cutting down errors, tedious tasks, and speeding up production. I created a data file for each city which had the speaker subject, speakers, their bios, the presentation information, the agenda time, the city sponsors, hotel information, city information, and all the links for the event (different ticket packages). This file would be called into the templates when needed and helped to create the dynamic data. When the cities changed from template to template all the variables pulling in this data would change. There was no constantly writing the same data in and possible seeing it changed from email to email. When there was series wide changes, such as personnel or agenda I made it in the database and didn’t worry about it again. Things like the unsubscribe, which was a part of the data file, and once it was set never needed to be revisited.
+
+The only downside to this data system was the manual nature of it. This required me to also maintain data in case of changes. Since I had no control over changes I had to rely on people updating me to changes or additions. This did require some great rewrites of the system due to needing something and not having the email setup for it. All of which could have been averted with some good planning and discussion about future needs of the emails.
+
+## Creating variables to take advantage of data
+
+Using the data files you could then pull in information and save them in the templates as variables. Variables could be anything from Hotel Name, with different variations, from a short version to a long version, to referencing the agenda speakers, date of the event or location. Being able to create variables lead to being able to create dynamic data, it was based on verifying information against variables.
+
+You could also make conditionals built into the templates and put all the options in each template. Using variable functions you can change the data being displayed depending on the current variables. An example is the pricing and labels would change based on the type of sale going on, early-bird or preview pricing. This included all the links to the different prices and using any necessary verbiage changes.
+
+You could also make some custom variables, like one that when compiled together would create the view in browser link. It would take all the information for the compilation from variables in the main email file.
+
+## Planning for the next step
+
+For a trial run from a first creation it did great! There where some noted pain points, when the style needed to be changed I needed to make changes in each data file to stay consistent. Also there were changes without my knowledge that I had to change in my data to match the current event. A lot of times I was running without data and would have to leave areas empty. These are not necessarily the systems fault, that’s communications errors and bad planning. One of the biggest problems seemed to revolve around creating, changing and maintaining data.
+
+For a truly consistent and easier usage the next step would be to make a GUI and integrate a server system and a database. With a database in place and a method for another person to maintain the data, the responsibility of data handling wouldn’t fall to me. With these changes in place I believe they would alleviate these problems. From a technical standpoint, the main problem to address is refreshing the data without restarting the server. Currently I change the data and need to restart the server. It’s annoying when making simple changes in the data and having to restart the server. For non-code people it could be a potential barrier and more of a problem than helpful.
+
+[Gulp Email Workflow](https://github.com/vpugh/Gulp-Email-Workflow)
+
+Still working on updating the repo. I kind of let it go to seed there.

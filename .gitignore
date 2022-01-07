@@ -5,10 +5,10 @@ dist/
 .vscode/
 assets/
 app.zip
-images/
-prototype/
-Old
-eROI.njk
-fonts
+.cache
+.cache/
+public
+.DS_Store
 *.html
 *.htaccess
+.env

@@ -1,0 +1,114 @@
+:root {
+  --textColor: #000;
+  --jumbotronBg: #000;
+  --pageBgColor: #000;
+  --buttonBg: #000;
+  --buttonBorderBg: #000;
+}
+
+@import './typography.css';
+
+html {
+  font-family: 'Inter', sans-serif;
+  color: var(--textColor);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--pageBgColor);
+}
+
+// Utility styles
+.bold-quincy {
+  font-family: 'QuincyCFMedium', serif;
+}
+
+.reg-quincy {
+  font-family: 'QuincyCFRegular', serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1460px;
+  box-sizing: border-box;
+  margin: 40px auto;
+  padding: 0 40px;
+  @media (min-width: 440px) {
+    padding: 0 60px;
+  }
+  @media (min-width: 768px) {
+    padding: 0 80px;
+  }
+}
+
+.button-container {
+  @media (min-width: 1024px) {
+    & a:last-child {
+      margin-left: 20px;
+    }
+    & a:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.button {
+  @media (max-width: 767px) {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  padding: 19px 60px;
+  border-radius: 8px;
+  border: none;
+  color: var(--textColor);
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  &.transition {
+    transition: all ease-in-out 300ms;
+  }
+  &:hover {
+    opacity: 0.4;
+  }
+  &.default {
+    background-color: var(--textColor);
+  color: #fff;
+  }
+  &.dark {
+    background-color: var(--jumbotronBg);
+  }
+  &.light {
+    background: var(--boxShading);
+  }
+  &.dark-outlined {
+    border: 1px solid var(--textColor);
+  }
+}
+
+.textLink {
+  text-decoration: none;
+  color: var(--textColor);
+  transition: 300ms ease-in-out;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+@import './footer';
+@import './header-navigation';
+@import './jumbotron';
+@import './personal-blurb';
+@import './work-preview';
+@import './work-post';
+@import './work';
+@import './about';
+@import './blog-preview';
+@import './blog-post';
+@import './contact';
+@import './theme-switcher';

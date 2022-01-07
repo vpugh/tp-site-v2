@@ -1,0 +1,72 @@
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  @media (min-width:1024px) {
+    margin-top: 120px;
+    width: 40%;
+  }
+  .contact-title {
+    font-size: 30px;
+    margin-bottom: 0;
+    @media (min-width: 1024px) {
+      font-size: 46px;
+    }
+  }
+  .availability {
+    @media (min-width: 1024px) {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+  }
+  .availability-status {
+    font-weight: 800;
+  }
+  .contact-subheader {
+    margin-bottom: 40px;
+    @media (min-width: 1024px) {
+      font-size: 18px;
+      margin-top: 0;
+      line-height: 1.4;
+    }
+  }
+}
+
+.contact-form {
+  input, textarea {
+    display: inline-block;
+    border: none;
+    border-bottom: solid 1px var(--buttonBorderBg);
+    margin-bottom: 14px;
+    padding: 12px 10px;
+    background-color: var(--pageBgColor);
+    /* border-radius: 4px; */
+    width: calc(100% - 20px);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      color: var(--textColor);
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color: var(--textColor);
+     opacity:  1;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color: var(--textColor);
+     opacity:  1;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+     color: var(--textColor);
+  }
+  &::-ms-input-placeholder { /* Microsoft Edge */
+     color: var(--textColor);
+  }
+  
+  &::placeholder { /* Most modern browsers support this now. */
+     color: var(--textColor);
+  }
+    @media (min-width: 1024px) {
+      width: 100%;
+      
+    }
+  }
+}

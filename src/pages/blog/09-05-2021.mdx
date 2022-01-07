@@ -1,0 +1,83 @@
+---
+path: '/blog/creating-a-recipe-app'
+title: 'Creating a Recipe App - Process Overview'
+excerpt: 'The high level process of making something from nothing'
+tags: ['development', 'react', 'graphql']
+coverPhoto:
+  {
+    cloudinaryAssetData: true,
+    cloudName: 'dmocgebcq',
+    publicId: 'portfolio/work-images/personal-recipes/Homepage_Laptop_View_2x_fbkplr.png',
+    originalHeight: 360,
+    originalWidth: 820,
+    defaultBase64: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMMXG/8HwAEwAI0Bj1bnwAAAABJRU5ErkJggg==',
+    defaultTracedSVG: 'data:image/svg+xml,%3Csvg%20height%3D%229999%22%20viewBox%3D%220%200%209999%209999%22%20width%3D%229999%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m0%200h9999v9999h-9999z%22%20fill%3D%22%23f9fafb%22%2F%3E%3C%2Fsvg%3E',
+  }
+draft: false
+type: blog
+date: 2021-12-15
+---
+
+For this project, I created an app to store personal recipes because it was something my mom needed since she kept losing her filed recipes. It was also something important to distract me from the beginning of the pandemic and gave me something to look forward to in quarantine.
+
+I used React, Heroku, Auth0, MirageJS, Hasura, and GraphQL.
+
+This project is important because it created something I could use and maybe others could use; and let me use some technologies I've never used.
+
+I started by creating a quick app, concentrating on the visual but not making an API system. A solution to build with the idea of using an API but not actually use one was using [MirageJS](https://miragejs.com/) to 'replicate' using an api. Before using MirageJS I used [Mockapi.io](https://mockapi.io/), to create a fake endpoint and integrate it into my applications. This way I didn't need to setup any api endpoints but everything would still be setup like I did. Using Mockapi is great, but I need to have access to the internet for it to work. Since I was having some internet issues, all those people working from home and just streaming in large numbers, made this more difficult than it needed to be. I'd seen references online to MirageJS and the idea of creating a local database and replicating using endpoints seemed like a great idea. I setup up all my endpoints offline on my local machine and setup all my api calls based off the data I **assumed** I'd get back.
+
+Then I had to setup a [Heroku](https://www.heroku.com/) instance to start using GraphQL and hook the app up to it's endpoints. Once I'd build out everything, which was adding a recipe for a user, getting a recipe, getting all the recipes for a certain user and editing a certain recipe. I felt confident to start turning this from a playful idea into reality. I've wanted to use [Hasura.io](https://hasura.io/) for awhile. I've heard about GraphQL and really wanted to get my hands dirty with it. Since I've never used it, this seemed like the perfect time to get into it. I had just watched a live demonstration of how to setup a Hasura instance on Heroku so I felt really confident about that starting step. It was literally pressing one button that spun up an instance on Heroku for you, you just needed to name it. So with that out of the way I started making GraphQL queries to make my endpoints. There was a lot of trial and error in this. GraphQL isn't difficult to understand but using the full power took me a little time. Sadly, I did not use the [Apollo GraphQL Client](https://www.apollographql.com/). I'd heard of it but since I was already learning a lot of stuff I felt I could do this without it. I might have to put a little more effort in but I could concentrate on getting things working and not get lost in another product.
+
+After that, I had to setup [Auth0](https://auth0.com/) to be able to authenticate and authorize signing in and up. I accidentally started this project like I was going to handle signups on my own (i.e. run my own api). After I'd gone through all the effort of making sure the passwords were not text readable and were salted and hashed, I realized none of this mattered. Since I couldn't access the database to verify the information without being signed in, which was checking the data that I needed to be verified to see. I know backend and messing with sign-ins and signups can be complex so I looked at some options and decided on Auth0. It's a name I'd heard for awhile now and felt pretty confident using it. Setup was pretty easy, implementation was a bit different. I think I had started using it after they'd released a newer package version. So, when looking the documentation I was confused which version I should be using and what pieces were appropriate for me. Again, lots of trial and error but I got it working in the end.
+
+After that, it was the nuances of getting the permission for the database set up in Hasura for proper authorization. I'd say this was one of the most difficult parts for me. I was completely baffled and required a lot of research to get this all to work reliably. I was running into issues with my tokens and they weren't displaying the correct information and were constantly not valid, so my endpoints wouldn't work. This was just digging through documentation, watching YouTube videos, and even buying some courses and learning from them. Just keeping at it until it makes sense and you get it working.
+
+Finally, deployed it all with [Netlify](https://www.netlify.com/). I've used Netlify before so this was super easy. Just select my Github project and it's pretty self-sufficient. Only real problem I had is being unable to sign-in with Auth0 on a test branch, that is annoying. I haven't found a way around it and just use the real site for testing.
+
+## Results:
+
+There is a demo but I've not secured it enough to share it yet. It's fully functional, I've been saving a lot of recipes on it and have used it on my phone and tablet when cooking. It's been quite handy. I made a video of it but I'm not sure where to host it. Once that's sorted I'll attach a link here.
+
+I've not been able to figure out how to save a token to a cookie so it's been saved to localStorage and I know that's not very secure. That's the last thing I need to solve but that solution for whatever reason has been difficult to come by.
+
+The github repo is https://github.com/vpugh/personal-recipes. ![image](https://community.codenewbie.org/remoteimages/uploads/articles/6lqjuals2hm3c68pm9mv.png)
+
+## Takeaways:
+
+Making a 'simple app' isn't nearly as simple as it seems. I was hoping to get a MVP for this created in a month and it took me a good 2-3 months to work out some of the issues. In total this took a good 5-6 months of pretty consistent work. I would get off of my day job and start working on it late into the night.
+
+Even after getting something that worked, I realized all the pieces I hadn't considered before building and then had to retrofit into the app after the fact. For the first time building a system front and back like this a lot of things became clear to me.
+
+- Having a clear idea about how the database is setup and how it relates to the data you'll be using is crucial. That was a taxing part that caused many rewrites. Using a system to mock apis revealed a lot of issues that I hadn't thought of and revealed other things to consider well before I created a database structure.
+
+- There are still many features I want this project to have, ability to share recipes, download recipes to pdf, and more settings controls. Figuring out how to make all that work is something I maybe could have stubbed out and then made it easier for future me.
+
+- This experience has been slow going but very enjoyable learning process. It takes a lot of time to do things right so spending the time doing that can be fun after some time.
+
+- I did not use Apollo GraphQL, I thought learning about GraphQL was difficult enough. I assume the usage of this may or may not make this process go faster.
+
+- I also just used React so I'm wondering if using NextJS or Gatsby would have also made this process a little easier. If it could have automated something I built from scratch.
+
+## Resources:
+
+This is some of the things I used to make this app possible.
+
+MirageJS: https://miragejs.com/
+
+Auth0: https://auth0.com/blog/
+The Complete Guide to React User Authentication with Auth0: https://auth0.com/blog/complete-guide-to-react-user-authentication/#Getting-User-Information-in-React-Components
+
+Hasura:
+Documentation Home: https://hasura.io/docs/latest/graphql/core/index.html
+Databases => Postgres:https://hasura.io/docs/latest/graphql/core/databases/postgres/index.html
+
+I'll update it with specific articles when I find them again
+
+<!-- ## More Expanded Explanation in Specific Sections -->
+
+<!-- - [Quick UI with MirageJS](/blog) -->
+<!-- - [Setting Up Heroku and Hasura to use GraphQL](/blog) -->
+<!-- - [Getting to use Auth0 for authentication and authorization](/blog) -->
+<!-- - [Complexity of permissions and authorization in Hasura](/blog) -->
+<!-- - [Using Netlify to host, Auth0 issues](/blog) -->
+<!-- - [Project Retro, what went well and what can be improved](/blog) -->

@@ -1,0 +1,64 @@
+---
+path: /work/personal-recipes
+title: Personal Recipes
+description: Creating a digital location to store recipes that is more difficult to lose and easier to access.
+workTags: ['UI/UX Design', 'Web Development']
+tags: ['Website Design', 'Development', 'React']
+coverPhoto:
+  {
+    cloudinaryAssetData: true,
+    cloudName: 'dmocgebcq',
+    publicId: 'portfolio/preview-images/personal-recipes-mockup-long_2x_iwn1sz.png',
+    originalHeight: 1248,
+    originalWidth: 2128,
+    defaultBase64: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMMXG/8HwAEwAI0Bj1bnwAAAABJRU5ErkJggg==',
+    defaultTracedSVG: 'data:image/svg+xml,%3Csvg%20height%3D%229999%22%20viewBox%3D%220%200%209999%209999%22%20width%3D%229999%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m0%200h9999v9999h-9999z%22%20fill%3D%22%23f9fafb%22%2F%3E%3C%2Fsvg%3E',
+  }
+work_jumbo_title: Pandemic application made as something to help my mom.
+laptop_image: https://res.cloudinary.com/dmocgebcq/image/upload/v1639095201/portfolio/laptop-images/personal-recipes-laptop-mock_mfzoic.png
+role: Designer/Developer
+deliverable: Netlify
+url:
+github: 'https://github.com/vpugh/personal-recipes'
+client: Self
+draft: false
+type: work
+order: 1
+date: 2018-01-03
+---
+
+### The Challenge
+
+At the beginning of the pandemic my mom was trying to pass time by baking and cooking up a storm. The problem was she kept taking out her files with her recipes and then losing them. I'd always talked about making a system so she could have access to her recipes and save them more securely without a risk of 'misplacing' them.
+
+<!-- [Insert Pictures of Lists and Beginning Sketches - maybe some 4x4] -->
+
+### Desired Solution
+
+To create an app that requires users, a need to sign up and sign in. They are able to add recipes to their account and view or edit them from anywhere. This solution solves all the important issues that were faced by a physical folder system of paper recipes. Easy access to recipes from anywhere (computer, tablet, etc...) and ability to save and update them.
+
+<!-- [Pictures of application] -->
+
+![alt](https://res.cloudinary.com/dmocgebcq/image/upload/v1639287752/portfolio/work-images/personal-recipes/Homepage_Laptop_View_2x_fbkplr.png)
+
+## Sitemap
+
+![Personal Recipes Sitemap](https://res.cloudinary.com/dmocgebcq/image/upload/v1639287750/portfolio/work-images/personal-recipes/Personal_Recipes_Sitemap_2x_1_2x_yera1z.png)
+
+## Main Screens
+
+![Personal Recipes - Add Recipe Page](https://res.cloudinary.com/dmocgebcq/image/upload/v1639287750/portfolio/work-images/personal-recipes/Add_Recipe_-_Screenshot_2x_q7qezp.png)
+
+![Personal Recipes - Single Recipe Page](https://res.cloudinary.com/dmocgebcq/image/upload/v1639287752/portfolio/work-images/personal-recipes/Single_Recipe_-_Screenshot_2x_nbohe1.png)
+
+![Personal Recipes - Homepage Mockup](https://res.cloudinary.com/dmocgebcq/image/upload/v1639287754/portfolio/work-images/personal-recipes/MacBook_mockup_on_a_white_bed_beside_a_cup_of_coffee_and_blue_duvet_Mockuuups_Studio_2x_tkkmcb.png)
+
+### Final Result
+
+The design was cleaned up a lot from the inital cool Dribbble idea and is more clean and simple but colorful. Ended up using a theme system, it has four different colors — pink, blue, purple, and green.
+
+For a first time try, using authentication and authorization went fairly smoothly. A user can register and login just fine. Only issue is saving authentication info, using local storage and want to use cookies. Seems that’ll need it’s own API so still looking for solutions. I originally was writing the backend to login and decided that was a bit too risky for a first time project. Better to stick to something that's easier and guaranteed secure. I did all the login and storing of PII correctly, I hashed with bcrypt and salted the passwords before saving into the account table.
+
+At it’s most basic form, it works. With regards for room for improvement there are some areas to keep working on. At the end of the day, it’s usable and that’s what matters.
+
+Writing some [blog posts](/blog/creating-a-recipe-app) about my experience setting, working with the backend and using some frontend stuff I don't normally do.

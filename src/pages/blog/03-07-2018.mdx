@@ -1,0 +1,143 @@
+---
+path: '/blog/making-a-vue-compnent'
+title: 'Making a Vue component'
+excerpt: 'Breaking down the creation of an editable navigation element'
+tags: ['javascript', 'vue', 'process', 'web development']
+coverPhoto:
+  {
+    cloudinaryAssetData: true,
+    cloudName: 'dmocgebcq',
+    publicId: 'portfolio/blog-covers/helloquence-5fNmWej4tAA-unsplash_l1fp6g.jpg',
+    originalHeight: 4912,
+    originalWidth: 7360,
+    defaultBase64: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMMXG/8HwAEwAI0Bj1bnwAAAABJRU5ErkJggg==',
+    defaultTracedSVG: 'data:image/svg+xml,%3Csvg%20height%3D%229999%22%20viewBox%3D%220%200%209999%209999%22%20width%3D%229999%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m0%200h9999v9999h-9999z%22%20fill%3D%22%23f9fafb%22%2F%3E%3C%2Fsvg%3E',
+  }
+draft: false
+type: blog
+date: 2018-03-07
+---
+
+I had an interesting idea to create a navigation that for simplicity I’ll call an editable navigation. I wanted this navigation to be easy to use. When you fill out the form then a link gets added. You can delete links, edit the content of a link, and change the order of the links.
+
+To start this project I broke it down into 3 phases: add links, delete links, and move links. As I went through them though, I felt these phases were a bit too vague. I had overlooked the important details that make a product usable. The nuances behind making something like adding seem so simple, error-handling and warnings. Without these I could create a very poor experience. As such, I added another phase of error handling but could have easily added more phases to encompass a smoother experience.
+
+To create this I’m using [Vue.js](https://vuejs.org/) and [Codepen](https://codepen.io/). This requires a basic knowledge of HTML and CSS and an intermediate knowledge of Javascript.
+
+# Phase 1: Add Links
+
+https://codepen.io/Vpugh/pen/bLKMaJ
+
+[Phase 1 Codepen](https://codepen.io/Vpugh/pen/bLKMaJ): The first phase of my navigation creation was developing a function to add links from input data. This was a simple matter of creating an empty array to place the new links into and when the “Add to Navigation” button is pressed it adds the content of the inputs into the array. This in turn would add a new link to the navigation.
+
+It's probably more simplistic than I intended. There is no safeguard against either input being blank and triggering the function or any error message if an input is blank telling the user it needs to be filled out. I'd fix this later on, the first thought was to make this function work.
+The tough part about this code was a problem with the nested arrays storing the data. I initially couldn't get the information pushed into the array, they just didn't show up. When I wrote it more literally [{ text: text, url: url }] as a nested array it worked.
+
+```javascript
+addLink: function() {
+  var text = this.newLink.trim()
+  var url = this.newURL.trim()
+  if (text) {
+    this.links.push({ text: text, url: url })
+    this.newLink = ""
+    this.newURL = ""
+  }
+}
+```
+
+# Phase 2: Deleting Links
+
+https://codepen.io/Vpugh/pen/oEyJQE
+
+[Phase 2 Codepen](https://medium.com/r/?url=https%3A%2F%2Fcodepen.io%2FVpugh%2Fpen%2FoEyJQE): The next step was to create a function that would take into account the index of the link you clicked and then delete that object from the array.
+
+```javascript
+removeLink: function(index) {
+  this.links.splice(index, 1)
+}
+```
+
+# Phase 3: Error Handling
+
+https://codepen.io/Vpugh/pen/wyXVMx
+
+[Phase 3 Codepen](https://medium.com/r/?url=https%3A%2F%2Fcodepen.io%2FVpugh%2Fpen%2FwyXVMx): This started as a need to add error handling (warnings and stopping the data from being added to the array). It than morphed into adding functionality for pressing enter to trigger the function. If you pressed enter on the last input it would trigger the add function. I found myself wanting to finish filling out the last input and just press enter expecting it to work and it didn't.
+
+```javascript
+addLink: function() {
+   var text = this.newLink.trim()
+   var url = this.newURL.trim()
+
+   if ((text !== '') && (url !== '')) {
+      this.isEmpty = false
+      this.links.push({ text: text, url: url })
+      this.newLink = ""
+      this.newURL = ""
+
+    } else {
+      this.isEmpty = true
+      this.error = 'Complete all boxes!'
+    }
+ }
+```
+
+This function is pretty straight forward in it's concept. The reason behind the logic is to make the text-input content and url-input content a variable and then check if either variable is empty. If so, then the function will make the variable isEmpty true which shows the error box with the message. The array push will not happen and the links will not be added.
+
+I did make a few mistakes in this function. With the original logic statement it wasn't properly triggering the function. It was checking only if variable text existed and if variable url was empty. The issue came because I wanted to check if the inputs are empty and not that they exist. The function would trigger if the url was not empty and text was empty. This was not what I wanted to happen. This would push a link with no title and would be a blank space.
+
+`if ((text && url !== '')`
+
+The other issue I ran into was trying to be too fancy and have the isEmpty toggle instead of explicitly state true or false. Whenever the logic failed it would keep toggling the error message on and off regardless if there was still an error. In this updated version, the variable is always true if there is an content in the inputs and will be false if the inputs are not empty.
+
+> These 3 phases went by quickly, they took me the better portion of a day. I was stuck on phase 3 the most, it was a classic case of needing to simplify and not be so fancy.
+
+# Phase 4 - Editing Links
+
+https://codepen.io/Vpugh/pen/VQBOax
+
+[Phase 4 Codepen](https://medium.com/r/?url=https%3A%2F%2Fcodepen.io%2FVpugh%2Fpen%2FVQBOax): This has been my toughest challenge yet! I was initially concerned about the mechanism to make the changes and settled on using a modal.
+
+```javascript
+<transition name="fade">
+    <div class="editMenu" v-show="isEditing">
+      <button class="close" @click="hideForm">X</button>
+      <h3>Edit Link</h3>
+      <label>Link Title</label>
+      <input v-model="editLink" @keyup.enter="editLinks" type="text">
+      <label>Link URL</label>
+      <input v-model="editURL" @keyup.enter="editLinks" type="text">
+    </div>
+  </transition>
+```
+
+I created a simple one by using a [transition](https://medium.com/r/?url=https%3A%2F%2Fvuejs.org%2Fv2%2Fguide%2Ftransitions.html) and [v-show](https://medium.com/r/?url=https%3A%2F%2Fvuejs.org%2Fv2%2Fguide%2Fconditional.html%23v-show). The transition creates a smooth fade in animation and the v-show activates the modal coming into view when a button is pressed.
+
+```javascript
+showForm: function(index) {
+  this.isEditing = true
+  this.editingIndex = index
+  this.editURL = this.links[index].url
+  this.editLink = this.links[index].text
+}
+```
+
+The editing part had been a trouble spot. After assistance from Roel N, he solved this crucial problem for me. The answer to making the edits specific to the link that was pressed is to take the index of the link and save that to a data variable. This would be done when the showForm function is being run so that the index value, which is now a variable of editingIndex, is available for the next function.
+
+```javascript
+editLinks: function(){
+  var text = this.editLink.trim()
+  var url = this.editURL.trim()
+  Vue.set(this.links, this.editingIndex, { text: text, url: url })
+  this.isEditing = false
+  this.editLink = ""
+  this.editURL = ""
+}
+```
+
+This function takes the information that is in the inputs and pushes them back to their array. This is where `Vue.set()` comes in handy.
+
+`Vue.set(object, key, value)` works like this. The object is where I want the changes to be, the links array. The key is the index of the particular link that has been clicked. The value is the content of the inputs.
+
+# Phase 5 - Rearranging Links
+
+This final phase will be centered around making the links change position in the navigation. I'm not sure where to begin with making this work and am unsure whether to use an outside extension or import something to assist with this. I'll try and build something first and then get more complex from there.

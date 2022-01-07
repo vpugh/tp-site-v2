@@ -1,0 +1,42 @@
+.blurb-container {
+  background: var(--boxShading);
+  margin: 60px 0;
+  @media (min-width: 1024px) {
+    margin: 180px 0 120px 0;
+  }
+}
+
+.blurb-title {
+  font-size: 36px;
+  @media (min-width: 768px) {
+    margin-bottom: 40px;
+    margin-top: 0;
+  }
+  @media (min-width: 1024px) {
+    font-size: 43px;
+  }
+}
+
+.blurb-text-container {
+  padding: 10px 0 40px 0;
+  @media (min-width: 768px) {
+    // margin: 0 auto;
+    padding: 30px 0;
+  }
+  @media (min-width: 1024px) {
+    font-size: 24px;
+    max-width: 71%;
+    padding: 79px 0;
+  }
+  .blurb-button {
+    margin-top: 26px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    @media (min-width: 1024px) {
+      font-size: 22px;
+      max-width: 750px;
+    }
+  }
+}
